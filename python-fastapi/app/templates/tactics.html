@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+{% from "macros.html" import stepper, score_state, impact_meter %}
+{% set active_nav = 'matches' %}
+{% block title %}전술 결정 — {{ scenario.minute }}분 — TOUCHLINE 26{% endblock %}
+
+{% block content %}
+<section class="workflow-head workflow-head--sticky">
+  <div class="page-wrap">
+    <nav class="breadcrumb" aria-label="현재 위치">
+      <a href="/matches/{{ match.id }}/scenarios/{{ scenario.id }}/briefing">상황 브리핑</a><span aria-hidden="true">/</span><span>전술 결정</span>
+    </nav>
+    {{ stepper('tactics') }}
+  </div>
+</section>
+
+<section class="tactics-head">
+  <div class="page-wrap tactics-head__inner">
+    <div>
+      <div class="tactics-head__meta">
+        {{ score_state(scenario) }}
+        <span>{{ match.homeTeam.code }} vs {{ match.awayTeam.code }}</span>
+      </div>
+      <h1>당신의 변화를<br><em>설계하세요.</em></h1>
+    </div>
+    <div class="tactics-head__guide">
+      <span>HOW TO PLAY</span>
+      <ol>
+        <li><b>1</b> 필드에서 OUT</li>
+        <li><b>2</b> 벤치에서 IN</li>
+        <li><b>3</b> 역할과 팀 지시</li>
+      </ol>
+      <small>클릭·Enter 또는 드래그로 선택할 수 있습니다.</small>
+    </div>
+  </div>
+</section>
+
+<form class="page-wrap tactics-workspace" id="tactics-form"
+      data-match-id="{{ match.id }}" data-scenario-id="{{ scenario.id }}"
+      data-result-url="/matches/{{ match.id }}/scenarios/{{ scenario.id }}/result">
+  <section class="tactic-section tactic-section--pitch" aria-labelledby="pitch-title">
+    <header class="tactic-section__head">
+      <div>
+        <span class="section-number">01</span>
+        <div><small>SELECT OUT</small><h2 id="pitch-title">필드 선수</h2></div>
+      </div>
+      <span class="selection-state" id="out-state">교체할 선수를 선택하세요</span>
+    </header>
+    <div class="football-pitch" id="football-pitch" aria-label="현재 포메이션. 교체할 선수를 선택하세요">
+      <div class="football-pitch__lines" aria-hidden="true">
+        <span class="football-pitch__box football-pitch__box--top"></span>
+        <span class="football-pitch__box football-pitch__box--bottom"></span>
+        <span class="football-pitch__circle"></span>
+      </div>
+      <span class="formation-label">{{ match.startingFormation }}</span>
+      {% for item in lineup_players %}
+      {% set player = item.player if item.player is defined else item %}
+      <button class="pitch-player" type="button" data-player-id="{{ player.id }}"
+              style="--x: {{ item.x|default(50) }}%; --y: {{ item.y|default(50) }}%;"
+              aria-pressed="false"
+              aria-label="{{ player.name }}, {{ item.slot|default(player.position) }}. 교체할 선수로 선택">
+        <span class="pitch-player__token">{{ player.shirtNumber }}</span>
+        <span class="pitch-player__name">{{ player.name }}</span>
+        <span class="pitch-player__slot">{{ item.slot|default(player.officialPosition) }}</span>
+      </button>
+      {% endfor %}
+      <div class="pitch-drop-hint" aria-hidden="true">벤치 선수를 이곳에 놓으세요</div>
+    </div>
+  </section>
+
+  <section class="tactic-section tactic-section--bench" aria-labelledby="bench-title">
+    <header class="tactic-section__head">
+      <div>
+        <span class="section-number">02</span>
+        <div><small>SELECT IN</small><h2 id="bench-title">교체 벤치</h2></div>
+      </div>
+      <span class="selection-state" id="in-state">투입할 선수를 선택하세요</span>
+    </header>
+    <div class="bench-grid" id="bench-grid">
+      {% for player in bench_players %}
+      <button class="bench-player" type="button" draggable="true" data-player-id="{{ player.id }}"
+              data-position-group="{{ player.positionGroup }}" aria-pressed="false"
+              aria-label="{{ player.name }}, {{ player.position }}. 투입 선수로 선택하거나 드래그">
+        <span class="bench-player__number">{{ player.shirtNumber }}</span>
+        <span class="bench-player__identity">
+          <strong>{{ player.name }}</strong>
+          <small>{{ player.position }}</small>
+        </span>
+        <span class="fitness{% if player.fitness < 70 %} fitness--warn{% endif %}">
+          체력 <b>{{ player.fitness }}</b>
+        </span>
+        <span class="bench-player__drag" aria-hidden="true">⠿</span>
+      </button>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="tactic-section tactic-section--builder" aria-labelledby="builder-title">
+    <header class="tactic-section__head">
+      <div>
+        <span class="section-number">03</span>
+        <div><small>SET THE PLAN</small><h2 id="builder-title">역할과 팀 지시</h2></div>
+      </div>
+      <span class="selection-state">선택에 따라 실시간 분석됩니다</span>
+    </header>
+    <div class="builder-grid">
+      <fieldset class="role-fieldset" id="role-fieldset" disabled>
+        <legend>투입 선수 역할</legend>
+        <p class="fieldset-help" id="role-help">먼저 투입 선수를 선택하세요.</p>
+        <div class="role-options" id="role-options">
+          {% for role in roles %}
+          <label class="choice-card role-choice" data-allowed="{{ role.allowedPositionGroups|join(',') }}">
+            <input type="radio" name="roleId" value="{{ role.roleId }}">
+            <span class="choice-card__check" aria-hidden="true"></span>
+            <span class="choice-card__body">
+              <strong>{{ role.name }}</strong>
+              <small>{{ role.description }}</small>
+              <span class="tag-row">
+                {% for attribute in role.preferredAttributes[:3] %}<i class="tag">{{ attribute }}</i>{% endfor %}
+              </span>
+            </span>
+          </label>
+          {% endfor %}
+        </div>
+      </fieldset>
+
+      <div class="instruction-groups">
+        <h3>팀 지시</h3>
+        <p class="fieldset-help">네 가지 지시는 역할과 함께 영향·위험 점수에 반영됩니다.</p>
+        {% for category in instructions %}
+        <fieldset class="instruction-fieldset">
+          <legend>{{ category.label }}</legend>
+          <div class="segmented-control">
+            {% for option in category.options %}
+            <label>
+              <input type="radio" name="{{ category.id }}" value="{{ option.id }}"
+                     {% if scenario.defaultInstructions[category.id] == option.id %}checked{% endif %}>
+              <span><strong>{{ option.label }}</strong><small>{{ option.description }}</small></span>
+            </label>
+            {% endfor %}
+          </div>
+        </fieldset>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <aside class="live-analysis" aria-labelledby="analysis-title">
+    <div class="live-analysis__head">
+      <div><small>LIVE ANALYSIS</small><h2 id="analysis-title">결정 미리보기</h2></div>
+      <span class="api-status" id="api-status"><i></i> 선택 대기</span>
+    </div>
+
+    <div class="substitution-preview" id="substitution-preview">
+      <div>
+        <span class="substitution-preview__label substitution-preview__label--out">OUT</span>
+        <strong data-preview-out>선수 선택</strong>
+        <small data-preview-out-position>필드에서 선택하세요</small>
+      </div>
+      <span class="substitution-preview__arrow" aria-hidden="true">⇄</span>
+      <div>
+        <span class="substitution-preview__label substitution-preview__label--in">IN</span>
+        <strong data-preview-in>선수 선택</strong>
+        <small data-preview-in-position>벤치에서 선택하세요</small>
+      </div>
+    </div>
+
+    <div class="fit-score">
+      <div class="fit-score__ring" data-score-ring style="--score: 0">
+        <span><strong data-fit-score>—</strong><small>/ 100</small></span>
+      </div>
+      <div>
+        <small>SITUATION FIT</small>
+        <strong data-fit-grade>결정을 완성하세요</strong>
+        <p data-fit-summary>OUT, IN, 역할을 선택하면 Python 엔진이 분석합니다.</p>
+      </div>
+    </div>
+
+    <div class="impact-preview" aria-label="예상 경기 영향">
+      {{ impact_meter('공격 위협', 'attack', 50, 0) }}
+      {{ impact_meter('점유 안정', 'control', 50, 0) }}
+      {{ impact_meter('수비 안정', 'defense', 50, 0) }}
+      {{ impact_meter('활동 에너지', 'energy', 50, 0) }}
+    </div>
+
+    <div class="risk-preview" id="risk-preview">
+      <span>RISK WATCH</span>
+      <p>선택을 완성하면 조합의 위험 요소가 표시됩니다.</p>
+    </div>
+
+    <div class="live-analysis__action">
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <button class="button button--gold button--full button--large" id="confirm-decision" type="submit" disabled>
+        <span>결정 확정</span><i aria-hidden="true">→</i>
+      </button>
+      <small>선택은 이 브라우저에만 저장됩니다.</small>
+    </div>
+  </aside>
+</form>
+
+<div class="mobile-decision-bar" id="mobile-decision-bar">
+  <div><small>상황 적합도</small><strong data-mobile-score>—</strong></div>
+  <button type="submit" form="tactics-form" class="button button--gold" disabled data-mobile-confirm>결정 확정</button>
+</div>
+
+<script type="application/json" id="tactics-data">
+{{ {
+  "matchId": match.id,
+  "scenarioId": scenario.id,
+  "lineupPlayers": lineup_players,
+  "benchPlayers": bench_players,
+  "roles": roles,
+  "defaultInstructions": scenario.defaultInstructions
+}|tojson }}
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/tactics.js" defer></script>
+{% endblock %}

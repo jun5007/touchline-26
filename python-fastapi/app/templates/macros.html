@@ -1,0 +1,65 @@
+{% macro team_mark(team, size='md') -%}
+<span class="team-mark team-mark--{{ size }}" aria-hidden="true">{{ team.code }}</span>
+{%- endmacro %}
+
+{% macro score_state(scenario) -%}
+<span class="status-chip status-chip--{{ scenario.scoreState }}">
+  <span class="status-chip__pulse" aria-hidden="true"></span>
+  {{ scenario.minute }}분 · {{ scenario.currentScore }}
+</span>
+{%- endmacro %}
+
+{% macro stepper(current) -%}
+{% set steps = [('briefing', '01', '상황 브리핑'), ('tactics', '02', '전술 결정'), ('result', '03', '분석 결과')] %}
+<nav class="stepper" aria-label="미션 진행 단계">
+  <ol>
+    {% for key, number, label in steps %}
+    <li class="stepper__item{% if key == current %} is-current{% elif (current == 'tactics' and key == 'briefing') or (current == 'result' and key != 'result') %} is-done{% endif %}"
+        {% if key == current %}aria-current="step"{% endif %}>
+      <span class="stepper__number">{% if (current == 'tactics' and key == 'briefing') or (current == 'result' and key != 'result') %}✓{% else %}{{ number }}{% endif %}</span>
+      <span>{{ label }}</span>
+    </li>
+    {% endfor %}
+  </ol>
+</nav>
+{%- endmacro %}
+
+{% macro scenario_card(match, scenario, compact=false) -%}
+<article class="mission-card{% if compact %} mission-card--compact{% endif %}">
+  <div class="mission-card__top">
+    {{ score_state(scenario) }}
+    <span class="difficulty">{{ scenario.difficulty }}</span>
+  </div>
+  <p class="overline">MISSION {{ "%02d"|format(scenario.order) }}</p>
+  <h3>{{ scenario.title }}</h3>
+  <p>{{ scenario.shortMission }}</p>
+  <div class="tag-row" aria-label="전술 키워드">
+    {% for tag in scenario.matchupTags[:3] %}
+    <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  <a class="text-link" href="/matches/{{ match.id }}/scenarios/{{ scenario.id }}/briefing">
+    미션 브리핑 보기 <span aria-hidden="true">→</span>
+  </a>
+</article>
+{%- endmacro %}
+
+{% macro impact_meter(label, key, value=50, delta=0) -%}
+<div class="impact-meter" data-impact="{{ key }}">
+  <div class="impact-meter__head">
+    <span>{{ label }}</span>
+    <strong data-impact-value="{{ key }}">{{ value }}</strong>
+  </div>
+  <div class="impact-meter__track" aria-hidden="true">
+    <span data-impact-bar="{{ key }}" style="width: {{ value }}%"></span>
+  </div>
+  <small data-impact-delta="{{ key }}">{% if delta > 0 %}+{% endif %}{{ delta }}</small>
+</div>
+{%- endmacro %}
+
+{% macro source_status(match) -%}
+<span class="source-badge">
+  <span class="source-badge__dot" aria-hidden="true"></span>
+  {% if match.verificationStatus == 'verified' %}공식 자료 교차 검증{% else %}부분 검증 데이터{% endif %}
+</span>
+{%- endmacro %}

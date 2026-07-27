@@ -1,0 +1,38 @@
+# Virtual environment and local Python runtimes
+/.venv/
+/.python-version
+
+# Project-local caches and generated reports
+/.cache/
+/.pip-cache/
+/.tmp/
+/.task/
+/.pytest_cache/
+/.ruff_cache/
+/.mypy_cache/
+/.coverage
+/coverage.xml
+/htmlcov/
+__pycache__/
+*.py[cod]
+
+# Local configuration and deployment state
+/.env
+/.env.*
+!/.env.example
+/.vercel/
+
+# Editors and operating systems
+/.idea/
+/.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+/build/
+/dist/
+*.egg-info/
+
+# Logs
+*.log

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% from "macros.html" import team_mark, scenario_card, source_status %}
+{% set active_nav = 'matches' %}
+{% block title %}{{ match.homeTeam.name }} vs {{ match.awayTeam.name }} — TOUCHLINE 26{% endblock %}
+
+{% block content %}
+<section class="match-detail-hero">
+  <div class="match-detail-hero__pitch" aria-hidden="true"></div>
+  <div class="page-wrap">
+    <nav class="breadcrumb" aria-label="현재 위치">
+      <a href="/matches">경기 선택</a><span aria-hidden="true">/</span><span>{{ match.homeTeam.code }} vs {{ match.awayTeam.code }}</span>
+    </nav>
+    <div class="match-detail-hero__meta">
+      <span>{{ match.competition }}</span>
+      <span>{{ match.group }} · {{ match.stage }}</span>
+      <span>MATCH {{ "%02d"|format(match.matchNumber) }}</span>
+    </div>
+    <div class="match-detail-score">
+      <div>
+        {{ team_mark(match.homeTeam, 'xl') }}
+        <span><strong>{{ match.homeTeam.name }}</strong><small>{{ match.homeTeam.code }} · {{ match.startingFormation }}</small></span>
+      </div>
+      <span class="match-detail-score__vs">VS</span>
+      <div>
+        {{ team_mark(match.awayTeam, 'xl') }}
+        <span><strong>{{ match.awayTeam.name }}</strong><small>{{ match.awayTeam.code }} · {{ match.opponentFormation }}</small></span>
+      </div>
+    </div>
+    <div class="match-detail-hero__foot">
+      <span>{{ match.date }} · {{ match.localKickoff }}</span>
+      <span>{{ match.venue }}, {{ match.city }}</span>
+      {{ source_status(match) }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page-wrap">
+    <div class="section-heading section-heading--split">
+      <div>
+        <span class="eyebrow">CHOOSE YOUR MOMENT</span>
+        <h1>결정적 순간을<br>다시 지휘하세요.</h1>
+      </div>
+      <p>각 미션은 같은 경기의 다른 국면을 다룹니다. 원하는 순간을 선택해 브리핑부터 시작하세요.</p>
+    </div>
+    <div class="mission-grid">
+      {% for scenario in scenarios %}
+        {{ scenario_card(match, scenario) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--timeline">
+  <div class="page-wrap">
+    <div class="section-heading">
+      <span class="eyebrow">MATCH TIMELINE</span>
+      <h2>검증된 경기 흐름</h2>
+    </div>
+    <ol class="match-timeline">
+      {% for event in match.events %}
+      <li class="match-timeline__event match-timeline__event--{{ event.type }}">
+        <time>{{ event.minute }}′</time>
+        <span class="match-timeline__pin" aria-hidden="true"></span>
+        <div>
+          <small>{{ 'GOAL' if event.type == 'goal' else 'SUBSTITUTION' if event.type == 'substitution' else 'MATCH EVENT' }}</small>
+          <strong>{{ event.label }}</strong>
+          {% if event.verified %}<span>공식 기록</span>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endblock %}

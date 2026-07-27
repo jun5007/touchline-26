@@ -54,6 +54,14 @@
 - localStorage: 확정된 사용자 선택 기록에만 사용
 - Vercel 배포 기준
 
+## Python FastAPI 독립 실행판
+
+Node.js 없이 실행할 수 있는 별도 구현을 [`python-fastapi`](python-fastapi)에 함께 제공합니다.
+FastAPI, Jinja2, Vanilla JavaScript로 같은 경기 선택 → 브리핑 → 전술 결정 → 결과 분석 흐름과
+60/20/10/10 평가 엔진을 구현했으며, 원본 JSON을 동기화한 독립 배포용 데이터 스냅샷을 포함합니다.
+설치·실행·테스트·Vercel·Docker·Render 안내는
+[`python-fastapi/README.md`](python-fastapi/README.md)를 참고하세요.
+
 ## 로컬 실행
 
 Node.js 24.x와 npm 11을 기준으로 검증했습니다.

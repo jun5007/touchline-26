@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}페이지를 찾을 수 없습니다 — TOUCHLINE 26{% endblock %}
+
+{% block content %}
+<section class="error-page">
+  <div class="error-page__pitch" aria-hidden="true">
+    <span class="error-page__ball">404</span>
+  </div>
+  <div class="page-wrap error-page__copy">
+    <span class="eyebrow">OUT OF PLAY</span>
+    <h1>터치라인 밖으로<br>나간 페이지입니다.</h1>
+    <p>요청한 경기나 미션이 존재하지 않습니다. 경기 선택 화면에서 다시 시작해 주세요.</p>
+    <div>
+      <a class="button button--gold button--large" href="/matches">경기 선택으로 <span aria-hidden="true">→</span></a>
+      <a class="button button--ghost button--large" href="/">홈으로</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

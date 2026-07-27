@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% from "macros.html" import team_mark, source_status %}
+{% set active_nav = '' %}
+{% block title %}TOUCHLINE 26 — 월드컵 감독의 선택{% endblock %}
+{% block body_class %}home-page{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="page-wrap hero__layout">
+    <div class="hero__copy">
+      <span class="eyebrow">WORLD CUP · DECISION LAB</span>
+      <h1>69분,<br><em>당신의 선택.</em></h1>
+      <p class="hero__lede">
+        실제 월드컵의 결정적 순간으로 돌아갑니다.
+        선수를 바꾸고, 역할을 부여하고, 그 선택이 경기를 어떻게 바꾸는지 확인하세요.
+      </p>
+      <div class="hero__actions">
+        <a class="button button--gold button--large" href="/matches">
+          감독 미션 시작 <span aria-hidden="true">↗</span>
+        </a>
+        <a class="button button--ghost button--large" href="/about-data">데이터 기준 보기</a>
+      </div>
+      <div class="hero__facts" aria-label="서비스 특성">
+        <span><b>01</b> 실제 경기 맥락</span>
+        <span><b>02</b> 설명 가능한 점수</span>
+        <span><b>03</b> 실제 선택 비교</span>
+      </div>
+    </div>
+
+    <div class="hero-console" aria-label="경기 미리보기">
+      <div class="hero-console__chrome">
+        <span><i></i> LIVE DECISION</span>
+        <span>MATCH 02 · GROUP A</span>
+      </div>
+      <div class="hero-console__pitch">
+        <div class="pitch-lines" aria-hidden="true"></div>
+        <div class="hero-scoreboard">
+          <span class="hero-scoreboard__minute">69′</span>
+          <div class="hero-scoreboard__teams">
+            <div>{{ team_mark(match.homeTeam, 'sm') }}<strong>{{ match.homeTeam.code }}</strong></div>
+            <b>{{ scenarios[0].currentScore if scenarios else '1–1' }}</b>
+            <div><strong>{{ match.awayTeam.code }}</strong>{{ team_mark(match.awayTeam, 'sm') }}</div>
+          </div>
+          <span class="hero-scoreboard__state">동점 · 교체 결정 대기</span>
+        </div>
+        <span class="player-dot player-dot--1" aria-hidden="true">7</span>
+        <span class="player-dot player-dot--2" aria-hidden="true">10</span>
+        <span class="player-dot player-dot--3" aria-hidden="true">18</span>
+        <span class="player-dot player-dot--4" aria-hidden="true">6</span>
+        <span class="player-dot player-dot--5" aria-hidden="true">19</span>
+        <div class="decision-prompt">
+          <span>YOUR CALL</span>
+          <strong>득점을 위해 무엇을 바꿀 것인가?</strong>
+        </div>
+      </div>
+      <div class="hero-console__footer">
+        {{ source_status(match) }}
+        <span>{{ match.venue }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--intro">
+  <div class="page-wrap">
+    <div class="section-heading section-heading--split">
+      <div>
+        <span class="eyebrow">THE MANAGER'S LOOP</span>
+        <h2>결정은 감이 아니라<br>맥락의 조합입니다.</h2>
+      </div>
+      <p>경기 상황을 읽고, 교체 카드와 임무를 선택한 뒤, 데이터에 기반한 영향과 위험을 확인하는 3단계 경험입니다.</p>
+    </div>
+    <ol class="process-grid">
+      <li>
+        <span class="process-grid__number">01</span>
+        <div class="process-grid__icon" aria-hidden="true">⌖</div>
+        <h3>상황을 읽는다</h3>
+        <p>스코어, 시간, 상대 진형과 직전 흐름을 한 화면에서 파악합니다.</p>
+      </li>
+      <li>
+        <span class="process-grid__number">02</span>
+        <div class="process-grid__icon" aria-hidden="true">⇄</div>
+        <h3>변화를 설계한다</h3>
+        <p>OUT과 IN, 선수 역할, 네 가지 팀 지시를 직접 조합합니다.</p>
+      </li>
+      <li>
+        <span class="process-grid__number">03</span>
+        <div class="process-grid__icon" aria-hidden="true">◎</div>
+        <h3>결정을 검증한다</h3>
+        <p>상황 적합도와 영향, 위험, 실제 감독의 선택을 나란히 비교합니다.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section featured-match">
+  <div class="page-wrap featured-match__layout">
+    <div>
+      <span class="eyebrow">FEATURED MATCH</span>
+      <h2>한 경기, 두 번의<br>갈림길.</h2>
+      <p>2026 월드컵 조별리그. 대한민국과 체코의 경기에서 공격과 운영, 서로 다른 두 결정을 맡아보세요.</p>
+      <a class="text-link" href="/matches/{{ match.id }}">경기와 미션 자세히 보기 <span aria-hidden="true">→</span></a>
+    </div>
+    <article class="match-ticket">
+      <div class="match-ticket__meta">
+        <span>{{ match.competition }}</span>
+        <span>{{ match.group }} · MATCH {{ "%02d"|format(match.matchNumber) }}</span>
+      </div>
+      <div class="match-ticket__teams">
+        <div>{{ team_mark(match.homeTeam, 'lg') }}<strong>{{ match.homeTeam.name }}</strong><small>{{ match.homeTeam.code }}</small></div>
+        <div class="match-ticket__versus"><span>VS</span><b>2026.06.11</b></div>
+        <div>{{ team_mark(match.awayTeam, 'lg') }}<strong>{{ match.awayTeam.name }}</strong><small>{{ match.awayTeam.code }}</small></div>
+      </div>
+      <div class="match-ticket__missions">
+        {% for scenario in scenarios %}
+        <a href="/matches/{{ match.id }}/scenarios/{{ scenario.id }}/briefing">
+          <span>{{ scenario.minute }}′</span>
+          <div><strong>{{ scenario.shortMission }}</strong><small>난이도 {{ scenario.difficulty }}</small></div>
+          <i aria-hidden="true">→</i>
+        </a>
+        {% endfor %}
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section final-cta">
+  <div class="page-wrap final-cta__inner">
+    <div>
+      <span class="eyebrow">THE TOUCHLINE IS YOURS</span>
+      <h2>이제, 벤치에서 답하세요.</h2>
+    </div>
+    <a class="button button--gold button--large" href="/matches">미션 선택하기 <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+{% endblock %}

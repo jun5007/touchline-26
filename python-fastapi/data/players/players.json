@@ -1,0 +1,850 @@
+[
+  {
+    "id": "kim-seunggyu",
+    "name": "김승규",
+    "nameEn": "KIM Seunggyu",
+    "shirtNumber": 1,
+    "teamId": "kor",
+    "officialPosition": "GK",
+    "position": "골키퍼",
+    "positionGroup": "GK",
+    "preferredSide": "centre",
+    "minutesPlayed": 99,
+    "tournamentMinutes": 99,
+    "fitness": 84,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 35,
+      "passesCompleted": 21
+    },
+    "attributes": {
+      "finishing": 11,
+      "chanceCreation": 11,
+      "dribbling": 11,
+      "passing": 11,
+      "pressing": 11,
+      "defending": 11,
+      "aerial": 11,
+      "impact": 11
+    },
+    "confidence": 0.66,
+    "confidenceLabel": "보통",
+    "performanceContext": "FIFA 경기 리포트의 배급과 선방 관여를 포지션 기준으로 변환",
+    "sourceStatus": "derived",
+    "tags": [
+      "빌드업 지원",
+      "후방 안정"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "lee-hanbeom",
+    "name": "이한범",
+    "nameEn": "LEE Hanbeom",
+    "shirtNumber": 2,
+    "teamId": "kor",
+    "officialPosition": "DF",
+    "position": "오른쪽 센터백",
+    "positionGroup": "CB",
+    "preferredSide": "right",
+    "minutesPlayed": 99,
+    "tournamentMinutes": 99,
+    "fitness": 73,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 60,
+      "passesCompleted": 53,
+      "lineBreaksAttempted": 14,
+      "lineBreaksCompleted": 11,
+      "ballProgressions": 3,
+      "shots": 1,
+      "directPressures": 5,
+      "possessionRegains": 4
+    },
+    "attributes": {
+      "finishing": 12,
+      "chanceCreation": 13,
+      "dribbling": 16,
+      "passing": 7,
+      "pressing": 8,
+      "defending": 4,
+      "aerial": 11,
+      "impact": 9
+    },
+    "confidence": 0.83,
+    "confidenceLabel": "높음",
+    "performanceContext": "FIFA PMSR의 패스·라인브레이크·수비 행동을 CB 표본에서 정규화",
+    "sourceStatus": "derived",
+    "tags": [
+      "전진 패스",
+      "수비 안정"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "lee-gihyuk",
+    "name": "이기혁",
+    "nameEn": "LEE Gihyuk",
+    "shirtNumber": 3,
+    "teamId": "kor",
+    "officialPosition": "MF",
+    "position": "왼쪽 센터백",
+    "positionGroup": "CB",
+    "preferredSide": "left",
+    "minutesPlayed": 96,
+    "tournamentMinutes": 96,
+    "fitness": 72,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 58,
+      "passesCompleted": 56,
+      "lineBreaksAttempted": 14,
+      "lineBreaksCompleted": 13,
+      "ballProgressions": 2,
+      "directPressures": 13,
+      "possessionRegains": 9
+    },
+    "attributes": {
+      "finishing": 10,
+      "chanceCreation": 14,
+      "dribbling": 11,
+      "passing": 15,
+      "pressing": 18,
+      "defending": 18,
+      "aerial": 11,
+      "impact": 13
+    },
+    "confidence": 0.82,
+    "confidenceLabel": "높음",
+    "performanceContext": "공식 포지션은 MF, 전술 라인업의 왼쪽 스토퍼 배치를 분석상 CB로 분류",
+    "sourceStatus": "derived",
+    "tags": [
+      "빌드업",
+      "점유 유지"
+    ],
+    "dataSources": [
+      "fifa-tactical",
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "kim-minjae",
+    "name": "김민재",
+    "nameEn": "KIM Minjae",
+    "shirtNumber": 4,
+    "teamId": "kor",
+    "officialPosition": "DF",
+    "position": "센터백",
+    "positionGroup": "CB",
+    "preferredSide": "centre",
+    "minutesPlayed": 99,
+    "tournamentMinutes": 99,
+    "fitness": 74,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 50,
+      "passesCompleted": 49,
+      "lineBreaksAttempted": 7,
+      "lineBreaksCompleted": 6,
+      "ballProgressions": 1,
+      "directPressures": 3,
+      "possessionRegains": 9
+    },
+    "attributes": {
+      "finishing": 10,
+      "chanceCreation": 4,
+      "dribbling": 5,
+      "passing": 10,
+      "pressing": 5,
+      "defending": 8,
+      "aerial": 11,
+      "impact": 9
+    },
+    "confidence": 0.84,
+    "confidenceLabel": "높음",
+    "performanceContext": "패스 안정성과 수비 행동을 CB 가중치로 변환",
+    "sourceStatus": "derived",
+    "tags": [
+      "수비 안정",
+      "제공권 강화"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "hwang-inbeom",
+    "name": "황인범",
+    "nameEn": "HWANG Inbeom",
+    "shirtNumber": 6,
+    "teamId": "kor",
+    "officialPosition": "MF",
+    "position": "중앙 미드필더",
+    "positionGroup": "CM_AM",
+    "preferredSide": "centre",
+    "minutesPlayed": 86,
+    "tournamentMinutes": 86,
+    "fitness": 69,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 79,
+      "passesCompleted": 70,
+      "lineBreaksAttempted": 15,
+      "lineBreaksCompleted": 11,
+      "ballProgressions": 1,
+      "takeOns": 1,
+      "shots": 3,
+      "shotsOnTarget": 2,
+      "goals": 1,
+      "assists": 1,
+      "directPressures": 15,
+      "possessionRegains": 9
+    },
+    "attributes": {
+      "finishing": 17,
+      "chanceCreation": 18,
+      "dribbling": 19,
+      "passing": 18,
+      "pressing": 7,
+      "defending": 13,
+      "aerial": 11,
+      "impact": 19
+    },
+    "confidence": 0.91,
+    "confidenceLabel": "높음",
+    "performanceContext": "공식 득점·도움과 PMSR의 분배·압박 지표를 CM/AM 가중치로 변환",
+    "sourceStatus": "derived",
+    "tags": [
+      "찬스 창출",
+      "전방 압박",
+      "점유 유지"
+    ],
+    "dataSources": [
+      "fifa-match-report",
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "son-heungmin",
+    "name": "손흥민",
+    "nameEn": "SON Heungmin",
+    "shirtNumber": 7,
+    "teamId": "kor",
+    "officialPosition": "FW",
+    "position": "중앙 공격수",
+    "positionGroup": "STRIKER",
+    "preferredSide": "both",
+    "minutesPlayed": 71,
+    "tournamentMinutes": 71,
+    "fitness": 67,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 22,
+      "passesCompleted": 20,
+      "lineBreaksAttempted": 5,
+      "lineBreaksCompleted": 3,
+      "ballProgressions": 3,
+      "takeOns": 2,
+      "shots": 6,
+      "shotsOnTarget": 1,
+      "directPressures": 16,
+      "possessionRegains": 3,
+      "crossesAttempted": 2
+    },
+    "attributes": {
+      "finishing": 5,
+      "chanceCreation": 15,
+      "dribbling": 8,
+      "passing": 17,
+      "pressing": 3,
+      "defending": 3,
+      "aerial": 11,
+      "impact": 6
+    },
+    "confidence": 0.82,
+    "confidenceLabel": "높음",
+    "performanceContext": "6회 슈팅·2회 테이크온과 압박 관여를 공격수 표본에서 정규화",
+    "sourceStatus": "derived",
+    "tags": [
+      "개인 돌파",
+      "슈팅 위협",
+      "역습 적합"
+    ],
+    "dataSources": [
+      "fifa-match-report",
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "paik-seungho",
+    "name": "백승호",
+    "nameEn": "PAIK Seungho",
+    "shirtNumber": 8,
+    "teamId": "kor",
+    "officialPosition": "MF",
+    "position": "중앙 미드필더",
+    "positionGroup": "DM",
+    "preferredSide": "centre",
+    "minutesPlayed": 86,
+    "tournamentMinutes": 86,
+    "fitness": 68,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 63,
+      "passesCompleted": 57,
+      "lineBreaksAttempted": 14,
+      "lineBreaksCompleted": 12,
+      "ballProgressions": 1,
+      "directPressures": 9,
+      "possessionRegains": 2
+    },
+    "attributes": {
+      "finishing": 11,
+      "chanceCreation": 16,
+      "dribbling": 14,
+      "passing": 18,
+      "pressing": 3,
+      "defending": 3,
+      "aerial": 11,
+      "impact": 8
+    },
+    "confidence": 0.84,
+    "confidenceLabel": "높음",
+    "performanceContext": "패스 성공과 라인브레이크를 DM/CM 표본에서 정규화",
+    "sourceStatus": "derived",
+    "tags": [
+      "점유 유지",
+      "빌드업 안정"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "lee-jaesung",
+    "name": "이재성",
+    "nameEn": "LEE Jaesung",
+    "shirtNumber": 10,
+    "teamId": "kor",
+    "officialPosition": "MF",
+    "position": "왼쪽 공격형 미드필더",
+    "positionGroup": "CM_AM",
+    "preferredSide": "left",
+    "minutesPlayed": 64,
+    "tournamentMinutes": 64,
+    "fitness": 65,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 32,
+      "passesCompleted": 25,
+      "lineBreaksAttempted": 4,
+      "lineBreaksCompleted": 2,
+      "shots": 2,
+      "shotsOnTarget": 1,
+      "directPressures": 14,
+      "possessionRegains": 2,
+      "crossesAttempted": 1
+    },
+    "attributes": {
+      "finishing": 7,
+      "chanceCreation": 6,
+      "dribbling": 7,
+      "passing": 8,
+      "pressing": 9,
+      "defending": 6,
+      "aerial": 11,
+      "impact": 6
+    },
+    "confidence": 0.76,
+    "confidenceLabel": "높음",
+    "performanceContext": "슈팅·압박·분배를 CM/AM 표본에서 정규화",
+    "sourceStatus": "derived",
+    "tags": [
+      "전방 압박",
+      "공간 침투"
+    ],
+    "dataSources": [
+      "fifa-match-report",
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "lee-taeseok",
+    "name": "이태석",
+    "nameEn": "LEE Taeseok",
+    "shirtNumber": 13,
+    "teamId": "kor",
+    "officialPosition": "DF",
+    "position": "왼쪽 윙백",
+    "positionGroup": "FB_WB",
+    "preferredSide": "left",
+    "minutesPlayed": 71,
+    "tournamentMinutes": 71,
+    "fitness": 63,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 33,
+      "passesCompleted": 28,
+      "lineBreaksAttempted": 10,
+      "lineBreaksCompleted": 8,
+      "crossesAttempted": 4,
+      "crossesCompleted": 2,
+      "directPressures": 5,
+      "possessionRegains": 5
+    },
+    "attributes": {
+      "finishing": 11,
+      "chanceCreation": 14,
+      "dribbling": 3,
+      "passing": 9,
+      "pressing": 9,
+      "defending": 12,
+      "aerial": 11,
+      "impact": 11
+    },
+    "confidence": 0.78,
+    "confidenceLabel": "높음",
+    "performanceContext": "크로스·라인브레이크·수비 행동을 윙백 표본에서 정규화",
+    "sourceStatus": "derived",
+    "tags": [
+      "측면 전개",
+      "찬스 창출"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "lee-kangin",
+    "name": "이강인",
+    "nameEn": "LEE Kangin",
+    "shirtNumber": 19,
+    "teamId": "kor",
+    "officialPosition": "MF",
+    "position": "오른쪽 윙어",
+    "positionGroup": "WINGER",
+    "preferredSide": "right",
+    "minutesPlayed": 99,
+    "tournamentMinutes": 99,
+    "fitness": 75,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 38,
+      "passesCompleted": 38,
+      "lineBreaksAttempted": 11,
+      "lineBreaksCompleted": 11,
+      "ballProgressions": 8,
+      "takeOns": 8,
+      "shots": 1,
+      "shotsOnTarget": 1,
+      "assists": 1,
+      "directPressures": 25,
+      "crossesAttempted": 4,
+      "crossesCompleted": 1
+    },
+    "attributes": {
+      "finishing": 16,
+      "chanceCreation": 16,
+      "dribbling": 11,
+      "passing": 13,
+      "pressing": 15,
+      "defending": 9,
+      "aerial": 11,
+      "impact": 16
+    },
+    "confidence": 0.93,
+    "confidenceLabel": "높음",
+    "performanceContext": "도움·8회 볼 전진·8회 테이크온·100% 패스를 윙어 표본에서 정규화",
+    "sourceStatus": "derived",
+    "tags": [
+      "개인 돌파",
+      "찬스 창출",
+      "낮은 블록 공략"
+    ],
+    "dataSources": [
+      "fifa-match-report",
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "seol-youngwoo",
+    "name": "설영우",
+    "nameEn": "SEOL Youngwoo",
+    "shirtNumber": 22,
+    "teamId": "kor",
+    "officialPosition": "DF",
+    "position": "오른쪽 윙백",
+    "positionGroup": "FB_WB",
+    "preferredSide": "right",
+    "minutesPlayed": 99,
+    "tournamentMinutes": 99,
+    "fitness": 76,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 44,
+      "passesCompleted": 42,
+      "lineBreaksAttempted": 6,
+      "lineBreaksCompleted": 4,
+      "ballProgressions": 3,
+      "takeOns": 1,
+      "crossesAttempted": 3,
+      "crossesCompleted": 1,
+      "directPressures": 11,
+      "possessionRegains": 4
+    },
+    "attributes": {
+      "finishing": 11,
+      "chanceCreation": 7,
+      "dribbling": 19,
+      "passing": 12,
+      "pressing": 13,
+      "defending": 8,
+      "aerial": 11,
+      "impact": 10
+    },
+    "confidence": 0.86,
+    "confidenceLabel": "높음",
+    "performanceContext": "패스·볼 전진·압박을 윙백 표본에서 정규화",
+    "sourceStatus": "derived",
+    "tags": [
+      "측면 전개",
+      "점유 유지",
+      "전방 압박"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "hwang-heechan",
+    "name": "황희찬",
+    "nameEn": "HWANG Heechan",
+    "shirtNumber": 11,
+    "teamId": "kor",
+    "officialPosition": "MF",
+    "position": "왼쪽 윙어",
+    "positionGroup": "WINGER",
+    "preferredSide": "left",
+    "minutesPlayed": 34,
+    "tournamentMinutes": 34,
+    "fitness": 87,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 10,
+      "passesCompleted": 10,
+      "lineBreaksAttempted": 1,
+      "lineBreaksCompleted": 1,
+      "ballProgressions": 3,
+      "takeOns": 3,
+      "directPressures": 3,
+      "possessionRegains": 1
+    },
+    "attributes": {
+      "finishing": 9,
+      "chanceCreation": 8,
+      "dribbling": 16,
+      "passing": 9,
+      "pressing": 11,
+      "defending": 11,
+      "aerial": 11,
+      "impact": 10
+    },
+    "confidence": 0.53,
+    "confidenceLabel": "보통",
+    "performanceContext": "34분 소표본을 중앙값으로 수축한 경기 종료 후 회고 지표",
+    "sourceStatus": "derived",
+    "tags": [
+      "개인 돌파",
+      "역습 적합",
+      "신선도"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "oh-hyeongyu",
+    "name": "오현규",
+    "nameEn": "OH Hyeongyu",
+    "shirtNumber": 18,
+    "teamId": "kor",
+    "officialPosition": "FW",
+    "position": "중앙 공격수",
+    "positionGroup": "STRIKER",
+    "preferredSide": "centre",
+    "minutesPlayed": 28,
+    "tournamentMinutes": 28,
+    "fitness": 91,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 6,
+      "passesCompleted": 4,
+      "lineBreaksAttempted": 1,
+      "ballProgressions": 1,
+      "takeOns": 1,
+      "shots": 1,
+      "shotsOnTarget": 1,
+      "goals": 1,
+      "directPressures": 9,
+      "possessionRegains": 2
+    },
+    "attributes": {
+      "finishing": 14,
+      "chanceCreation": 8,
+      "dribbling": 12,
+      "passing": 6,
+      "pressing": 15,
+      "defending": 15,
+      "aerial": 11,
+      "impact": 13
+    },
+    "confidence": 0.49,
+    "confidenceLabel": "보통",
+    "performanceContext": "1슈팅 1골과 압박 관여를 반영하되 28분 소표본을 크게 수축",
+    "sourceStatus": "derived",
+    "tags": [
+      "박스 타깃",
+      "제공권 강화",
+      "막판 임팩트"
+    ],
+    "dataSources": [
+      "fifa-match-report",
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "eom-jisung",
+    "name": "엄지성",
+    "nameEn": "EOM Jisung",
+    "shirtNumber": 25,
+    "teamId": "kor",
+    "officialPosition": "MF",
+    "position": "왼쪽 윙어",
+    "positionGroup": "WINGER",
+    "preferredSide": "left",
+    "minutesPlayed": 30,
+    "tournamentMinutes": 30,
+    "fitness": 90,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 3,
+      "passesCompleted": 3,
+      "lineBreaksAttempted": 2,
+      "lineBreaksCompleted": 2,
+      "ballProgressions": 1,
+      "takeOns": 1,
+      "crossesAttempted": 1,
+      "crossesCompleted": 1,
+      "directPressures": 2,
+      "possessionRegains": 1
+    },
+    "attributes": {
+      "finishing": 9,
+      "chanceCreation": 10,
+      "dribbling": 6,
+      "passing": 10,
+      "pressing": 8,
+      "defending": 11,
+      "aerial": 11,
+      "impact": 8
+    },
+    "confidence": 0.46,
+    "confidenceLabel": "보통",
+    "performanceContext": "30분 소표본의 크로스·전진 지표를 중앙값으로 수축",
+    "sourceStatus": "derived",
+    "tags": [
+      "측면 폭",
+      "신선도",
+      "개인 돌파"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "kim-jingyu",
+    "name": "김진규",
+    "nameEn": "KIM Jingyu",
+    "shirtNumber": 24,
+    "teamId": "kor",
+    "officialPosition": "MF",
+    "position": "중앙 미드필더",
+    "positionGroup": "CM_AM",
+    "preferredSide": "centre",
+    "minutesPlayed": 13,
+    "tournamentMinutes": 13,
+    "fitness": 94,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 4,
+      "passesCompleted": 3,
+      "lineBreaksAttempted": 1,
+      "lineBreaksCompleted": 1,
+      "shots": 1,
+      "directPressures": 4,
+      "possessionRegains": 1
+    },
+    "attributes": {
+      "finishing": 10,
+      "chanceCreation": 10,
+      "dribbling": 9,
+      "passing": 9,
+      "pressing": 12,
+      "defending": 11,
+      "aerial": 11,
+      "impact": 10
+    },
+    "confidence": 0.28,
+    "confidenceLabel": "낮음",
+    "performanceContext": "13분 소표본으로 대부분 중립값에 가깝게 수축",
+    "sourceStatus": "derived",
+    "tags": [
+      "점유 유지",
+      "신선도"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "park-jinseob",
+    "name": "박진섭",
+    "nameEn": "PARK Jinseob",
+    "shirtNumber": 16,
+    "teamId": "kor",
+    "officialPosition": "DF",
+    "position": "수비형 미드필더",
+    "positionGroup": "DM",
+    "preferredSide": "centre",
+    "minutesPlayed": 13,
+    "tournamentMinutes": 13,
+    "fitness": 94,
+    "cardStatus": "clear",
+    "rawMetrics": {
+      "passesAttempted": 5,
+      "passesCompleted": 4,
+      "lineBreaksAttempted": 2,
+      "lineBreaksCompleted": 1,
+      "directPressures": 3,
+      "possessionRegains": 5
+    },
+    "attributes": {
+      "finishing": 11,
+      "chanceCreation": 8,
+      "dribbling": 9,
+      "passing": 8,
+      "pressing": 13,
+      "defending": 13,
+      "aerial": 11,
+      "impact": 11
+    },
+    "confidence": 0.31,
+    "confidenceLabel": "낮음",
+    "performanceContext": "짧은 출전의 수비 행동을 반영하되 중립값으로 강하게 수축",
+    "sourceStatus": "derived",
+    "tags": [
+      "수비 안정",
+      "제공권 강화",
+      "신선도"
+    ],
+    "dataSources": [
+      "fifa-pmsr"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "cho-guesung",
+    "name": "조규성",
+    "nameEn": "CHO Guesung",
+    "shirtNumber": 9,
+    "teamId": "kor",
+    "officialPosition": "FW",
+    "position": "중앙 공격수",
+    "positionGroup": "STRIKER",
+    "preferredSide": "centre",
+    "minutesPlayed": 0,
+    "tournamentMinutes": 0,
+    "fitness": 92,
+    "cardStatus": "clear",
+    "rawMetrics": null,
+    "attributes": {
+      "finishing": 11,
+      "chanceCreation": 11,
+      "dribbling": 11,
+      "passing": 11,
+      "pressing": 11,
+      "defending": 11,
+      "aerial": 11,
+      "impact": 11
+    },
+    "confidence": 0.12,
+    "confidenceLabel": "낮음",
+    "performanceContext": "이 경기 공식 퍼포먼스 표본이 없어 10.5 중립 기준만 제공",
+    "sourceStatus": "neutral-baseline",
+    "tags": [
+      "데이터 제한",
+      "박스 타깃"
+    ],
+    "dataSources": [
+      "fifa-match-report"
+    ],
+    "isSample": false
+  },
+  {
+    "id": "bae-junho",
+    "name": "배준호",
+    "nameEn": "BAE Junho",
+    "shirtNumber": 17,
+    "teamId": "kor",
+    "officialPosition": "MF",
+    "position": "공격형 미드필더",
+    "positionGroup": "CM_AM",
+    "preferredSide": "both",
+    "minutesPlayed": 0,
+    "tournamentMinutes": 0,
+    "fitness": 93,
+    "cardStatus": "clear",
+    "rawMetrics": null,
+    "attributes": {
+      "finishing": 11,
+      "chanceCreation": 11,
+      "dribbling": 11,
+      "passing": 11,
+      "pressing": 11,
+      "defending": 11,
+      "aerial": 11,
+      "impact": 11
+    },
+    "confidence": 0.12,
+    "confidenceLabel": "낮음",
+    "performanceContext": "이 경기 공식 퍼포먼스 표본이 없어 10.5 중립 기준만 제공",
+    "sourceStatus": "neutral-baseline",
+    "tags": [
+      "데이터 제한",
+      "신선도"
+    ],
+    "dataSources": [
+      "fifa-match-report"
+    ],
+    "isSample": false
+  }
+]

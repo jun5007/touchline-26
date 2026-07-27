@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% from "macros.html" import stepper %}
+{% set active_nav = 'matches' %}
+{% block title %}결정 분석 결과 — TOUCHLINE 26{% endblock %}
+
+{% block content %}
+<section class="workflow-head">
+  <div class="page-wrap">
+    <nav class="breadcrumb" aria-label="현재 위치">
+      <a href="/matches/{{ match.id }}/scenarios/{{ scenario.id }}/tactics">전술 결정</a><span aria-hidden="true">/</span><span>분석 결과</span>
+    </nav>
+    {{ stepper('result') }}
+  </div>
+</section>
+
+<section class="result-loading" id="result-loading" aria-live="polite">
+  <div class="loading-mark" aria-hidden="true"><span>26</span></div>
+  <h1>결정을 복원하고 있습니다.</h1>
+  <p>저장된 선택과 Python 분석 결과를 확인합니다.</p>
+</section>
+
+<div class="result-page" id="result-page" hidden>
+  <section class="result-hero">
+    <div class="result-hero__glow" aria-hidden="true"></div>
+    <div class="page-wrap result-hero__layout">
+      <div class="decision-score">
+        <div class="decision-score__ring" data-result-score-ring style="--score: 0">
+          <span><strong data-result-score>—</strong><small>/ 100</small></span>
+        </div>
+        <span class="grade-badge" data-result-grade>—</span>
+      </div>
+      <div class="result-hero__copy">
+        <span class="eyebrow">DECISION REPORT · {{ scenario.minute }} MIN</span>
+        <h1 data-result-headline>당신의 결정 분석</h1>
+        <p data-result-summary>분석 결과를 불러오는 중입니다.</p>
+        <div class="result-tags">
+          <span>{{ match.homeTeam.code }} {{ scenario.currentScore }} {{ match.awayTeam.code }}</span>
+          <span>{{ scenario.scoreState|upper }}</span>
+          <span>상황 적합도 기반</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="page-wrap result-layout">
+      <article class="report-card report-card--decision">
+        <header>
+          <span class="report-card__number">01</span>
+          <div><small>YOUR CALL</small><h2>내가 만든 변화</h2></div>
+        </header>
+        <div class="result-substitution">
+          <div><span class="out">OUT</span><strong data-result-out>—</strong><small data-result-out-position>—</small></div>
+          <span aria-hidden="true">→</span>
+          <div><span class="in">IN</span><strong data-result-in>—</strong><small data-result-in-position>—</small></div>
+        </div>
+        <dl class="decision-meta">
+          <div><dt>부여 역할</dt><dd data-result-role>—</dd></div>
+          <div><dt>위험 감점</dt><dd data-result-penalty>0</dd></div>
+        </dl>
+        <div class="instruction-summary" data-result-instructions></div>
+      </article>
+
+      <article class="report-card report-card--impact">
+        <header>
+          <span class="report-card__number">02</span>
+          <div><small>EXPECTED IMPACT</small><h2>경기 영향 변화</h2></div>
+        </header>
+        <div class="result-impact-list">
+          {% for key, label in [('attack','공격 위협'), ('control','점유 안정'), ('defense','수비 안정'), ('energy','활동 에너지')] %}
+          <div class="result-impact" data-result-impact="{{ key }}">
+            <div><strong>{{ label }}</strong><span data-result-impact-delta="{{ key }}">0</span></div>
+            <div class="result-impact__bars">
+              <span><i data-result-before="{{ key }}" style="width: 50%"></i></span>
+              <span><i data-result-after="{{ key }}" style="width: 50%"></i></span>
+            </div>
+            <small>기존 <b data-result-before-value="{{ key }}">50</b> → 선택 후 <b data-result-after-value="{{ key }}">50</b></small>
+          </div>
+          {% endfor %}
+        </div>
+      </article>
+
+      <article class="report-card report-card--benefits">
+        <header>
+          <span class="report-card__number">03</span>
+          <div><small>WHAT WORKS</small><h2>기대 효과</h2></div>
+        </header>
+        <ul class="report-list report-list--positive" data-result-benefits></ul>
+      </article>
+
+      <article class="report-card report-card--risks">
+        <header>
+          <span class="report-card__number">04</span>
+          <div><small>RISK & RESPONSE</small><h2>위험과 보완책</h2></div>
+        </header>
+        <div data-result-risks></div>
+      </article>
+
+      <article class="report-card report-card--actual">
+        <header>
+          <span class="report-card__number">05</span>
+          <div><small>WHAT ACTUALLY HAPPENED</small><h2>실제 감독의 선택</h2></div>
+          <span class="inference-label">사실 / 추론 분리</span>
+        </header>
+        <div class="actual-comparison">
+          <div>
+            <span>공식 기록</span>
+            <strong>{{ scenario.actualDecision.minute }}′ · 교체</strong>
+            <p data-actual-fact>실제 경기의 교체 기록을 불러옵니다.</p>
+          </div>
+          <div>
+            <span>전술적 해석 · 추론</span>
+            <strong>{{ scenario.actualDecision.interpretedRole }}</strong>
+            <p>{{ scenario.actualDecision.note }}</p>
+          </div>
+        </div>
+        {% if scenario.actualDecision.parallelDecision %}
+        <p class="parallel-note"><b>같은 시점의 병행 결정</b> {{ scenario.actualDecision.parallelDecision }}</p>
+        {% endif %}
+      </article>
+    </div>
+  </section>
+
+  <section class="workflow-actions">
+    <div class="page-wrap workflow-actions__inner">
+      <a class="button button--ghost" href="/matches/{{ match.id }}/scenarios/{{ scenario.id }}/tactics">← 같은 미션 다시 하기</a>
+      <div>
+        <small>다른 갈림길도 지휘해보세요</small>
+        <a class="button button--gold button--large" href="/matches/{{ match.id }}">다른 미션 선택 <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="result-empty" id="result-empty" hidden>
+  <div class="empty-state">
+    <span aria-hidden="true">↺</span>
+    <h1>아직 저장된 결정이 없습니다.</h1>
+    <p>전술판에서 교체 선수와 역할을 선택하면 분석 결과를 확인할 수 있습니다.</p>
+    <a class="button button--gold button--large" href="/matches/{{ match.id }}/scenarios/{{ scenario.id }}/tactics">전술 결정 시작 <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<script type="application/json" id="result-context">
+{{ {
+  "matchId": match.id,
+  "scenarioId": scenario.id,
+  "actualDecision": scenario.actualDecision,
+  "tacticsUrl": "/matches/" ~ match.id ~ "/scenarios/" ~ scenario.id ~ "/tactics"
+}|tojson }}
+</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/result.js" defer></script>
+{% endblock %}
