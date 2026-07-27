@@ -1,0 +1,26 @@
+import Link from "next/link";
+
+export function SiteFooter() {
+  return (
+    <footer className="mt-auto border-t border-white/[.07] bg-[#060c15]">
+      <div className="page-wrap grid gap-5 py-8 text-xs text-[#8e98a6] sm:grid-cols-[1fr_auto] sm:items-end">
+        <div>
+          <p className="font-black tracking-[.12em] text-[#e8e5dd]">TOUCHLINE 26</p>
+          <p className="mt-2 max-w-2xl leading-5">
+            FIFA와 무관한 비공식·비상업적 데이터 프로젝트입니다. 결과는 실제 경기 예측이나
+            선수의 절대 평가가 아닌 회고형 전술 적합도입니다.
+          </p>
+        </div>
+        <div className="flex gap-4 font-bold">
+          <Link className="hover:text-white" href="/about-data">
+            출처와 계산법
+          </Link>
+          <Link className="hover:text-white" href="/matches">
+            감독 미션
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
