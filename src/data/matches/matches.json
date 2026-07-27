@@ -1,0 +1,110 @@
+[
+  {
+    "id": "kor-cze-2026",
+    "competition": "FIFA World Cup 2026",
+    "season": "2026",
+    "group": "A조",
+    "stage": "조별리그",
+    "matchNumber": 2,
+    "date": "2026-06-11",
+    "localKickoff": "20:00",
+    "venue": "Guadalajara Stadium",
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "attendance": 44985,
+    "homeTeam": { "id": "kor", "name": "대한민국", "code": "KOR" },
+    "awayTeam": { "id": "cze", "name": "체코", "code": "CZE" },
+    "finalScore": { "home": 2, "away": 1, "halfTime": "0–0" },
+    "selectedTeamId": "kor",
+    "startingFormation": "3-4-3",
+    "opponentFormation": "5-2-3",
+    "lineup": [
+      "kim-seunggyu",
+      "lee-hanbeom",
+      "lee-gihyuk",
+      "kim-minjae",
+      "hwang-inbeom",
+      "son-heungmin",
+      "paik-seungho",
+      "lee-jaesung",
+      "lee-taeseok",
+      "lee-kangin",
+      "seol-youngwoo"
+    ],
+    "benchOptions": [
+      "cho-guesung",
+      "hwang-heechan",
+      "park-jinseob",
+      "bae-junho",
+      "oh-hyeongyu",
+      "kim-jingyu",
+      "eom-jisung"
+    ],
+    "fullBenchNames": [
+      "송범근",
+      "조현우",
+      "김태현",
+      "조규성",
+      "황희찬",
+      "조위제",
+      "김문환",
+      "박진섭",
+      "배준호",
+      "오현규",
+      "양현준",
+      "옌스 카스트로프",
+      "김진규",
+      "엄지성",
+      "이동경"
+    ],
+    "events": [
+      { "minute": 59, "type": "goal", "teamId": "cze", "label": "라디슬라프 크레이치 득점 · 블라디미르 초우팔 도움", "verified": true },
+      { "minute": 62, "type": "substitution", "teamId": "kor", "label": "황희찬 IN · 이재성 OUT", "verified": true },
+      { "minute": 67, "type": "goal", "teamId": "kor", "label": "황인범 득점 · 이강인 도움", "verified": true },
+      { "minute": 69, "type": "substitution", "teamId": "kor", "label": "엄지성 IN · 이태석 OUT / 오현규 IN · 손흥민 OUT", "verified": true },
+      { "minute": 70, "type": "captain-change", "teamId": "kor", "label": "주장 손흥민 → 김민재", "verified": true },
+      { "minute": 80, "type": "goal", "teamId": "kor", "label": "오현규 득점 · 황인범 도움", "verified": true },
+      { "minute": 84, "type": "substitution", "teamId": "kor", "label": "김진규 IN · 황인범 OUT / 박진섭 IN · 백승호 OUT", "verified": true }
+    ],
+    "dataSources": [
+      {
+        "sourceName": "FIFA Full-Time Match Report",
+        "sourceUrl": "https://fdp.fifa.org/assetspublic/ce281/r12450/pdf/FullTimeMatchReport-English.pdf",
+        "accessedAt": "2026-07-27",
+        "license": "FIFA Terms of Service 적용 · 사실 데이터의 비상업적 편집 인용, 원본 그래픽 미사용",
+        "verificationNote": "경기 정보, 선발·벤치, 득점, 도움, 교체, 최종 통계의 기준 원본"
+      },
+      {
+        "sourceName": "FIFA Tactical Line-up",
+        "sourceUrl": "https://fdp.fifa.org/assetspublic/ce281/r12450/pdf/TacticalLineup-English.pdf",
+        "accessedAt": "2026-07-27",
+        "license": "FIFA Terms of Service 적용 · 원본 캡처 및 디자인 재사용 안 함",
+        "verificationNote": "대한민국 3-4-3, 체코 5-2-3 및 선발 배치 확인"
+      },
+      {
+        "sourceName": "FIFA Post-Match Summary Report",
+        "sourceUrl": "https://www.fifatrainingcentre.com/media/native/tournaments/fifa-world-cup/2026/PMSR-M02%20KOR%20V%20CZE%20.pdf",
+        "accessedAt": "2026-07-27",
+        "license": "FIFA Terms of Service 적용 · 수치 출처 표기, 표·그래픽 복제 안 함",
+        "verificationNote": "선수별 패스·라인브레이크·압박·슈팅 등 파생 지표 입력값 확인"
+      },
+      {
+        "sourceName": "AP Match Report",
+        "sourceUrl": "https://apnews.com/article/world-cup-south-korea-czech-republic-score-496e7772dde95ca0af90b5074fdb13d9",
+        "accessedAt": "2026-07-27",
+        "license": "링크와 사실 교차검증만 사용 · 기사 문장/사진 미복제",
+        "verificationNote": "득점 흐름, 경기 맥락, 감독 발언을 독립 교차 확인"
+      },
+      {
+        "sourceName": "OpenFootball World Cup JSON",
+        "sourceUrl": "https://github.com/openfootball/worldcup.json",
+        "accessedAt": "2026-07-27",
+        "license": "CC0 / Public Domain",
+        "verificationNote": "경기 메타데이터의 재사용 가능 공개 출처"
+      }
+    ],
+    "verificationStatus": "verified",
+    "isSample": false
+  }
+]
+
