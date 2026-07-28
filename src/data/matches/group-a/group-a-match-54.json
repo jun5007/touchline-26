@@ -1,0 +1,344 @@
+{
+  "id": "rsa-kor-2026",
+  "fifaMatchId": "400021445",
+  "fdpResourceId": "r12454",
+  "groupId": "group-a",
+  "competition": "FIFA World Cup 2026",
+  "stage": "group",
+  "matchNumber": 54,
+  "date": "2026-06-24",
+  "localKickoff": "19:00",
+  "kickoffUtc": "2026-06-25T01:00:00Z",
+  "venue": "Monterrey Stadium",
+  "city": "Monterrey",
+  "country": "Mexico",
+  "attendance": 51243,
+  "homeTeamId": "rsa",
+  "awayTeamId": "kor",
+  "playableTeamIds": [
+    "rsa",
+    "kor"
+  ],
+  "finalScore": {
+    "home": 1,
+    "away": 0
+  },
+  "halfTimeScore": {
+    "home": 0,
+    "away": 0
+  },
+  "formationsByTeam": {
+    "rsa": "4-2-3-1",
+    "kor": "3-4-3"
+  },
+  "lineupsByTeam": {
+    "rsa": [
+      "rsa-ronwen-williams",
+      "rsa-thalente-mbatha",
+      "rsa-aubrey-modiba",
+      "rsa-oswin-appollis",
+      "rsa-relebohile-mofokeng",
+      "rsa-thapelo-maseko",
+      "rsa-sphephelo-sithole",
+      "rsa-mbekezeli-mbokazi",
+      "rsa-evidence-makgopa",
+      "rsa-khuliso-mudau",
+      "rsa-ime-okon"
+    ],
+    "kor": [
+      "kim-seunggyu",
+      "lee-hanbeom",
+      "lee-gihyuk",
+      "kim-minjae",
+      "hwang-inbeom",
+      "paik-seungho",
+      "hwang-heechan",
+      "lee-taeseok",
+      "oh-hyeongyu",
+      "lee-kangin",
+      "seol-youngwoo"
+    ]
+  },
+  "benchesByTeam": {
+    "rsa": [
+      "rsa-sipho-chaine",
+      "rsa-ricardo-goss",
+      "rsa-thabang-matuludi",
+      "rsa-khulumani-ndamane",
+      "rsa-tshepang-moremi",
+      "rsa-lyle-foster",
+      "rsa-iqraam-rayners",
+      "rsa-samukele-kabini",
+      "rsa-nkosinathi-sibisi",
+      "rsa-jayden-adams",
+      "rsa-olwethu-makhanya",
+      "rsa-kamogelo-sebelebele",
+      "rsa-bradley-cross"
+    ],
+    "kor": [
+      "song-bumkeun",
+      "jo-hyeonwoo",
+      "kim-taehyeon",
+      "son-heungmin",
+      "cho-guesung",
+      "lee-jaesung",
+      "cho-wije",
+      "kim-moonhwan",
+      "park-jinseob",
+      "bae-junho",
+      "yang-hyunjun",
+      "castrop-jens",
+      "kim-jingyu",
+      "eom-jisung",
+      "lee-donggyeong"
+    ]
+  },
+  "unavailableByTeam": {
+    "rsa": [
+      {
+        "playerId": "rsa-teboho-mokoena",
+        "status": "suspended",
+        "reason": "yellow-card-accumulation",
+        "note": "FIFA 공식 기사가 경고 누적 결장을 명시한다.",
+        "verificationStatus": "verified_official"
+      },
+      {
+        "playerId": "rsa-themba-zwane",
+        "status": "matchday_unavailable",
+        "reason": null,
+        "note": "공식 경기 명단 미등재. 추가 징계 사유는 공식 자료에서 확인되지 않음.",
+        "verificationStatus": "partial"
+      }
+    ],
+    "kor": []
+  },
+  "substitutionsByTeam": {
+    "rsa": [
+      {
+        "minute": {
+          "regulation": 62
+        },
+        "outPlayerId": "rsa-oswin-appollis",
+        "inPlayerId": "rsa-tshepang-moremi",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 75
+        },
+        "outPlayerId": "rsa-thapelo-maseko",
+        "inPlayerId": "rsa-iqraam-rayners",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 80
+        },
+        "outPlayerId": "rsa-relebohile-mofokeng",
+        "inPlayerId": "rsa-jayden-adams",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ],
+    "kor": [
+      {
+        "minute": {
+          "regulation": 46
+        },
+        "outPlayerId": "hwang-heechan",
+        "inPlayerId": "son-heungmin",
+        "note": "half-time",
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 46
+        },
+        "outPlayerId": "paik-seungho",
+        "inPlayerId": "kim-jingyu",
+        "note": "half-time",
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 46
+        },
+        "outPlayerId": "lee-taeseok",
+        "inPlayerId": "castrop-jens",
+        "note": "half-time",
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 65
+        },
+        "outPlayerId": "kim-minjae",
+        "inPlayerId": "park-jinseob",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 74
+        },
+        "outPlayerId": "oh-hyeongyu",
+        "inPlayerId": "cho-guesung",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ]
+  },
+  "events": [
+    {
+      "minute": {
+        "regulation": 46
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "son-heungmin",
+      "relatedPlayerId": "hwang-heechan",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": "half-time",
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 46
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "kim-jingyu",
+      "relatedPlayerId": "paik-seungho",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": "half-time",
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 46
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "castrop-jens",
+      "relatedPlayerId": "lee-taeseok",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": "half-time",
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 62
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-tshepang-moremi",
+      "relatedPlayerId": "rsa-oswin-appollis",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 63
+      },
+      "type": "goal",
+      "teamId": "rsa",
+      "playerId": "rsa-thapelo-maseko",
+      "assistPlayerId": "rsa-tshepang-moremi",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 65
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "park-jinseob",
+      "relatedPlayerId": "kim-minjae",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 72
+      },
+      "type": "card",
+      "teamId": "rsa",
+      "playerId": "rsa-aubrey-modiba",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 74
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "cho-guesung",
+      "relatedPlayerId": "oh-hyeongyu",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 75
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-iqraam-rayners",
+      "relatedPlayerId": "rsa-thapelo-maseko",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 78
+      },
+      "type": "card",
+      "teamId": "kor",
+      "playerId": "cho-guesung",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 80
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-jayden-adams",
+      "relatedPlayerId": "rsa-relebohile-mofokeng",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    }
+  ],
+  "sourceIds": [
+    "fifa-ftr-m54",
+    "fifa-tactical-m54",
+    "fifa-pmsr-m54",
+    "fifa-api-m54",
+    "fifa-article-m54"
+  ],
+  "discrepancyNotes": [],
+  "verificationStatus": "verified_official"
+}

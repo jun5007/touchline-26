@@ -1,15 +1,17 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { StoredDecision } from "@/data/types";
 import {
   clearDecision,
+  DECISION_STORAGE_VERSION,
   loadDecision,
   saveDecision,
 } from "@/lib/decision/storage";
 
 const decision: StoredDecision = {
-  version: 1,
+  version: 3,
   matchId: "match",
   scenarioId: "scenario",
+  selectedTeamId: "kor",
   outPlayerId: "out",
   inPlayerId: "in",
   roleId: "role",
@@ -19,108 +21,115 @@ const decision: StoredDecision = {
     defensiveLine: "medium",
     mentality: "balanced",
   },
-  score: 77,
-  riskPenalty: 2,
-  impactsBefore: { attackThreat: 50 },
-  impactsAfter: { attackThreat: 58 },
-  explanation: {
-    benefits: ["장점"],
-    risks: ["위험"],
-    remedies: ["보완"],
-    summary: "요약",
-  },
   createdAt: "2026-07-27T00:00:00.000Z",
 };
 
 const key = "touchline26:decision:match:scenario";
 
-const invalidNestedDecisions: Array<[string, unknown]> = [
-  ["an instructions array", { ...decision, instructions: [] }],
-  [
-    "an incomplete instructions object",
-    {
-      ...decision,
-      instructions: {
-        attackDirection: "balanced",
-        pressing: "medium",
-        defensiveLine: "medium",
-      },
-    },
-  ],
-  [
-    "an unsupported instruction value",
-    {
-      ...decision,
-      instructions: { ...decision.instructions, pressing: "all-out" },
-    },
-  ],
-  ["a missing before-impact record", { ...decision, impactsBefore: null }],
-  ["an after-impact array", { ...decision, impactsAfter: [58] }],
-  [
-    "a non-numeric impact",
-    {
-      ...decision,
-      impactsAfter: { ...decision.impactsAfter, attackThreat: "high" },
-    },
-  ],
-  ["a missing explanation", { ...decision, explanation: null }],
-  [
-    "a non-array benefit list",
-    {
-      ...decision,
-      explanation: { ...decision.explanation, benefits: "benefit" },
-    },
-  ],
-  [
-    "a non-string remedy",
-    {
-      ...decision,
-      explanation: { ...decision.explanation, remedies: [null] },
-    },
-  ],
-  [
-    "a non-string explanation summary",
-    {
-      ...decision,
-      explanation: { ...decision.explanation, summary: 42 },
-    },
-  ],
-  ["an invalid creation date", { ...decision, createdAt: "not-a-date" }],
-  ["a non-numeric risk penalty", { ...decision, riskPenalty: "2" }],
-];
-
-describe("decision storage", () => {
+describe("decision storage v3", () => {
   beforeEach(() => window.localStorage.clear());
 
-  it("saves, loads, and clears a valid decision", () => {
+  it("saves, loads, and clears only the minimal selection state", () => {
+    expect(DECISION_STORAGE_VERSION).toBe(3);
     expect(saveDecision(decision)).toBe(true);
     expect(loadDecision("match", "scenario")).toEqual(decision);
+
+    const persisted = JSON.parse(window.localStorage.getItem(key) ?? "{}");
+    expect(Object.keys(persisted).sort()).toEqual(
+      [
+        "createdAt",
+        "inPlayerId",
+        "instructions",
+        "matchId",
+        "outPlayerId",
+        "roleId",
+        "scenarioId",
+        "selectedTeamId",
+        "version",
+      ].sort(),
+    );
+    expect(persisted).not.toHaveProperty("score");
+    expect(persisted).not.toHaveProperty("riskPenalty");
+    expect(persisted).not.toHaveProperty("impactsBefore");
+    expect(persisted).not.toHaveProperty("explanation");
+
     clearDecision("match", "scenario");
     expect(loadDecision("match", "scenario")).toBeNull();
   });
 
-  it("removes corrupt or out-of-range data without throwing", () => {
-    window.localStorage.setItem(key, '{"version":1,"score":999}');
-    expect(loadDecision("match", "scenario")).toBeNull();
-    expect(window.localStorage.getItem(key)).toBeNull();
+  it("whitelists fields on save and load so derived or injected values never persist", () => {
+    expect(
+      saveDecision({
+        ...decision,
+        score: 999,
+        riskPenalty: -100,
+        explanation: { summary: "forged" },
+      } as StoredDecision),
+    ).toBe(true);
+    expect(window.localStorage.getItem(key)).not.toContain("forged");
+
+    window.localStorage.setItem(
+      key,
+      JSON.stringify({
+        ...decision,
+        score: 999,
+        riskPenalty: -100,
+        instructions: { ...decision.instructions, injected: "ignored" },
+      }),
+    );
+    expect(loadDecision("match", "scenario")).toEqual(decision);
+    expect(window.localStorage.getItem(key)).toBe(JSON.stringify(decision));
+  });
+
+  it("removes corrupt records and rejects unsupported identifiers or instructions", () => {
+    const invalidRecords: unknown[] = [
+      { ...decision, instructions: [] },
+      {
+        ...decision,
+        instructions: { ...decision.instructions, pressing: "all-out" },
+      },
+      { ...decision, roleId: "" },
+      { ...decision, inPlayerId: "../player" },
+      { ...decision, createdAt: "not-a-date" },
+      { ...decision, selectedTeamId: "" },
+      { ...decision, version: 4 },
+    ];
+
+    for (const invalid of invalidRecords) {
+      window.localStorage.setItem(key, JSON.stringify(invalid));
+      expect(loadDecision("match", "scenario")).toBeNull();
+      expect(window.localStorage.getItem(key)).toBeNull();
+    }
 
     window.localStorage.setItem(key, "{broken");
     expect(loadDecision("match", "scenario")).toBeNull();
     expect(window.localStorage.getItem(key)).toBeNull();
   });
 
-  it.each(invalidNestedDecisions)(
-    "removes a stored decision with %s",
-    (_description, storedValue) => {
-      window.localStorage.setItem(key, JSON.stringify(storedValue));
+  it("removes version 1 records instead of trusting or migrating cached calculations", () => {
+    window.localStorage.setItem(
+      key,
+      JSON.stringify({
+        ...decision,
+        version: 1,
+        score: 99,
+        riskPenalty: 0,
+        impactsBefore: {},
+        impactsAfter: {},
+        explanation: {
+          benefits: [],
+          risks: [],
+          remedies: [],
+          summary: "legacy",
+        },
+      }),
+    );
 
-      expect(() => loadDecision("match", "scenario")).not.toThrow();
-      expect(loadDecision("match", "scenario")).toBeNull();
-      expect(window.localStorage.getItem(key)).toBeNull();
-    },
-  );
+    expect(loadDecision("match", "scenario")).toBeNull();
+    expect(window.localStorage.getItem(key)).toBeNull();
+  });
 
-  it("removes a valid decision stored under mismatched route identifiers", () => {
+  it("removes a structurally valid record stored under mismatched route identifiers", () => {
     window.localStorage.setItem(
       key,
       JSON.stringify({ ...decision, scenarioId: "another-scenario" }),
@@ -128,5 +137,15 @@ describe("decision storage", () => {
 
     expect(loadDecision("match", "scenario")).toBeNull();
     expect(window.localStorage.getItem(key)).toBeNull();
+  });
+
+  it("does not throw when browser storage operations fail", () => {
+    const setItem = vi
+      .spyOn(Storage.prototype, "setItem")
+      .mockImplementation(() => {
+        throw new DOMException("blocked");
+      });
+    expect(saveDecision(decision)).toBe(false);
+    setItem.mockRestore();
   });
 });

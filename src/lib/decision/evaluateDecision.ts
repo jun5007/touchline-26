@@ -1,9 +1,11 @@
-import { getInstructions } from "@/data/repository";
+import { getInstructions } from "@/data/instructionCatalog";
 import type {
+  AttributeKey,
+  DecisionScenarioContext,
+  ImpactGaugeKey,
   InstructionCategory,
   Player,
   Role,
-  Scenario,
   StoredDecision,
   TacticalInstructions,
 } from "@/data/types";
@@ -17,8 +19,14 @@ import {
   type RiskRule,
   type SituationFitResult,
 } from "@/lib/scoring";
+import {
+  getEligiblePositionGroups,
+  playerHasVerifiedPositionGroup,
+  roleSupportsPlayer,
+} from "@/lib/decision/positionCompatibility";
+import { calculateEffectiveAttributes } from "@/lib/attributes/baseProfile";
 
-export const ATTRIBUTE_LABELS: Record<string, string> = {
+export const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   finishing: "골 결정력",
   chanceCreation: "찬스 창출",
   dribbling: "드리블",
@@ -29,80 +37,12 @@ export const ATTRIBUTE_LABELS: Record<string, string> = {
   impact: "임팩트",
 };
 
-const ROLE_GAUGE_MODIFIERS: Record<
-  string,
-  Record<
-    "attackThreat" | "possessionStability" | "defensiveStability" | "pressingIntensity",
-    number
-  >
-> = {
-  "inside-forward": {
-    attackThreat: 5,
-    possessionStability: -1,
-    defensiveStability: -2,
-    pressingIntensity: 1,
-  },
-  winger: {
-    attackThreat: 3,
-    possessionStability: 1,
-    defensiveStability: -1,
-    pressingIntensity: 2,
-  },
-  "target-striker": {
-    attackThreat: 6,
-    possessionStability: -1,
-    defensiveStability: 0,
-    pressingIntensity: -2,
-  },
-  "advanced-forward": {
-    attackThreat: 7,
-    possessionStability: -2,
-    defensiveStability: -2,
-    pressingIntensity: 2,
-  },
-  playmaker: {
-    attackThreat: 3,
-    possessionStability: 5,
-    defensiveStability: -1,
-    pressingIntensity: -1,
-  },
-  "box-to-box": {
-    attackThreat: 2,
-    possessionStability: 2,
-    defensiveStability: 2,
-    pressingIntensity: 5,
-  },
-  "holding-midfielder": {
-    attackThreat: -3,
-    possessionStability: 4,
-    defensiveStability: 7,
-    pressingIntensity: 2,
-  },
-  "attacking-fullback": {
-    attackThreat: 4,
-    possessionStability: 1,
-    defensiveStability: -4,
-    pressingIntensity: 2,
-  },
-  "defensive-fullback": {
-    attackThreat: -3,
-    possessionStability: 2,
-    defensiveStability: 6,
-    pressingIntensity: 1,
-  },
-  "centre-back": {
-    attackThreat: -4,
-    possessionStability: 1,
-    defensiveStability: 7,
-    pressingIntensity: 0,
-  },
-  "ball-playing-centre-back": {
-    attackThreat: -2,
-    possessionStability: 5,
-    defensiveStability: 4,
-    pressingIntensity: 0,
-  },
-};
+const IMPACT_GAUGE_KEYS: readonly ImpactGaugeKey[] = [
+  "attackThreat",
+  "possessionStability",
+  "defensiveStability",
+  "pressingIntensity",
+];
 
 const RISK_RULES: RiskRule[] = [
   {
@@ -152,14 +92,16 @@ const RISK_RULES: RiskRule[] = [
   },
   {
     id: "low-confidence",
-    label: "낮은 데이터 신뢰도",
+    label: "BASE 근거 불확실성",
     conditions: [
-      { path: "incomingConfidence", operator: "lt", value: 0.35 },
+      { path: "incomingConfidence", operator: "lt", value: 0.6 },
     ],
     penalty: 5,
     severity: "low",
-    message: "투입 선수의 이 경기 표본이 짧아 퍼포먼스 스탯의 불확실성이 큽니다.",
-    mitigation: "점수 차이를 절대값보다 선택 의도와 위험 범위로 해석하세요.",
+    message:
+      "투입 선수의 최근 1년 원자료 범위와 신뢰도가 제한되어 평가 불확실성이 큽니다.",
+    mitigation:
+      "선수의 경기력이 낮다는 뜻이 아닙니다. 점수 차이를 근거 불확실성을 포함한 범위로 해석하세요.",
   },
   {
     id: "protect-lead-attacking",
@@ -179,59 +121,173 @@ function sumInstructionModifiers(
   values: TacticalInstructions,
   categories: InstructionCategory[] = getInstructions(),
 ) {
-  const totals = {
-    attackThreat: 0,
-    possessionStability: 0,
-    defensiveStability: 0,
-    pressingIntensity: 0,
-  };
-  let fitModifier = 0;
+  const totals = Object.fromEntries(
+    IMPACT_GAUGE_KEYS.map((gauge) => [gauge, 0]),
+  ) as Record<ImpactGaugeKey, number>;
 
   for (const category of categories) {
     const selectedId = values[category.id];
-    const option = category.options.find((candidate) => candidate.id === selectedId);
+    const option = category.options.find(
+      (candidate) => candidate.id === selectedId,
+    );
     if (!option) continue;
-    fitModifier += option.fitModifier;
-    for (const key of Object.keys(totals) as Array<keyof typeof totals>) {
-      totals[key] += option.impactModifiers[key];
+    for (const gauge of IMPACT_GAUGE_KEYS) {
+      const modifier = option.impactModifiers[gauge];
+      if (Number.isFinite(modifier)) {
+        totals[gauge] += modifier ?? 0;
+      }
     }
   }
 
-  return { totals, fitModifier };
+  return totals;
 }
 
-function getRoleAttributeWeights(role: Role) {
+function getRoleAttributeWeights(
+  role: Role,
+): Partial<Record<AttributeKey, number>> {
   return Object.fromEntries(
     role.preferredAttributes.map((attribute, index) => [
       attribute,
       Math.max(1, role.preferredAttributes.length - index) *
         (role.fitModifiers[attribute] ?? 1),
     ]),
-  );
+  ) as Partial<Record<AttributeKey, number>>;
 }
 
-function getMatchupFit(player: Player, scenario: Scenario, role: Role) {
-  let fit = 58;
-  if (scenario.scoreState === "level") {
-    if (player.positionGroup === "STRIKER") fit += 10;
-    if (player.positionGroup === "WINGER") fit += 6;
-    if (["target-striker", "advanced-forward", "inside-forward"].includes(role.roleId)) fit += 7;
-    if (player.tags.includes("박스 타깃")) fit += 5;
-    if (player.tags.includes("낮은 블록 공략")) fit += 4;
+const TACTICAL_INSTRUCTION_KEYS = [
+  "attackDirection",
+  "pressing",
+  "defensiveLine",
+  "mentality",
+] as const satisfies ReadonlyArray<keyof TacticalInstructions>;
+
+function matchesInstructionCombination(
+  instructions: TacticalInstructions,
+  when: Partial<TacticalInstructions>,
+): boolean {
+  return (
+    Object.entries(when) as Array<
+      [
+        keyof TacticalInstructions,
+        TacticalInstructions[keyof TacticalInstructions],
+      ]
+    >
+  ).every(([category, expected]) => instructions[category] === expected);
+}
+
+/**
+ * Returns a scenario-owned team-instruction fit adjustment.
+ *
+ * The defensive fallback keeps old or malformed saved scenario snapshots
+ * usable without reviving the former global instruction-option score.
+ */
+export function calculateInstructionFit(
+  instructions: TacticalInstructions,
+  scenario: DecisionScenarioContext,
+): number {
+  const configuration = scenario.instructionFit;
+  if (!configuration) return 0;
+
+  let total = 0;
+  for (const category of TACTICAL_INSTRUCTION_KEYS) {
+    const categoryModifiers = configuration[category] as
+      | Readonly<Record<string, number>>
+      | undefined;
+    const modifier = categoryModifiers?.[instructions[category]];
+    if (Number.isFinite(modifier)) {
+      total += modifier ?? 0;
+    }
   }
-  if (scenario.scoreState === "leading") {
-    if (player.positionGroup === "DM") fit += 13;
-    if (player.positionGroup === "CM_AM") fit += 8;
-    if (player.positionGroup === "CB") fit += 9;
-    if (["holding-midfielder", "box-to-box", "defensive-fullback"].includes(role.roleId)) fit += 7;
-    if (player.tags.includes("수비 안정")) fit += 5;
-    if (player.positionGroup === "STRIKER") fit -= 7;
+  for (const combination of configuration.combinationModifiers ?? []) {
+    if (
+      Number.isFinite(combination.modifier) &&
+      matchesInstructionCombination(instructions, combination.when)
+    ) {
+      total += combination.modifier;
+    }
   }
-  return Math.max(0, Math.min(100, fit));
+
+  return Math.max(-8, Math.min(8, total));
+}
+
+function matchesMatchupRule(
+  player: Player,
+  role: Role,
+  rule: DecisionScenarioContext["matchupModifiers"]["rules"][number],
+): boolean {
+  let hasMatcher = false;
+
+  if (rule.positionGroups) {
+    hasMatcher = true;
+    if (!playerHasVerifiedPositionGroup(player, rule.positionGroups)) {
+      return false;
+    }
+  }
+  if (rule.roleIds) {
+    hasMatcher = true;
+    if (!rule.roleIds.includes(role.roleId)) return false;
+  }
+  if (rule.playerTags) {
+    hasMatcher = true;
+    if (!rule.playerTags.some((tag) => player.tags.includes(tag))) return false;
+  }
+
+  return hasMatcher;
+}
+
+export function calculateMatchupFit(
+  player: Player,
+  scenario: DecisionScenarioContext,
+  role: Role,
+): number {
+  return calculateMatchupEvaluation(player, scenario, role).fit;
+}
+
+export interface MatchupEvaluation {
+  fit: number;
+  matchedRuleIds: string[];
+  reasons: string[];
+}
+
+export function calculateMatchupEvaluation(
+  player: Player,
+  scenario: DecisionScenarioContext,
+  role: Role,
+): MatchupEvaluation {
+  const configuration = scenario.matchupModifiers;
+  if (!configuration) {
+    return { fit: 50, matchedRuleIds: [], reasons: [] };
+  }
+
+  let fit = Number.isFinite(configuration.base) ? configuration.base : 50;
+  const matchedRules: typeof configuration.rules = [];
+  for (const rule of configuration.rules ?? []) {
+    if (
+      Number.isFinite(rule.modifier) &&
+      matchesMatchupRule(player, role, rule)
+    ) {
+      fit += rule.modifier;
+      matchedRules.push(rule);
+    }
+  }
+
+  return {
+    fit: Math.max(0, Math.min(100, fit)),
+    matchedRuleIds: matchedRules.map((rule) => rule.id),
+    reasons: matchedRules.map(
+      (rule) => `${rule.label} (${rule.modifier > 0 ? "+" : ""}${rule.modifier})`,
+    ),
+  };
 }
 
 export function isPositionMismatch(outgoing: Player, incoming: Player): boolean {
-  if (outgoing.positionGroup === incoming.positionGroup) return false;
+  const outgoingGroups = getEligiblePositionGroups(outgoing);
+  const incomingGroups = getEligiblePositionGroups(incoming);
+  if (
+    outgoingGroups.some((group) => incomingGroups.includes(group))
+  ) {
+    return false;
+  }
   const compatiblePairs = new Set([
     "WINGER:STRIKER",
     "STRIKER:WINGER",
@@ -242,17 +298,30 @@ export function isPositionMismatch(outgoing: Player, incoming: Player): boolean 
     "CB:DM",
     "DM:CB",
   ]);
-  return !compatiblePairs.has(`${outgoing.positionGroup}:${incoming.positionGroup}`);
+  return !outgoingGroups.some((outgoingGroup) =>
+    incomingGroups.some((incomingGroup) =>
+      compatiblePairs.has(`${outgoingGroup}:${incomingGroup}`),
+    ),
+  );
 }
 
 export interface DecisionEvaluation {
   fit: SituationFitResult;
   risk: RiskEvaluation;
-  impacts: ImpactComparison<
-    "attackThreat" | "possessionStability" | "defensiveStability" | "pressingIntensity"
-  >;
+  impacts: ImpactComparison<ImpactGaugeKey>;
   explanation: ReturnType<typeof generateExplanation>;
   positionMismatch: boolean;
+  instructionFit: number;
+  matchupFit: number;
+  matchupReasons: string[];
+  effectiveAttributes: {
+    outgoing: Player["attributes"];
+    incoming: Player["attributes"];
+  };
+  formAdjustments: {
+    outgoing: number;
+    incoming: number;
+  };
 }
 
 export interface BestRoleEvaluation {
@@ -271,11 +340,28 @@ export function evaluateDecision({
   incoming: Player;
   role: Role;
   instructions: TacticalInstructions;
-  scenario: Scenario;
+  scenario: DecisionScenarioContext;
 }): DecisionEvaluation {
   const positionMismatch = isPositionMismatch(outgoing, incoming);
+  const outgoingFormAdjustment = outgoing.tournamentForm?.adjustment ?? 0;
+  const incomingFormAdjustment = incoming.tournamentForm?.adjustment ?? 0;
+  const outgoingEffectiveAttributes = calculateEffectiveAttributes(
+    outgoing.attributes,
+    { adjustment: outgoingFormAdjustment },
+  );
+  const incomingEffectiveAttributes = calculateEffectiveAttributes(
+    incoming.attributes,
+    { adjustment: incomingFormAdjustment },
+  );
   const scenarioRiskRules = RISK_RULES.filter((rule) =>
     scenario.riskRules.includes(rule.id),
+  ).map((rule) =>
+    rule.id === "low-confidence"
+      ? {
+          ...rule,
+          penalty: incoming.confidence >= 0.35 ? 2 : 5,
+        }
+      : rule,
   );
   const roleRiskRules: RiskRule[] = role.riskModifiers.map(
     (message, index) => ({
@@ -301,38 +387,38 @@ export function evaluateDecision({
   });
   const instructionModifiers = sumInstructionModifiers(instructions);
   const defaultModifiers = sumInstructionModifiers(scenario.defaultInstructions);
-  const roleModifiers = ROLE_GAUGE_MODIFIERS[role.roleId] ?? {
-    attackThreat: 0,
-    possessionStability: 0,
-    defensiveStability: 0,
-    pressingIntensity: 0,
-  };
-  const afterGaugeModifiers = Object.fromEntries(
-    (Object.keys(roleModifiers) as Array<keyof typeof roleModifiers>).map((key) => [
-      key,
-      instructionModifiers.totals[key] + roleModifiers[key],
-    ]),
-  );
+  const roleModifiers = getRoleAttributeWeights(role);
 
   const impacts = calculateImpact({
     before: {
-      attributes: outgoing.attributes,
-      gaugeModifiers: defaultModifiers.totals,
+      attributes: outgoingEffectiveAttributes,
+      gaugeModifiers: defaultModifiers,
     },
     after: {
-      attributes: incoming.attributes,
-      gaugeModifiers: afterGaugeModifiers,
+      attributes: incomingEffectiveAttributes,
+      gaugeModifiers: instructionModifiers,
     },
     attributeLabels: ATTRIBUTE_LABELS,
   });
 
+  const instructionFit = calculateInstructionFit(instructions, scenario);
+  const matchup = calculateMatchupEvaluation(incoming, scenario, role);
+  const matchupFit = matchup.fit;
+  const hasMeasuredRoleAttribute = role.preferredAttributes.some(
+    (attribute) =>
+      Number.isFinite(incomingEffectiveAttributes[attribute]),
+  );
   const fit = calculateSituationFit({
-    attributes: incoming.attributes,
+    attributes: incomingEffectiveAttributes,
     attributeWeights: scenario.attributeWeights,
-    roleAttributeWeights: getRoleAttributeWeights(role),
-    roleModifier: Math.min(8, instructionModifiers.fitModifier),
-    fitness: incoming.fitness,
-    matchupFit: getMatchupFit(incoming, scenario, role),
+    roleAttributeWeights: roleModifiers,
+    // A compatible role is selectable only after the position-group guard.
+    // When its preferred attributes are all null, 50 is a positional
+    // compatibility baseline rather than a fabricated player attribute.
+    roleFit: hasMeasuredRoleAttribute ? undefined : 50,
+    roleModifier: instructionFit,
+    fitness: incoming.fitness ?? undefined,
+    matchupFit,
     risk,
   });
   const explanation = generateExplanation({
@@ -342,7 +428,24 @@ export function evaluateDecision({
     roleName: role.name,
   });
 
-  return { fit, risk, impacts, explanation, positionMismatch };
+  return {
+    fit,
+    risk,
+    impacts,
+    explanation,
+    positionMismatch,
+    instructionFit,
+    matchupFit,
+    matchupReasons: matchup.reasons,
+    effectiveAttributes: {
+      outgoing: outgoingEffectiveAttributes,
+      incoming: incomingEffectiveAttributes,
+    },
+    formAdjustments: {
+      outgoing: outgoingFormAdjustment,
+      incoming: incomingFormAdjustment,
+    },
+  };
 }
 
 export function evaluateBestRole({
@@ -356,14 +459,13 @@ export function evaluateBestRole({
   incoming: Player;
   roles: Role[];
   instructions: TacticalInstructions;
-  scenario: Scenario;
+  scenario: DecisionScenarioContext;
 }): BestRoleEvaluation | null {
-  return roles
-    .filter((role) =>
-      role.allowedPositionGroups.includes(incoming.positionGroup),
-    )
-    .map((role) => ({
+  const best = roles
+    .filter((role) => roleSupportsPlayer(role, incoming))
+    .map((role, sourceIndex) => ({
       role,
+      sourceIndex,
       evaluation: evaluateDecision({
         outgoing,
         incoming,
@@ -375,8 +477,10 @@ export function evaluateBestRole({
     .sort(
       (left, right) =>
         right.evaluation.fit.score - left.evaluation.fit.score ||
-        left.role.roleId.localeCompare(right.role.roleId),
-    )[0] ?? null;
+        left.sourceIndex - right.sourceIndex,
+    )[0];
+
+  return best ? { role: best.role, evaluation: best.evaluation } : null;
 }
 
 export function toStoredDecision({
@@ -386,10 +490,9 @@ export function toStoredDecision({
   incoming,
   role,
   instructions,
-  evaluation,
 }: {
   matchId: string;
-  scenario: Scenario;
+  scenario: DecisionScenarioContext;
   outgoing: Player;
   incoming: Player;
   role: Role;
@@ -397,27 +500,14 @@ export function toStoredDecision({
   evaluation: DecisionEvaluation;
 }): StoredDecision {
   return {
-    version: 1,
+    version: 3,
     matchId,
     scenarioId: scenario.id,
+    selectedTeamId: scenario.selectedTeamId,
     outPlayerId: outgoing.id,
     inPlayerId: incoming.id,
     roleId: role.roleId,
     instructions,
-    score: evaluation.fit.score,
-    riskPenalty: evaluation.risk.totalPenalty,
-    impactsBefore: Object.fromEntries(
-      Object.entries(evaluation.impacts).map(([key, value]) => [key, value.before]),
-    ),
-    impactsAfter: Object.fromEntries(
-      Object.entries(evaluation.impacts).map(([key, value]) => [key, value.after]),
-    ),
-    explanation: {
-      benefits: [...evaluation.explanation.benefits],
-      risks: [...evaluation.explanation.risks],
-      remedies: [...evaluation.explanation.mitigations],
-      summary: evaluation.explanation.summary,
-    },
     createdAt: new Date().toISOString(),
   };
 }

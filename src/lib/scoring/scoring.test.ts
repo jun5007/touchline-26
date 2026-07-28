@@ -1,15 +1,19 @@
 import { describe, expect, it } from "vitest";
 
+import { resultTemplates } from "@/data/repository";
 import {
   calculateAttributeFit,
   calculateImpact,
   calculateRisk,
   calculateSituationFit,
+  DECISION_GRADE_MINIMUMS,
+  DEFAULT_IMPACT_GAUGE_DEFINITIONS,
   evaluateRiskCondition,
   generateExplanation,
   getDecisionGrade,
   readRiskContextValue,
   renderTemplate,
+  SUPPORTED_IMPACT_ATTRIBUTES,
 } from ".";
 import type {
   ImpactGaugeResult,
@@ -150,13 +154,46 @@ describe("situation fit", () => {
     ).toBe(75);
   });
 
-  it("uses a neutral value for configured but missing evidence", () => {
+  it("excludes missing evidence and renormalizes the available weights", () => {
     expect(
       calculateAttributeFit(
-        { finishing: 20 },
+        { finishing: 20, passing: null },
         { finishing: 1, passing: 1 },
       ),
-    ).toBe(75);
+    ).toBe(100);
+  });
+
+  it("excludes an all-null ability component and reweights available components", () => {
+    const result = calculateSituationFit({
+      attributes: { finishing: null, passing: null },
+      attributeWeights: { finishing: 3, passing: 1 },
+      roleFit: 80,
+      fitness: 70,
+      matchupFit: 60,
+    });
+
+    expect(result.componentAvailability).toEqual({
+      ability: false,
+      role: true,
+      fitness: true,
+      matchup: true,
+    });
+    expect(result.componentWeights).toEqual({
+      ability: 0,
+      role: 0.5,
+      fitness: 0.25,
+      matchup: 0.25,
+    });
+    expect(result.contributions).toEqual({
+      ability: 0,
+      role: 40,
+      fitness: 17.5,
+      matchup: 15,
+    });
+    expect(result.score).toBe(73);
+    expect(result.warnings).toContain(
+      "사용 가능한 선수 능력치가 없어 능력 구성 요소를 점수에서 제외했습니다.",
+    );
   });
 
   it("uses the specified 60/20/10/10 structure and subtracts risk", () => {
@@ -243,16 +280,23 @@ describe("situation fit", () => {
   });
 
   it("assigns the documented decision bands", () => {
-    expect(getDecisionGrade(90)).toBe("excellent");
-    expect(getDecisionGrade(75)).toBe("good");
-    expect(getDecisionGrade(60)).toBe("mixed");
-    expect(getDecisionGrade(40)).toBe("risky");
-    expect(getDecisionGrade(39)).toBe("weak");
+    expect(getDecisionGrade(56)).toBe("excellent");
+    expect(getDecisionGrade(52)).toBe("good");
+    expect(getDecisionGrade(47)).toBe("mixed");
+    expect(getDecisionGrade(39)).toBe("risky");
+    expect(getDecisionGrade(38)).toBe("weak");
+    expect(resultTemplates.grades.map((grade) => grade.min)).toEqual([
+      DECISION_GRADE_MINIMUMS.excellent,
+      DECISION_GRADE_MINIMUMS.good,
+      DECISION_GRADE_MINIMUMS.mixed,
+      DECISION_GRADE_MINIMUMS.risky,
+      0,
+    ]);
   });
 });
 
 describe("impact gauges", () => {
-  it("returns all four canonical gauges with before/after deltas", () => {
+  it("builds the four canonical gauges only from the eight measured attributes", () => {
     const result = calculateImpact({
       before: {
         attributes: {
@@ -264,10 +308,6 @@ describe("impact gauges", () => {
           defending: 10,
           aerial: 10,
           impact: 10,
-          speed: 10,
-          stamina: 10,
-          composure: 10,
-          ballRetention: 10,
         },
       },
       after: {
@@ -280,10 +320,6 @@ describe("impact gauges", () => {
           defending: 6,
           aerial: 6,
           impact: 16,
-          speed: 15,
-          stamina: 10,
-          composure: 10,
-          ballRetention: 12,
         },
       },
     });
@@ -302,6 +338,38 @@ describe("impact gauges", () => {
     );
     expect(result.defensiveStability.delta).toBeLessThan(0);
     expect(result.attackThreat.reason).toContain("상승");
+
+    const supported = new Set<string>(SUPPORTED_IMPACT_ATTRIBUTES);
+    for (const definition of Object.values(
+      DEFAULT_IMPACT_GAUGE_DEFINITIONS,
+    )) {
+      expect(
+        Object.keys(definition.attributeWeights).every((key) =>
+          supported.has(key),
+        ),
+      ).toBe(true);
+      expect(
+        Object.values(definition.attributeWeights).reduce(
+          (sum, weight) => sum + (weight ?? 0),
+          0,
+        ),
+      ).toBeCloseTo(1, 10);
+    }
+  });
+
+  it("rejects a gauge definition that references an unsupported attribute", () => {
+    expect(() =>
+      calculateImpact({
+        before: { attributes: { finishing: 10 } },
+        after: { attributes: { finishing: 12 } },
+        definitions: {
+          invalid: {
+            label: "근거 없는 게이지",
+            attributeWeights: { speed: 1 },
+          },
+        },
+      }),
+    ).toThrow(/지원하지 않는 속성.*speed/);
   });
 
   it("supports fully data-driven custom gauges and tactical modifiers", () => {
@@ -336,11 +404,11 @@ describe("impact gauges", () => {
     ]);
   });
 
-  it("clamps gauge values and safely handles missing or invalid data", () => {
-    const neutral = calculateImpact({
+  it("reports unavailable instead of fabricating a neutral gauge", () => {
+    const unavailable = calculateImpact({
       before: { attributes: {} },
       after: {
-        attributes: { finishing: Number.NaN },
+        attributes: { finishing: null },
         gaugeModifiers: { threat: Infinity },
       },
       definitions: {
@@ -364,10 +432,41 @@ describe("impact gauges", () => {
       },
     });
 
-    expect(neutral.threat.before).toBe(50);
-    expect(neutral.threat.after).toBe(50);
-    expect(neutral.threat.delta).toBe(0);
+    expect(unavailable.threat).toMatchObject({
+      before: 0,
+      after: 0,
+      delta: 0,
+      available: false,
+      availableAttributes: [],
+      reason: "OUT·IN 공통 능력치 데이터 없음",
+    });
     expect(clamped.threat.after).toBe(0);
+  });
+
+  it("compares only shared attributes and renormalizes their gauge weights", () => {
+    const result = calculateImpact({
+      before: {
+        attributes: { finishing: 10, passing: 1 },
+      },
+      after: {
+        attributes: { finishing: 20, passing: null },
+      },
+      definitions: {
+        threat: {
+          label: "위협",
+          attributeWeights: { finishing: 0.25, passing: 0.75 },
+        },
+      },
+    });
+
+    expect(result.threat.available).toBe(true);
+    expect(result.threat.availableAttributes).toEqual(["finishing"]);
+    expect(result.threat.before).toBe(47);
+    expect(result.threat.after).toBe(100);
+    expect(result.threat.delta).toBe(53);
+    expect(result.threat.drivers.map((driver) => driver.key)).toEqual([
+      "finishing",
+    ]);
   });
 });
 
@@ -382,6 +481,8 @@ function impact(
     before: 50,
     after: 50 + delta,
     delta,
+    available: true,
+    availableAttributes: ["test"],
     direction:
       delta > 0 ? "increase" : delta < 0 ? "decrease" : "unchanged",
     reason: "test",
@@ -401,7 +502,7 @@ describe("rule-based explanations", () => {
 
   it("explains benefits, risks, mitigations, an alternative, and actual choice", () => {
     const explanation = generateExplanation({
-      score: 82,
+      score: 53,
       impacts: {
         attack: impact("attack", "공격 위협", 18),
         defense: impact("defense", "수비 안정", -9),
@@ -424,7 +525,7 @@ describe("rule-based explanations", () => {
         name: "대안 선수",
         comparison: "수비 안정은 높지만 공격 위협 증가는 작습니다.",
       },
-      actualDecision: {
+      observedCoachChoice: {
         description: "실제 감독은 다른 교체를 선택했습니다.",
         difference: "중원 안정에 더 무게를 둔 선택으로 볼 수 있습니다.",
         isInferred: true,
@@ -439,8 +540,8 @@ describe("rule-based explanations", () => {
     ]);
     expect(explanation.mitigations[0]).toContain("풀백");
     expect(explanation.alternative).toContain("대안 선수");
-    expect(explanation.actualDecisionComparison).toContain("전술적 추론");
-    expect(explanation.actualDecisionComparison).toContain("정답");
+    expect(explanation.observedCoachChoiceComparison).toContain("전술적 추론");
+    expect(explanation.observedCoachChoiceComparison).toContain("정답");
   });
 
   it("always shows a possible intent and a caveat", () => {

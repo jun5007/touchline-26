@@ -92,6 +92,8 @@ export interface SituationFitResult {
   riskPenalty: number;
   components: SituationFitComponents;
   contributions: SituationFitComponents;
+  componentWeights: SituationComponentWeights;
+  componentAvailability: Readonly<Record<keyof SituationFitComponents, boolean>>;
   warnings: readonly string[];
 }
 
@@ -125,6 +127,10 @@ export interface ImpactGaugeResult {
   before: number;
   after: number;
   delta: number;
+  /** False when OUT and IN have no measured attribute in common. */
+  available: boolean;
+  /** Only these shared attributes contributed to both scores. */
+  availableAttributes: readonly string[];
   direction: "increase" | "decrease" | "unchanged";
   reason: string;
   drivers: readonly ImpactDriver[];
@@ -154,8 +160,8 @@ export interface ExplanationTemplates {
   riskCaution: string;
   mitigationDefault: string;
   alternative: string;
-  actualDecision: string;
-  actualDecisionInferred: string;
+  observedCoachChoice: string;
+  observedCoachChoiceInferred: string;
 }
 
 export interface AlternativeExplanationInput {
@@ -163,7 +169,7 @@ export interface AlternativeExplanationInput {
   comparison: string;
 }
 
-export interface ActualDecisionExplanationInput {
+export interface ObservedCoachChoiceExplanationInput {
   description: string;
   difference?: string;
   isInferred?: boolean;
@@ -175,7 +181,7 @@ export interface GenerateExplanationInput {
   risk: RiskEvaluation;
   roleName?: string;
   alternative?: AlternativeExplanationInput;
-  actualDecision?: ActualDecisionExplanationInput;
+  observedCoachChoice?: ObservedCoachChoiceExplanationInput;
   templates?: Partial<ExplanationTemplates>;
   maxItems?: number;
 }
@@ -186,7 +192,7 @@ export interface DecisionExplanation {
   risks: readonly string[];
   mitigations: readonly string[];
   alternative?: string;
-  actualDecisionComparison?: string;
+  observedCoachChoiceComparison?: string;
 }
 
 export type DecisionGrade =
@@ -195,4 +201,3 @@ export type DecisionGrade =
   | "mixed"
   | "risky"
   | "weak";
-

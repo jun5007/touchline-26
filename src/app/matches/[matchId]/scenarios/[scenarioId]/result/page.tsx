@@ -3,12 +3,15 @@ import { notFound } from "next/navigation";
 import { StepIndicator } from "@/components/layout/StepIndicator";
 import { ResultWorkspace } from "@/components/result/ResultWorkspace";
 import {
+  getDecisionScenarioContext,
+  getInstructions,
   getMatch,
   getNextScenario,
-  getPlayers,
+  getPlayersByIds,
   getRoles,
   getScenario,
 } from "@/data/repository";
+import { calculateLegalDecisionScoreDistribution } from "@/lib/decision/decisionScoreDistribution";
 
 export const metadata: Metadata = { title: "결정 분석" };
 
@@ -22,6 +25,28 @@ export default async function ResultPage({
   const scenario = getScenario(matchId, scenarioId);
   if (!match || !scenario) notFound();
   const nextScenario = getNextScenario(scenario);
+  const players = getPlayersByIds(
+    [
+      ...new Set([
+        ...scenario.currentLineup.map((spot) => spot.playerId),
+        ...scenario.benchOptions,
+        scenario.actualDecision.outPlayerId,
+        scenario.actualDecision.inPlayerId,
+      ]),
+    ],
+    scenario,
+  );
+  const roles = getRoles();
+  const scoreDistribution = calculateLegalDecisionScoreDistribution({
+    scenario: getDecisionScenarioContext(scenario),
+    lineupPlayers: getPlayersByIds(
+      scenario.currentLineup.map((spot) => spot.playerId),
+      scenario,
+    ),
+    benchPlayers: getPlayersByIds(scenario.benchOptions, scenario),
+    roles,
+    instructionCategories: getInstructions(),
+  });
 
   return (
     <div className="page-wrap py-10 sm:py-14">
@@ -37,11 +62,12 @@ export default async function ResultPage({
       <ResultWorkspace
         match={match}
         scenario={scenario}
-        players={getPlayers()}
-        roles={getRoles()}
+        players={players}
+        roles={roles}
+        scoreDistribution={scoreDistribution}
         nextScenarioId={nextScenario?.id}
+        nextMatchId={nextScenario?.matchId}
       />
     </div>
   );
 }
-

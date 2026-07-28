@@ -1,0 +1,382 @@
+{
+  "id": "mex-kor-2026",
+  "fifaMatchId": "400021442",
+  "fdpResourceId": "r12451",
+  "groupId": "group-a",
+  "competition": "FIFA World Cup 2026",
+  "stage": "group",
+  "matchNumber": 28,
+  "date": "2026-06-18",
+  "localKickoff": "19:00",
+  "kickoffUtc": "2026-06-19T01:00:00Z",
+  "venue": "Guadalajara Stadium",
+  "city": "Guadalajara",
+  "country": "Mexico",
+  "attendance": 45522,
+  "homeTeamId": "mex",
+  "awayTeamId": "kor",
+  "playableTeamIds": [
+    "mex",
+    "kor"
+  ],
+  "finalScore": {
+    "home": 1,
+    "away": 0
+  },
+  "halfTimeScore": {
+    "home": 0,
+    "away": 0
+  },
+  "formationsByTeam": {
+    "mex": "4-1-2-3",
+    "kor": "3-4-3"
+  },
+  "lineupsByTeam": {
+    "mex": [
+      "mex-raul-rangel",
+      "mex-jorge-sanchez",
+      "mex-edson-alvarez",
+      "mex-johan-vasquez",
+      "mex-erik-lira",
+      "mex-luis-romo",
+      "mex-raul-jimenez",
+      "mex-julian-quinones",
+      "mex-jesus-gallardo",
+      "mex-roberto-alvarado",
+      "mex-brian-gutierrez"
+    ],
+    "kor": [
+      "kim-seunggyu",
+      "lee-hanbeom",
+      "lee-gihyuk",
+      "kim-minjae",
+      "hwang-inbeom",
+      "son-heungmin",
+      "paik-seungho",
+      "lee-jaesung",
+      "kim-moonhwan",
+      "lee-kangin",
+      "seol-youngwoo"
+    ]
+  },
+  "benchesByTeam": {
+    "mex": [
+      "mex-carlos-acevedo",
+      "mex-guillermo-ochoa",
+      "mex-alvaro-fidalgo",
+      "mex-alexis-vega",
+      "mex-santiago-gimenez",
+      "mex-armando-gonzalez",
+      "mex-israel-reyes",
+      "mex-orbelin-pineda",
+      "mex-obed-vargas",
+      "mex-gilberto-mora",
+      "mex-mateo-chavez",
+      "mex-cesar-huerta",
+      "mex-guillermo-martinez",
+      "mex-luis-chavez"
+    ],
+    "kor": [
+      "song-bumkeun",
+      "jo-hyeonwoo",
+      "kim-taehyeon",
+      "cho-guesung",
+      "hwang-heechan",
+      "lee-taeseok",
+      "cho-wije",
+      "park-jinseob",
+      "bae-junho",
+      "oh-hyeongyu",
+      "yang-hyunjun",
+      "castrop-jens",
+      "kim-jingyu",
+      "eom-jisung",
+      "lee-donggyeong"
+    ]
+  },
+  "unavailableByTeam": {
+    "mex": [
+      {
+        "playerId": "mex-cesar-montes",
+        "status": "matchday_unavailable",
+        "reason": null,
+        "note": "개막전 퇴장과 이 경기 공식 명단 미등재는 확인. 징계 기간은 별도 단정하지 않음.",
+        "verificationStatus": "partial"
+      }
+    ],
+    "kor": []
+  },
+  "substitutionsByTeam": {
+    "mex": [
+      {
+        "minute": {
+          "regulation": 71
+        },
+        "outPlayerId": "mex-luis-romo",
+        "inPlayerId": "mex-obed-vargas",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 71
+        },
+        "outPlayerId": "mex-brian-gutierrez",
+        "inPlayerId": "mex-orbelin-pineda",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 80
+        },
+        "outPlayerId": "mex-raul-jimenez",
+        "inPlayerId": "mex-santiago-gimenez",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 80
+        },
+        "outPlayerId": "mex-roberto-alvarado",
+        "inPlayerId": "mex-israel-reyes",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 84
+        },
+        "outPlayerId": "mex-julian-quinones",
+        "inPlayerId": "mex-cesar-huerta",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ],
+    "kor": [
+      {
+        "minute": {
+          "regulation": 57
+        },
+        "outPlayerId": "lee-jaesung",
+        "inPlayerId": "hwang-heechan",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 57
+        },
+        "outPlayerId": "son-heungmin",
+        "inPlayerId": "oh-hyeongyu",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 71
+        },
+        "outPlayerId": "kim-moonhwan",
+        "inPlayerId": "eom-jisung",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 71
+        },
+        "outPlayerId": "seol-youngwoo",
+        "inPlayerId": "yang-hyunjun",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 77
+        },
+        "outPlayerId": "paik-seungho",
+        "inPlayerId": "cho-guesung",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ]
+  },
+  "events": [
+    {
+      "minute": {
+        "regulation": 4
+      },
+      "type": "card",
+      "teamId": "kor",
+      "playerId": "lee-kangin",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 50
+      },
+      "type": "goal",
+      "teamId": "mex",
+      "playerId": "mex-luis-romo",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 57
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "hwang-heechan",
+      "relatedPlayerId": "lee-jaesung",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 57
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "oh-hyeongyu",
+      "relatedPlayerId": "son-heungmin",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 58
+      },
+      "type": "card",
+      "teamId": "kor",
+      "playerId": "paik-seungho",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 71
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-obed-vargas",
+      "relatedPlayerId": "mex-luis-romo",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 71
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-orbelin-pineda",
+      "relatedPlayerId": "mex-brian-gutierrez",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 71
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "eom-jisung",
+      "relatedPlayerId": "kim-moonhwan",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 71
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "yang-hyunjun",
+      "relatedPlayerId": "seol-youngwoo",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 77
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "cho-guesung",
+      "relatedPlayerId": "paik-seungho",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 80
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-santiago-gimenez",
+      "relatedPlayerId": "mex-raul-jimenez",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 80
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-israel-reyes",
+      "relatedPlayerId": "mex-roberto-alvarado",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 84
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-cesar-huerta",
+      "relatedPlayerId": "mex-julian-quinones",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    }
+  ],
+  "sourceIds": [
+    "fifa-ftr-m28",
+    "fifa-tactical-m28",
+    "fifa-pmsr-m28",
+    "fifa-api-m28",
+    "fifa-article-m28"
+  ],
+  "discrepancyNotes": [],
+  "verificationStatus": "verified_official"
+}

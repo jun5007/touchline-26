@@ -39,10 +39,9 @@ export function FootballPitch({
           />
         );
       })}
-      <div className="pointer-events-none absolute bottom-3 left-3 rounded-lg border border-white/10 bg-[#04110c]/65 px-2.5 py-1.5 text-[8px] font-bold text-white/55 backdrop-blur">
-        공식 3-4-3을 바탕으로 한 분석적 위치 재구성
+      <div className="pointer-events-none absolute bottom-3 left-3 rounded-lg border border-white/10 bg-[#04110c]/75 px-2.5 py-1.5 text-[11px] font-bold text-white/75 backdrop-blur">
+        공식 선발 명단과 포지션군을 바탕으로 한 분석적 위치 도식
       </div>
     </section>
   );
 }
-

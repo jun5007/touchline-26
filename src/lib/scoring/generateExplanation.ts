@@ -22,9 +22,9 @@ export const DEFAULT_EXPLANATION_TEMPLATES: ExplanationTemplates = {
   mitigationDefault:
     "경기 흐름을 관찰하며 역할과 팀 지시의 강도를 단계적으로 조정하세요.",
   alternative: "{name}: {comparison}",
-  actualDecision:
+  observedCoachChoice:
     "{description} {difference} 실제 선택은 정답 기준이 아니라 서로 다른 장점과 위험을 비교하는 자료입니다.",
-  actualDecisionInferred:
+  observedCoachChoiceInferred:
     "{description} {difference} 이 목적은 경기 상황과 선수 특성에 근거한 전술적 추론이며, 실제 선택을 정답으로 보지는 않습니다.",
 };
 
@@ -59,7 +59,7 @@ export function generateExplanation({
   risk,
   roleName,
   alternative,
-  actualDecision,
+  observedCoachChoice,
   templates: templateOverrides,
   maxItems = 3,
 }: GenerateExplanationInput): DecisionExplanation {
@@ -82,6 +82,7 @@ export function generateExplanation({
   ];
   const impactList = Object.values(impacts).filter(
     (impact) =>
+      impact.available &&
       isFiniteNumber(impact.delta) &&
       typeof impact.label === "string" &&
       impact.label.length > 0,
@@ -139,14 +140,14 @@ export function generateExplanation({
         comparison: alternative.comparison,
       })
     : undefined;
-  const actualDecisionComparison = actualDecision
+  const observedCoachChoiceComparison = observedCoachChoice
     ? renderTemplate(
-        actualDecision.isInferred
-          ? templates.actualDecisionInferred
-          : templates.actualDecision,
+        observedCoachChoice.isInferred
+          ? templates.observedCoachChoiceInferred
+          : templates.observedCoachChoice,
         {
-          description: actualDecision.description,
-          difference: actualDecision.difference ?? "",
+          description: observedCoachChoice.description,
+          difference: observedCoachChoice.difference ?? "",
         },
       )
     : undefined;
@@ -157,6 +158,6 @@ export function generateExplanation({
     risks,
     mitigations,
     alternative: alternativeText,
-    actualDecisionComparison,
+    observedCoachChoiceComparison,
   };
 }

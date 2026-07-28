@@ -6,8 +6,11 @@ import {
   KeyboardCode,
   KeyboardSensor,
   PointerSensor,
+  pointerWithin,
+  rectIntersection,
   useSensor,
   useSensors,
+  type CollisionDetection,
   type DragEndEvent,
   type DragStartEvent,
 } from "@dnd-kit/core";
@@ -23,20 +26,30 @@ import { RoleSelector } from "@/components/tactics/RoleSelector";
 import { SubstitutionPreview } from "@/components/tactics/SubstitutionPreview";
 import { TeamInstructions } from "@/components/tactics/TeamInstructions";
 import type {
+  DecisionMatchView,
+  DecisionScenarioContext,
   InstructionCategory,
-  Match,
   Player,
   Role,
-  Scenario,
+  StoredDecision,
   TacticalInstructions,
 } from "@/data/types";
 import {
+  getDecisionScoreRelativeContext,
+  type DecisionScoreDistribution,
+} from "@/lib/decision/decisionScoreRelativeContext";
+import {
   evaluateBestRole,
   evaluateDecision,
-  toStoredDecision,
   type DecisionEvaluation,
 } from "@/lib/decision/evaluateDecision";
+import { roleSupportsPlayer } from "@/lib/decision/positionCompatibility";
 import { saveDecision } from "@/lib/decision/storage";
+
+const substitutionCollisionDetection: CollisionDetection = (args) => {
+  const pointerHits = pointerWithin(args);
+  return pointerHits.length > 0 ? pointerHits : rectIntersection(args);
+};
 
 export function TacticsWorkspace({
   match,
@@ -45,13 +58,15 @@ export function TacticsWorkspace({
   benchPlayers,
   roles,
   instructions,
+  scoreDistribution,
 }: {
-  match: Match;
-  scenario: Scenario;
+  match: DecisionMatchView;
+  scenario: DecisionScenarioContext;
   lineupPlayers: Player[];
   benchPlayers: Player[];
   roles: Role[];
   instructions: InstructionCategory[];
+  scoreDistribution?: DecisionScoreDistribution | null;
 }) {
   const router = useRouter();
   const [selectedOutId, setSelectedOutId] = useState<string | null>(null);
@@ -79,9 +94,12 @@ export function TacticsWorkspace({
   const outgoing = lineupPlayers.find((player) => player.id === selectedOutId) ?? null;
   const incoming = benchPlayers.find((player) => player.id === selectedInId) ?? null;
   const allowedRoles = incoming
-    ? roles.filter((role) => role.allowedPositionGroups.includes(incoming.positionGroup))
+    ? roles.filter((role) => roleSupportsPlayer(role, incoming))
     : [];
   const selectedRole = roles.find((role) => role.roleId === selectedRoleId) ?? null;
+  const hasAvailableSubstitution =
+    Number.isInteger(scenario.substitutionsRemaining) &&
+    scenario.substitutionsRemaining > 0;
 
   const evaluation: DecisionEvaluation | null = useMemo(() => {
     if (!outgoing || !incoming || !selectedRole) return null;
@@ -93,6 +111,12 @@ export function TacticsWorkspace({
       scenario,
     });
   }, [incoming, outgoing, scenario, selectedRole, teamInstructions]);
+  const scoreContext = evaluation
+    ? getDecisionScoreRelativeContext(
+        scoreDistribution ?? null,
+        evaluation.fit.score,
+      )
+    : null;
 
   const fitScores = useMemo(() => {
     if (!outgoing) return {};
@@ -157,19 +181,46 @@ export function TacticsWorkspace({
   }
 
   function confirmDecision() {
+    if (!hasAvailableSubstitution) {
+      setStatusMessage(
+        "이 시점 기준 선택 가능한 교체 인원이 없어 결정을 확정할 수 없습니다.",
+      );
+      return;
+    }
     if (!outgoing || !incoming || !selectedRole || !evaluation) {
       setStatusMessage("OUT, IN, 역할을 모두 선택해야 결정을 확정할 수 있습니다.");
       return;
     }
-    const stored = toStoredDecision({
+    const lineupIds = scenario.currentLineup.map((spot) => spot.playerId);
+    const benchIds = scenario.benchOptions;
+    const hasDuplicateRosterIds =
+      new Set(lineupIds).size !== lineupIds.length ||
+      new Set(benchIds).size !== benchIds.length ||
+      lineupIds.some((playerId) => benchIds.includes(playerId));
+    const isValidSelection =
+      outgoing.id !== incoming.id &&
+      lineupIds.includes(outgoing.id) &&
+      benchIds.includes(incoming.id) &&
+      roleSupportsPlayer(selectedRole, incoming);
+
+    if (hasDuplicateRosterIds || !isValidSelection) {
+      setStatusMessage(
+        "현재 명단과 선택이 일치하지 않습니다. 중복 선수가 없는지 확인한 뒤 OUT, IN, 역할을 다시 선택하세요.",
+      );
+      return;
+    }
+
+    const stored: StoredDecision = {
+      version: 3,
       matchId: match.id,
-      scenario,
-      outgoing,
-      incoming,
-      role: selectedRole,
+      scenarioId: scenario.id,
+      selectedTeamId: scenario.selectedTeamId,
+      outPlayerId: outgoing.id,
+      inPlayerId: incoming.id,
+      roleId: selectedRole.roleId,
       instructions: teamInstructions,
-      evaluation,
-    });
+      createdAt: new Date().toISOString(),
+    };
     if (!saveDecision(stored)) {
       setStorageError(true);
       setStatusMessage("브라우저 저장소를 사용할 수 없어 결과를 안전하게 보관하지 못했습니다.");
@@ -179,10 +230,21 @@ export function TacticsWorkspace({
   }
 
   const activePlayer = benchPlayers.find((player) => player.id === activeDragId);
+  const internalStage = !outgoing
+    ? 0
+    : !incoming
+      ? 1
+      : !selectedRole
+        ? 2
+        : evaluation
+          ? 4
+          : 3;
+  const internalStageLabels = ["OUT", "IN", "역할", "팀 지시", "확정"];
 
   return (
     <DndContext
       sensors={sensors}
+      collisionDetection={substitutionCollisionDetection}
       accessibility={{
         screenReaderInstructions: {
           draggable:
@@ -206,12 +268,37 @@ export function TacticsWorkspace({
       onDragEnd={handleDragEnd}
       onDragCancel={() => setActiveDragId(null)}
     >
-      <div className="grid gap-5 xl:grid-cols-[250px_minmax(440px,1fr)_350px]">
-        <aside className="contents xl:grid xl:content-start xl:gap-5">
-          <div className="order-1 xl:order-none">
+      <ol
+        className="mb-4 grid grid-cols-5 gap-1.5 xl:hidden"
+        aria-label="전술 결정 내부 단계"
+      >
+        {internalStageLabels.map((label, index) => {
+          const complete = index < internalStage;
+          const current = index === internalStage;
+          return (
+            <li
+              key={label}
+              aria-current={current ? "step" : undefined}
+              className={`rounded-lg border px-1.5 py-2 text-center text-[11px] font-black ${
+                current
+                  ? "border-[#f4b860]/60 bg-[#f4b860]/12 text-[#f7c979]"
+                  : complete
+                    ? "border-[#65d89a]/25 bg-[#65d89a]/8 text-[#82e6ac]"
+                    : "border-white/[.07] bg-white/[.025] text-[#9aa5b4]"
+              }`}
+            >
+              {complete ? "✓ " : ""}
+              {label}
+            </li>
+          );
+        })}
+      </ol>
+      <div className="grid min-w-0 gap-5 pb-24 xl:grid-cols-[250px_minmax(440px,1fr)_350px] xl:pb-0">
+        <aside className="contents xl:sticky xl:top-24 xl:grid xl:max-h-[calc(100vh-7rem)] xl:self-start xl:content-start xl:gap-5 xl:overflow-y-auto xl:pr-1">
+          <div className="min-w-0 order-1 xl:order-none">
             <MatchStatePanel match={match} scenario={scenario} />
           </div>
-          <div className="panel order-3 p-5 xl:order-none">
+          <div className="panel min-w-0 order-3 p-5 xl:order-none">
             <BenchPanel
               players={benchPlayers}
               selectedId={selectedInId}
@@ -222,16 +309,16 @@ export function TacticsWorkspace({
         </aside>
 
         <section
-          className="panel relative order-2 overflow-hidden p-3 sm:p-5 xl:order-none"
+          className="panel relative min-w-0 order-2 overflow-hidden p-3 sm:p-5 xl:order-none"
           aria-labelledby="board-title"
         >
           <div className="mb-4 flex items-end justify-between gap-4">
             <div>
-              <p className="text-[10px] font-black tracking-[.13em] text-[#7f8998]">TACTICAL BOARD</p>
+              <p className="text-xs font-black tracking-[.13em] text-[#9aa5b4]">TACTICAL BOARD</p>
               <h1 id="board-title" className="mt-1 text-xl font-black text-white">필드에서 OUT 선수를 선택</h1>
             </div>
-            <span className="hidden text-[10px] font-bold text-[#9ba5b2] sm:block">
-              벤치 카드를 선수 위로 드롭할 수도 있습니다
+            <span className="hidden text-xs font-bold text-[#b2bbc7] sm:block">
+              기본 조작 · 필드와 벤치 선수를 차례로 클릭
             </span>
           </div>
           <FootballPitch
@@ -244,9 +331,14 @@ export function TacticsWorkspace({
           <div className="sr-only" aria-live="polite">{statusMessage}</div>
         </section>
 
-        <aside className="order-4 grid content-start gap-4 xl:order-none">
+        <aside className="min-w-0 order-4 grid grid-cols-[minmax(0,1fr)] content-start gap-4 xl:sticky xl:top-24 xl:order-none xl:max-h-[calc(100vh-7rem)] xl:self-start xl:overflow-y-auto xl:pr-1">
           <div className="panel p-4">
-            <PlayerComparison outgoing={outgoing} incoming={incoming} role={selectedRole} />
+            <PlayerComparison
+              outgoing={outgoing}
+              incoming={incoming}
+              role={selectedRole}
+              evaluation={evaluation}
+            />
           </div>
           {incoming && (
             <div className="panel p-4">
@@ -269,7 +361,10 @@ export function TacticsWorkspace({
             />
           </div>
           <div className="panel p-4">
-            <ImpactGauges evaluation={evaluation} />
+            <ImpactGauges
+              evaluation={evaluation}
+              scoreContext={scoreContext}
+            />
           </div>
           <SubstitutionPreview
             outgoing={outgoing}
@@ -280,7 +375,7 @@ export function TacticsWorkspace({
           />
           {evaluation && evaluation.risk.triggered.length > 0 && (
             <div className="rounded-xl border border-[#ff806d]/20 bg-[#ff806d]/7 p-4">
-              <p className="text-[10px] font-black tracking-[.12em] text-[#ff9e90]">
+              <p className="text-xs font-black tracking-[.12em] text-[#ff9e90]">
                 RISK CHECK · −{evaluation.risk.totalPenalty}
               </p>
               <ul className="mt-2 grid gap-1.5 text-xs leading-5 text-[#e3b3ac]">
@@ -290,23 +385,32 @@ export function TacticsWorkspace({
               </ul>
             </div>
           )}
-          {storageError && (
-            <p role="alert" className="rounded-xl border border-[#ff806d]/20 bg-[#ff806d]/7 p-3 text-xs text-[#ffab9f]">
-              브라우저 저장소가 차단되어 있습니다. 사이트 데이터 저장을 허용한 뒤 다시 시도해 주세요.
+          <div className="sticky bottom-0 z-30 -mx-3 border-t border-white/10 bg-[#070e18]/95 px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-18px_40px_rgba(7,14,24,.7)] backdrop-blur-xl xl:mx-0 xl:rounded-xl xl:border xl:border-white/10 xl:p-3">
+            <p aria-live="polite" className="mb-2 text-center text-xs leading-5 text-[#b2bbc7] xl:hidden">
+              {statusMessage}
             </p>
-          )}
-          <Button
-            type="button"
-            onClick={confirmDecision}
-            disabled={!evaluation}
-            className="w-full"
-          >
-            {evaluation ? `결정 확정 · 적합도 ${evaluation.fit.score}` : "선수와 역할을 선택하세요"}
-            {evaluation && <span aria-hidden="true">→</span>}
-          </Button>
-          <p className="text-center text-[10px] leading-4 text-[#9ba5b2]">
-            확정 후에도 결과 화면에서 재도전할 수 있습니다.
-          </p>
+            {storageError && (
+              <p role="alert" className="mb-2 rounded-xl border border-[#ff806d]/20 bg-[#ff806d]/7 p-3 text-xs text-[#ffab9f]">
+                브라우저 저장소가 차단되어 있습니다. 사이트 데이터 저장을 허용한 뒤 다시 시도해 주세요.
+              </p>
+            )}
+            <Button
+              type="button"
+              onClick={confirmDecision}
+              disabled={!evaluation || !hasAvailableSubstitution}
+              className="w-full"
+            >
+              {!hasAvailableSubstitution
+                ? "이 시점에 가능한 교체가 없습니다"
+                : evaluation
+                  ? `결정 확정 · 적합도 ${evaluation.fit.score}`
+                  : "선수와 역할을 선택하세요"}
+              {evaluation && <span aria-hidden="true">→</span>}
+            </Button>
+            <p className="mt-2 text-center text-xs leading-5 text-[#b2bbc7]">
+              선택만 저장되며 결과는 현재 데이터로 다시 계산됩니다.
+            </p>
+          </div>
         </aside>
       </div>
       <DragOverlay>
@@ -318,7 +422,7 @@ export function TacticsWorkspace({
               </span>
               <div>
                 <p className="text-sm font-black text-white">{activePlayer.name}</p>
-                <p className="text-[10px] text-[#8f99a8]">{activePlayer.position}</p>
+                <p className="text-xs text-[#a8b1bf]">{activePlayer.position}</p>
               </div>
             </div>
           </div>

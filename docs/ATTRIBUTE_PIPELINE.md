@@ -1,134 +1,183 @@
-# 1–20 선수 능력치 재현 파이프라인
+# 선수 프로필·전술 선택 적합도 파이프라인
 
-## 목적과 범위
+## 현재 모델의 원칙
 
-`players.json`의 능력치는 FIFA 공식 평점이나 선수의 절대 기량이 아니다. 대한민국–체코 한 경기의 종료 후 관측치를 같은 전술 포지션 그룹 안에서 비교하기 위한 앱 자체 회고 지표다.
+현재 A조판은 과거 대한민국–체코 단일 경기판의 “18명 × 8개 사후 퍼포먼스 값”을 정본으로 사용하지 않습니다. 그 값은 경기 종료 후 자료를 의사결정 전 능력처럼 보이게 할 위험이 있어 새 4팀 범위에서는 폐기된 이전 모델입니다.
 
-모델 버전은 `match-report-position-group-v1`이다. 아래 세 파일이 재현 가능한 단일 경로를 이룬다.
+현재 정본은 `src/data/players/group-a-players.json`의 104명 BASE PROFILE입니다.
 
-- 원자료와 저장 결과: `src/data/players/players.json`
-- 지표 정의·포지션별 가중치·표본 구성·계산: `src/lib/attributes/reproducePlayerAttributes.ts`
-- 검증·갱신 명령: `scripts/attributes.ts`
+- 기간: 2025-06-11~2026-06-10
+- 선수: KOR/CZE/MEX/RSA 각 26명
+- 최근 365일 공통 지표 확보 상태: 미확보
+- 결과: 104명 모두 `dataGrade: D`, `status: incomplete`
+- `analysisMinutes`, 필드 속성, 골키퍼 속성: 모두 `null`
 
-## 바로 검증하기
+누락값을 0, 10.5, 평균, FIFA 명단의 A매치 수로 대체하지 않습니다.
 
-```bash
-npm run attributes:verify
-```
+## 스키마
 
-이 명령은 18명 × 8개 저장값을 원자료부터 다시 계산해 하나라도 다르면 비정상 종료한다. 특정 선수의 정규화 전후 결과, 백분위, 가중치, 신뢰도 수축을 모두 보려면 다음처럼 실행한다.
+### 필드 선수 8키
 
-```bash
-npm run attributes:verify -- --explain=oh-hyeongyu
-```
-
-원자료나 모델을 의도적으로 바꾼 뒤 저장 결과를 갱신할 때만 다음 명령을 사용한다.
-
-```bash
-npm run attributes:generate
-npm run attributes:verify
-```
-
-생성 명령은 `src/data/players/players.json`의 `attributes` 필드만 같은 키 순서로 다시 쓴다. 코드 리뷰와 CI에서는 읽기 전용인 `attributes:verify`를 사용한다.
-
-## 입력 해석
-
-### 공식 경기 원자료
-
-비교에 쓰는 횟수형 지표는 패스, 라인 브레이크, 볼 전진, 테이크온, 슈팅, 유효 슈팅, 득점, 도움, 직접 압박, 볼 회수, 크로스다. 값은 FIFA Post-Match Summary Report에서 정리한 `rawMetrics`에 있다.
-
-- `rawMetrics`가 객체인 공식 선수 행에서 생략된 횟수 필드는 0회로 해석한다.
-- `rawMetrics: null`은 미출전 등으로 경기 관측 표본 자체가 없다는 뜻이다. 0회와 구분하며 모든 능력치에서 중립 백분위를 사용한다.
-- 완료율은 `완료 / 시도`로 계산한다. 시도가 0이면 완료율 근거만 제외한다.
-- 횟수형 지표는 `값 × 90 / 출전 시간`으로 per90 변환한다.
-- 완료율은 0–1 원 단위를 유지한다.
-
-### 포지션 그룹 비교 표본
-
-선수와 비교 표본에 정확히 같은 정규화를 적용한다. 비교 표본은 같은 `positionGroup`이고 `rawMetrics`가 있으며 출전 시간이 0보다 큰 선수만 포함한다. 다른 포지션 선수의 값은 섞지 않는다.
-
-현재 관측 선수 수는 다음과 같다.
-
-| 포지션 그룹 | 관측 선수 수 |
-| --- | ---: |
-| GK | 1 |
-| CB | 3 |
-| FB_WB | 2 |
-| DM | 2 |
-| CM_AM | 3 |
-| WINGER | 3 |
-| STRIKER | 2 |
-
-표본 배열을 별도 수기 파일로 복사하지 않고 `players.json`에서 매번 구성하므로 원자료와 비교 기준이 어긋나지 않는다. 자동 테스트는 윙어의 `takeOns/90` 표본이 윙어 3명으로만 구성되는지도 확인한다.
-
-## 명시적 지표 가중치
-
-`ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP`가 각 포지션 그룹과 능력치의 지표 가중치를 보관한다. 예를 들어 스트라이커의 가중치는 다음과 같다.
-
-| 능력치 | 지표 가중치 |
+| 키 | 의미 |
 | --- | --- |
-| 골 결정 | 득점 0.50, 유효 슈팅 0.35, 슈팅 0.15 |
-| 기회 창출 | 도움 0.30, 라인 브레이크 완료 0.30, 볼 전진 0.25, 크로스 완료 0.15 |
-| 드리블 | 테이크온 0.65, 볼 전진 0.35 |
-| 패스 | 패스 성공률 0.40, 패스 완료 0.20, 라인 브레이크 완료 0.25, 라인 브레이크 성공률 0.15 |
-| 압박 | 직접 압박 0.75, 볼 회수 0.25 |
-| 수비 | 볼 회수 0.60, 직접 압박 0.40 |
-| 영향력 | 득점 0.40, 도움 0.20, 유효 슈팅 0.15, 볼 전진 0.10, 볼 회수 0.15 |
+| `finishing` | 슈팅 마무리 |
+| `chanceCreation` | 기회 창출 |
+| `dribbling` | 운반·돌파 |
+| `passing` | 패스 전개 |
+| `pressing` | 압박 기여 |
+| `defending` | 수비 행동 |
+| `aerial` | 제공권 |
+| `impact` | 종합 영향 |
 
-전체 7개 포지션 그룹의 가중치는 코드에 숫자로 공개되어 있다. 근거가 없는 지표는 계산에서 빠지고, 남은 근거의 가중치 합으로 다시 나눈다.
+### 골키퍼 전용 8키
 
-FIFA의 이 경기 선수별 표에는 공중볼 경합 지표가 없다. 따라서 `aerial`은 근거를 만들지 않고 모든 선수에게 50번째 백분위의 중립값을 사용한다. 추후 출처가 있는 공중볼 데이터가 추가되면 모델 버전을 올리고 해당 지표와 비교 표본을 함께 추가해야 한다.
+| 키 | 의미 |
+| --- | --- |
+| `shotStopping` | 슈팅 저지 |
+| `distribution` | 배급 |
+| `aerialCommand` | 공중볼 장악 |
+| `sweeping` | 뒷공간 처리 |
+| `penaltySaving` | 페널티 대응 |
+| `stability` | 안정성 |
+| `buildUp` | 빌드업 참여 |
+| `impact` | 종합 영향 |
 
-## 백분위와 1–20 변환
+GK는 필드 선수 가중치에 억지로 넣지 않습니다. `activeAttributeModel`이 `field` 또는 `goalkeeper`를 명시합니다.
 
-각 원지표는 같은 포지션 그룹 표본에서 0–1 백분위로 바꾼다.
+## BASE PROFILE
 
-- 표본 최솟값은 0, 최댓값은 1이다.
-- 동률은 평균 순위를 쓴다.
-- 값 사이에서는 선형 보간한다.
-- 유효한 근거가 하나도 없으면 중립 백분위 0.5를 쓴다.
-
-능력치별 지표 백분위를 가중 평균한 뒤 다음과 같이 원점수를 만든다.
-
-```text
-weightedPercentile =
-  Σ(metricPercentile × configuredWeight)
-  / Σ(availableConfiguredWeight)
-
-rawScore = round(1 + 19 × weightedPercentile)
-```
-
-## 신뢰도 수축
-
-`players.json`의 `confidence`는 출전 시간과 FIFA 표의 지표 커버리지를 검토해 데이터에 함께 기록한 0–1 입력값이다. 공식 통계나 확률이 아니며, 현재 버전에서는 별도의 생체·불확실성 모델로 생성하지 않는다. 이 입력을 숨기지 않고 선수 데이터와 설명 결과에 그대로 노출한다.
-
-원점수는 짧거나 제한적인 표본일수록 중립 중앙값 10.5로 수축한다.
+BASE PROFILE은 본선 개막 전에 확보할 수 있었던 선수의 기본 프로필을 뜻합니다.
 
 ```text
-adjustedScore =
-  confidence × rawScore
-  + (1 - confidence) × 10.5
-
-storedScore = clamp(round(adjustedScore), 1, 20)
+start = 2025-06-11
+end   = 2026-06-10
 ```
 
-스크립트의 `--explain=<player-id>` 결과에는 각 능력치의 `percentile`, `rawScore`, `adjustedScore`, `score`, `confidence`, 사용 지표와 가중치가 출력된다.
+FIFA 최종 명단은 신원·등번호·포지션·클럽을 확인하는 출처입니다. 동일 기간의 선수별 출전시간과 이벤트 분모를 제공하지 않으므로 능력치를 계산하는 출처로 사용하지 않습니다. 본선 PMSR도 기간 이후의 사후 자료이므로 BASE PROFILE에 혼합하지 않습니다.
 
-## 자동 검증
+현재 선수 레코드의 공통 상태:
 
-`src/lib/attributes/reproducePlayerAttributes.test.ts`는 다음을 고정한다.
+```json
+{
+  "analysisMinutes": null,
+  "dataGrade": "D",
+  "confidence": 0,
+  "status": "incomplete"
+}
+```
 
-- 18명 × 8개 파생 결과와 `players.json` 저장값의 완전 일치
-- 포지션 그룹 밖 선수가 비교 표본에 섞이지 않음
-- 스트라이커 골 결정 가중치의 명시값
-- 같은 `confidence`를 사용한 10.5 중앙 수축
-- 관측 표본이 없는 선수의 8개 중립값
+## 누락값 재가중
 
-## 해석 한계
+점수 계산은 사용할 수 있는 항목만 남기고 가중치를 다시 정규화합니다.
 
-- 종료 후 한 경기 표본이므로 69분 당시의 실시간 예측값이 아니다.
-- 포지션 그룹별 관측 선수가 1–3명이라 백분위가 표본 변화에 민감하다.
-- per90은 단위를 맞추지만 짧은 교체 출전의 불확실성을 없애지 못한다. 신뢰도 수축을 함께 보는 이유다.
-- 공중볼처럼 출처에 없는 항목은 중립 처리한다.
-- 능력치 가중치는 공개된 제품 모델 선택이며 FIFA의 평가 기준이 아니다.
-- 이 수치로 선수의 커리어 가치나 절대 기량을 단정하면 안 된다.
+```text
+availableWeight = Σ(weight_i where attribute_i is not null)
+
+if availableWeight > 0:
+  component = Σ(attribute_i × weight_i) / availableWeight
+else:
+  component = unavailable
+```
+
+- `null`은 0점이 아닙니다.
+- 사용 가능한 능력치가 하나도 없으면 선수 능력 구성요소를 제외합니다.
+- 구성요소 하나가 제외되면 역할·현재 상태·상대 매치업 등 남은 구성요소의 가중치를 다시 정규화합니다.
+- 공통으로 비교할 수 있는 속성이 없으면 영향 게이지도 `available: false`로 표시합니다.
+- UI는 누락값을 `—` 또는 “데이터 없음”으로 보여야 합니다.
+
+역할 적합도는 포지션 호환성 같은 명시적 전술 규칙에서 계산할 수 있지만, 이것을 선수 능력치처럼 표시하지 않습니다.
+
+## Tournament Form
+
+Tournament Form은 각 미션 전에 끝난 A조 경기만 사용합니다.
+
+| 상태 | 조건 | 조정 |
+| --- | --- | ---: |
+| `no_minutes` | 이전 본선 출전 사실 없음 | 0 |
+| `insufficient_metrics` | 출전 사실은 있으나 시점 안전한 선수별 지표 없음 | 0 |
+
+`matchesPlayedBeforeScenario`와 source id는 보존하지만, 선수별 분·지표가 검증되지 않으면 `minutesBeforeScenario: null`, `metricCoverage: 0`, `reliability: 0`입니다. 뒤 경기나 현재 미션 이후 사건은 참조할 수 없습니다.
+
+## Current Condition
+
+Current Condition은 현재 경기의 해당 시점까지 확인한 정보입니다.
+
+- 공식 현재 출전시간
+- 경고·퇴장 상태
+- 경기 명단 포함과 교체 가능 여부
+- 확인할 수 있는 경우에만 부상 상태
+
+에너지 추정:
+
+```text
+energyEstimate = max(60, round(100 - 0.42 × minutesInMatch))
+```
+
+이 값은 공식 피지컬·웨어러블 데이터가 아니라 출전시간을 설명 가능한 단일 식으로 변환한 제품 파생값입니다. 정확한 피로도로 표현하면 안 됩니다.
+
+## TOUCHLINE League Strength Index
+
+FIFA 최종 명단의 클럽 협회 코드에서 26개 협회 맥락을 만들었습니다. 그러나 실제 리그, 시즌, 승강, 대륙 간 강도를 같은 척도로 연결하는 검증 근거가 없습니다.
+
+모든 TLSI 행:
+
+```json
+{
+  "strengthFactor": 1,
+  "confidence": "low",
+  "sourceStatus": "incomplete",
+  "attributeImpactLimit": 0,
+  "applied": false
+}
+```
+
+1.00은 “리그가 같다”는 결론이 아니라 보정 미적용 표기입니다. 현재 점수 영향은 정확히 0입니다.
+
+## 전술 선택 적합도
+
+전술 선택 적합도는 공식 평점·승률·선수 절대 능력 평가가 아니라 한 미션에서 선택을 설명하기 위한 규칙 기반 값입니다.
+
+```text
+base components:
+  available player attributes
+  role fit
+  current condition
+  opponent matchup
+
+result:
+  reweighted available components
+  + scenario instruction modifiers
+  - declared risk penalties
+```
+
+가용하지 않은 능력 구성요소를 임의 중앙값으로 넣지 않으므로, 상황에 따라 역할·지시·현재 상태가 점수 차이를 설명합니다. 결과에는 사용할 수 있었던 근거와 빠진 근거를 함께 표시해야 합니다.
+
+## 미래 정보 누출 방지
+
+- BASE 종료일은 본선 개막 전날입니다.
+- Tournament Form source id는 `scenarioTimestamp`보다 이른 경기만 허용합니다.
+- Current Condition은 현재 경기의 미션 분까지만 허용합니다.
+- `DecisionMatchView`는 `finalScore`와 사후 이벤트를 포함하지 않습니다.
+- `DecisionScenarioContext`는 `actualDecision`과 결과 전용 사실을 포함하지 않습니다.
+- 결과 화면만 실제 선택과 최종 결과를 읽습니다.
+
+## 생성·검증
+
+```bash
+npm run data:generate
+npm run data:validate
+npm run data:coverage
+npm run data:future-leakage
+npm run test
+```
+
+`data:coverage`는 프로필을 억지로 완성하지 않고 104명 모두 D/incomplete라는 현재 커버리지를 문서화해야 합니다. 데이터가 추가될 경우 다음 조건을 모두 만족해야 속성을 채울 수 있습니다.
+
+1. 2025-06-11~2026-06-10 기간이 명확할 것
+2. 선수별 분석 출전시간 분모가 있을 것
+3. 네 팀 104명을 공통 정의로 비교할 수 있을 것
+4. 원본 source id와 변환식을 재현할 수 있을 것
+5. GK와 필드 지표 정의가 분리될 것
+6. 누락 커버리지와 등급이 자동 계산될 것
+
+최종 통합 검증 전에는 과거의 `attributes:verify` 18명 결과나 과거 Vitest 개수를 새 A조판의 완료 증거로 인용하지 않습니다.

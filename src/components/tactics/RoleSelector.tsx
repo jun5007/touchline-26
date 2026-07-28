@@ -13,7 +13,9 @@ export function RoleSelector({
 }) {
   return (
     <fieldset>
-      <legend className="text-sm font-black text-white">투입 역할</legend>
+      <legend className="text-sm font-black text-white">
+        투입 역할 <span className="ml-2 text-xs text-[#9acbff]">모델 입력</span>
+      </legend>
       {roles.length === 0 ? (
         <p className="mt-3 rounded-xl border border-[#ff806d]/20 bg-[#ff806d]/7 p-3 text-xs leading-5 text-[#ffab9f]">
           이 포지션 그룹에 사용할 수 있는 역할이 없습니다. 다른 선수를 선택하세요.
@@ -42,7 +44,7 @@ export function RoleSelector({
                 <span className={`text-xs font-black ${checked ? "text-[#f7c979]" : "text-white"}`}>
                   {role.name}
                 </span>
-                <span className="mt-1 block text-[10px] leading-4 text-[#8994a3]">{role.description}</span>
+                <span className="mt-1 block text-xs leading-5 text-[#a8b1bf]">{role.description}</span>
               </label>
             );
           })}

@@ -1,0 +1,41 @@
+{
+  "teamId": "cze",
+  "competition": "FIFA World Cup 2026",
+  "squadSize": 26,
+  "headCoach": {
+    "nameKo": "미로슬라프 코우베크",
+    "nameEn": "Miroslav Koubek"
+  },
+  "playerIds": [
+    "cze-matej-kovar",
+    "cze-david-zima",
+    "cze-tomas-holes",
+    "cze-robin-hranac",
+    "cze-vladimir-coufal",
+    "cze-stepan-chaloupek",
+    "cze-ladislav-krejci",
+    "cze-vladimir-darida",
+    "cze-adam-hlozek",
+    "cze-patrik-schick",
+    "cze-jan-kuchta",
+    "cze-lukas-cerv",
+    "cze-mojmir-chytil",
+    "cze-david-jurasek",
+    "cze-pavel-sulc",
+    "cze-jindrich-stanek",
+    "cze-lukas-provod",
+    "cze-michal-sadilek",
+    "cze-tomas-chory",
+    "cze-jaroslav-zeleny",
+    "cze-david-doudera",
+    "cze-tomas-soucek",
+    "cze-lukas-hornicek",
+    "cze-alexandr-sojka",
+    "cze-hugo-sochurek",
+    "cze-denis-visinsky"
+  ],
+  "sourceIds": [
+    "fifa-squad-list-2026-v1"
+  ],
+  "verificationStatus": "verified"
+}

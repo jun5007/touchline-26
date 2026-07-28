@@ -1,0 +1,414 @@
+{
+  "id": "mex-rsa-2026",
+  "fifaMatchId": "400021443",
+  "fdpResourceId": "r12452",
+  "groupId": "group-a",
+  "competition": "FIFA World Cup 2026",
+  "stage": "group",
+  "matchNumber": 1,
+  "date": "2026-06-11",
+  "localKickoff": "13:00",
+  "kickoffUtc": "2026-06-11T19:00:00Z",
+  "venue": "Mexico City Stadium",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "attendance": 80824,
+  "homeTeamId": "mex",
+  "awayTeamId": "rsa",
+  "playableTeamIds": [
+    "mex",
+    "rsa"
+  ],
+  "finalScore": {
+    "home": 2,
+    "away": 0
+  },
+  "halfTimeScore": {
+    "home": 1,
+    "away": 0
+  },
+  "formationsByTeam": {
+    "mex": "4-1-2-3",
+    "rsa": "5-3-2"
+  },
+  "lineupsByTeam": {
+    "mex": [
+      "mex-raul-rangel",
+      "mex-cesar-montes",
+      "mex-johan-vasquez",
+      "mex-erik-lira",
+      "mex-alvaro-fidalgo",
+      "mex-raul-jimenez",
+      "mex-israel-reyes",
+      "mex-julian-quinones",
+      "mex-jesus-gallardo",
+      "mex-roberto-alvarado",
+      "mex-brian-gutierrez"
+    ],
+    "rsa": [
+      "rsa-ronwen-williams",
+      "rsa-teboho-mokoena",
+      "rsa-aubrey-modiba",
+      "rsa-lyle-foster",
+      "rsa-sphephelo-sithole",
+      "rsa-mbekezeli-mbokazi",
+      "rsa-iqraam-rayners",
+      "rsa-nkosinathi-sibisi",
+      "rsa-khuliso-mudau",
+      "rsa-ime-okon",
+      "rsa-jayden-adams"
+    ]
+  },
+  "benchesByTeam": {
+    "mex": [
+      "mex-carlos-acevedo",
+      "mex-guillermo-ochoa",
+      "mex-jorge-sanchez",
+      "mex-edson-alvarez",
+      "mex-luis-romo",
+      "mex-alexis-vega",
+      "mex-santiago-gimenez",
+      "mex-armando-gonzalez",
+      "mex-orbelin-pineda",
+      "mex-obed-vargas",
+      "mex-gilberto-mora",
+      "mex-mateo-chavez",
+      "mex-cesar-huerta",
+      "mex-guillermo-martinez",
+      "mex-luis-chavez"
+    ],
+    "rsa": [
+      "rsa-sipho-chaine",
+      "rsa-ricardo-goss",
+      "rsa-thabang-matuludi",
+      "rsa-khulumani-ndamane",
+      "rsa-thalente-mbatha",
+      "rsa-oswin-appollis",
+      "rsa-tshepang-moremi",
+      "rsa-relebohile-mofokeng",
+      "rsa-themba-zwane",
+      "rsa-thapelo-maseko",
+      "rsa-evidence-makgopa",
+      "rsa-samukele-kabini",
+      "rsa-olwethu-makhanya",
+      "rsa-kamogelo-sebelebele",
+      "rsa-bradley-cross"
+    ]
+  },
+  "unavailableByTeam": {
+    "mex": [],
+    "rsa": []
+  },
+  "substitutionsByTeam": {
+    "mex": [
+      {
+        "minute": {
+          "regulation": 66
+        },
+        "outPlayerId": "mex-brian-gutierrez",
+        "inPlayerId": "mex-luis-chavez",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 66
+        },
+        "outPlayerId": "mex-alvaro-fidalgo",
+        "inPlayerId": "mex-gilberto-mora",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 76
+        },
+        "outPlayerId": "mex-erik-lira",
+        "inPlayerId": "mex-edson-alvarez",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 76
+        },
+        "outPlayerId": "mex-raul-jimenez",
+        "inPlayerId": "mex-armando-gonzalez",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 79
+        },
+        "outPlayerId": "mex-julian-quinones",
+        "inPlayerId": "mex-alexis-vega",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ],
+    "rsa": [
+      {
+        "minute": {
+          "regulation": 56
+        },
+        "outPlayerId": "rsa-lyle-foster",
+        "inPlayerId": "rsa-thalente-mbatha",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 61
+        },
+        "outPlayerId": "rsa-jayden-adams",
+        "inPlayerId": "rsa-themba-zwane",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 76
+        },
+        "outPlayerId": "rsa-iqraam-rayners",
+        "inPlayerId": "rsa-evidence-makgopa",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 76
+        },
+        "outPlayerId": "rsa-aubrey-modiba",
+        "inPlayerId": "rsa-oswin-appollis",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ]
+  },
+  "events": [
+    {
+      "minute": {
+        "regulation": 9
+      },
+      "type": "goal",
+      "teamId": "mex",
+      "playerId": "mex-julian-quinones",
+      "assistPlayerId": "mex-erik-lira",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 17
+      },
+      "type": "card",
+      "teamId": "rsa",
+      "playerId": "rsa-teboho-mokoena",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 23
+      },
+      "type": "card",
+      "teamId": "mex",
+      "playerId": "mex-brian-gutierrez",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 49
+      },
+      "type": "card",
+      "teamId": "rsa",
+      "playerId": "rsa-sphephelo-sithole",
+      "assistPlayerId": null,
+      "card": "red",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 56
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-thalente-mbatha",
+      "relatedPlayerId": "rsa-lyle-foster",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 61
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-themba-zwane",
+      "relatedPlayerId": "rsa-jayden-adams",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 66
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-luis-chavez",
+      "relatedPlayerId": "mex-brian-gutierrez",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 66
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-gilberto-mora",
+      "relatedPlayerId": "mex-alvaro-fidalgo",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 67
+      },
+      "type": "goal",
+      "teamId": "mex",
+      "playerId": "mex-raul-jimenez",
+      "assistPlayerId": "mex-roberto-alvarado",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 74
+      },
+      "type": "card",
+      "teamId": "rsa",
+      "playerId": "rsa-nkosinathi-sibisi",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 76
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-edson-alvarez",
+      "relatedPlayerId": "mex-erik-lira",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 76
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-armando-gonzalez",
+      "relatedPlayerId": "mex-raul-jimenez",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 76
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-evidence-makgopa",
+      "relatedPlayerId": "rsa-iqraam-rayners",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 76
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-oswin-appollis",
+      "relatedPlayerId": "rsa-aubrey-modiba",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 79
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-alexis-vega",
+      "relatedPlayerId": "mex-julian-quinones",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 84
+      },
+      "type": "card",
+      "teamId": "rsa",
+      "playerId": "rsa-themba-zwane",
+      "assistPlayerId": null,
+      "card": "red",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 90,
+        "added": 2
+      },
+      "type": "card",
+      "teamId": "mex",
+      "playerId": "mex-cesar-montes",
+      "assistPlayerId": null,
+      "card": "red",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    }
+  ],
+  "sourceIds": [
+    "fifa-ftr-m01",
+    "fifa-tactical-m01",
+    "fifa-pmsr-m01",
+    "fifa-api-m01",
+    "fifa-article-m01"
+  ],
+  "discrepancyNotes": [],
+  "verificationStatus": "verified_official"
+}

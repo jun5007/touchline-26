@@ -1,233 +1,326 @@
 import type { Metadata } from "next";
 import { Badge } from "@/components/common/Badge";
 import { ButtonLink } from "@/components/common/Button";
-import { getMatch, getPlayers } from "@/data/repository";
+import {
+  getGroupAMatches,
+  getGroupAPlayers,
+  getGroupAScenarios,
+  getGroupATeams,
+} from "@/data/group-a/catalog";
+import type { GroupASourceRecord } from "@/data/group-a/types";
+import sourceRegistryData from "@/data/sources/sourceRegistry.json";
 
 export const metadata: Metadata = {
-  title: "데이터와 계산 방법",
-  description: "TOUCHLINE 26의 실제 경기 출처, 1–20 스탯과 상황 적합도 계산 방법",
+  title: "데이터 원칙",
+  description:
+    "TOUCHLINE 26의 현재 데이터 범위, 전술 선택 적합도의 의미와 향후 확장 계획",
 };
 
-const featuredPlayerIds = [
-  "son-heungmin",
-  "lee-kangin",
-  "hwang-inbeom",
-  "oh-hyeongyu",
-];
+const sourceRegistry =
+  sourceRegistryData as unknown as GroupASourceRecord[];
+
+function unique<T>(values: T[]): T[] {
+  return [...new Set(values)];
+}
+
+const userFacingUsagePermission: Record<
+  GroupASourceRecord["usagePermission"],
+  string
+> = {
+  allowed_factual_use: "공개 사실 확인·인용",
+  allowed_with_attribution: "출처 표시 조건 적용",
+  open_license: "공개 라이선스 조건 적용",
+  restricted: "사실 확인 출처 · 원문 이용조건 적용",
+  unknown: "사실 확인 출처 · 권리 조건 확인 필요",
+};
+
+export function formatUserFacingUsagePermission(
+  permission: GroupASourceRecord["usagePermission"],
+): string {
+  return userFacingUsagePermission[permission];
+}
 
 export default function AboutDataPage() {
-  const match = getMatch("kor-cze-2026");
-  const players = getPlayers().filter((player) =>
-    featuredPlayerIds.includes(player.id),
+  const teams = getGroupATeams();
+  const matches = getGroupAMatches();
+  const scenarios = getGroupAScenarios();
+  const players = getGroupAPlayers();
+  const officialSources = sourceRegistry.filter(
+    (source) =>
+      !source.id.startsWith("base-audit-") &&
+      (source.publisher === "FIFA" ||
+        source.publisher === "FIFA Training Centre" ||
+        source.publisher === "COSAFA"),
   );
 
   return (
     <div className="page-wrap py-12 sm:py-16">
-      <header className="grid gap-8 border-b border-white/[.08] pb-12 lg:grid-cols-[1fr_.7fr] lg:items-end">
+      <header className="grid gap-8 border-b border-white/[.08] pb-12 lg:grid-cols-[1fr_.72fr] lg:items-end">
         <div>
-          <p className="eyebrow">Data, not destiny</p>
+          <div className="flex flex-wrap gap-2">
+            <Badge tone="green">현재 구현 공개</Badge>
+            <Badge tone="gold">확인 사실·모델 해석 분리</Badge>
+          </div>
+          <p className="eyebrow mt-7">Data, not destiny</p>
           <h1 className="text-balance mt-5 text-4xl font-black tracking-[-.055em] text-white sm:text-6xl">
-            숫자는 정답이 아니라
+            있는 데이터는 정확히,
             <br />
-            <span className="text-[#f4b860]">판단의 근거</span>입니다.
+            <span className="text-[#f4b860]">없는 숫자는 만들지 않게.</span>
           </h1>
         </div>
         <p className="text-base leading-7 text-[#aeb6c2]">
-          TOUCHLINE 26은 FIFA의 공식 경기 사실을 사용하지만, FIFA 공식 평점이나 게임
-          데이터베이스를 사용하지 않습니다. 1–20 스탯과 적합도는 출처가 있는 원자료를
-          설명 가능한 규칙으로 변환한 앱의 파생 지표입니다.
+          TOUCHLINE 26은 실제 월드컵 경기의 특정 시점으로 돌아가 공식
+          명단·라인업·교체 타임라인과 경기 상황을 확인하고, 교체 선수·역할·팀
+          지시를 선택한 뒤 장점과 위험을 분석하는 회고형 감독
+          시뮬레이션입니다. 아래에서 지금 작동하는 범위와 향후 확장을
+          분명히 나눠 설명합니다.
         </p>
       </header>
 
-      <section className="mt-12 grid gap-4 md:grid-cols-3">
-        {[
-          {
-            label: "확인된 사실",
-            tone: "green" as const,
-            title: "경기·명단·이벤트",
-            copy: "날짜, 스코어, 선발과 벤치, 득점·도움·교체 시점은 FIFA 공식 리포트로 확인하고 독립 출처로 교차 검증했습니다.",
-          },
-          {
-            label: "앱 파생값",
-            tone: "gold" as const,
-            title: "1–20과 상황 적합도",
-            copy: "패스, 라인브레이크, 슈팅, 압박 등 공식 수치를 포지션과 표본 신뢰도로 보정한 앱 자체 지표입니다.",
-          },
-          {
-            label: "전술적 추론",
-            tone: "blue" as const,
-            title: "역할과 감독 의도",
-            copy: "공식 인터뷰로 확인되지 않은 교체 목적은 당시 스코어와 선수 특성에 기반한 해석으로 명확히 표시합니다.",
-          },
-        ].map((item) => (
-          <article key={item.label} className="panel p-5 sm:p-6">
-            <Badge tone={item.tone}>{item.label}</Badge>
-            <h2 className="mt-5 text-xl font-black text-white">{item.title}</h2>
-            <p className="mt-3 text-sm leading-6 text-[#9fa8b5]">{item.copy}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="mt-16">
-        <div className="grid gap-8 lg:grid-cols-[.72fr_1.28fr]">
+      <section className="mt-10">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="eyebrow">Performance scale</p>
-            <h2 className="text-balance mt-4 text-3xl font-black tracking-[-.04em] text-white sm:text-4xl">
-              1–20 스탯은
-              <br />
-              이렇게 만듭니다.
+            <p className="eyebrow">Available now</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-.04em] text-white sm:text-4xl">
+              현재 구현된 데이터 범위
             </h2>
-            <p className="mt-4 text-sm leading-6 text-[#9fa8b5]">
-              이 값은 선수의 커리어 절대 능력이 아닙니다. 대한민국–체코전의 경기 종료 후
-              관측값을 이해하기 쉬운 회고 지표로 바꾼 값입니다.
-            </p>
           </div>
-          <div className="panel overflow-hidden">
-            <ol className="grid sm:grid-cols-2">
-              {[
-                ["01", "원자료 정리", "횟수형 지표는 가능한 경우 출전 시간 기준으로 비교하고, 누락값을 사실처럼 채우지 않습니다."],
-                ["02", "포지션 비교", "CB, FB/WB, DM, CM/AM, WINGER, STRIKER 안에서 의미가 다른 지표와 가중치를 사용합니다."],
-                ["03", "백분위 변환", "동일 비교 그룹의 백분위를 round(1 + 19 × percentile)로 1–20 범위에 옮깁니다."],
-                ["04", "신뢰도 수축", "출전 시간이 짧거나 지표가 적으면 confidence × raw + (1−confidence) × 10.5로 중앙값에 당깁니다."],
-              ].map(([number, title, copy], index) => (
-                <li
-                  key={number}
-                  className={`p-5 sm:p-6 ${index % 2 === 0 ? "sm:border-r sm:border-white/[.07]" : ""} ${index < 2 ? "border-b border-white/[.07]" : ""}`}
-                >
-                  <span className="text-xs font-black text-[#f4b860]">{number}</span>
-                  <h3 className="mt-5 text-sm font-black text-white">{title}</h3>
-                  <p className="mt-2 text-xs leading-5 text-[#929dab]">{copy}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
+          <Badge tone="green">CURRENT · 실제 서비스 반영</Badge>
         </div>
 
-        <div className="mt-6 overflow-hidden rounded-[18px] border border-white/[.08]">
-          <div className="overflow-x-auto">
-            <table className="min-w-[760px] w-full border-collapse text-left">
-              <caption className="sr-only">주요 선수의 공식 원자료와 파생 지표 맥락</caption>
-              <thead className="bg-white/[.04] text-[10px] font-black tracking-[.1em] text-[#7f8998]">
-                <tr>
-                  <th className="px-4 py-3">선수</th>
-                  <th className="px-4 py-3">공식 출전</th>
-                  <th className="px-4 py-3">확인된 핵심 원자료</th>
-                  <th className="px-4 py-3">신뢰도</th>
-                  <th className="px-4 py-3">해석 범위</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/[.06] bg-[#0c1727]/65 text-xs">
-                {players.map((player) => (
-                  <tr key={player.id}>
-                    <td className="px-4 py-4">
-                      <strong className="block text-sm text-white">{player.name}</strong>
-                      <span className="text-[#748091]">{player.position}</span>
-                    </td>
-                    <td className="number-tabular px-4 py-4 font-bold text-[#d4d9e0]">{player.minutesPlayed}분</td>
-                    <td className="px-4 py-4 leading-5 text-[#a7b0bc]">
-                      {player.rawMetrics
-                        ? `패스 ${player.rawMetrics.passesCompleted ?? 0}/${player.rawMetrics.passesAttempted ?? 0}, 슈팅 ${player.rawMetrics.shots ?? 0}, 직접 압박 ${player.rawMetrics.directPressures ?? 0}`
-                        : "이 경기 출전 표본 없음"}
-                    </td>
-                    <td className="px-4 py-4">
-                      <Badge tone={player.confidenceLabel === "낮음" ? "danger" : "green"}>
-                        {player.confidenceLabel}
-                      </Badge>
-                    </td>
-                    <td className="max-w-sm px-4 py-4 leading-5 text-[#8f99a8]">{player.performanceContext}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <div className="mt-7 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {[
+            ["대상 국가", `${teams.length}개국`, "대한민국 · 체코 · 멕시코 · 남아공"],
+            ["공식 경기", `${matches.length}경기`, "A조 조별리그 전체"],
+            ["실제 최종 명단", `${players.length}명`, "국가별 26명"],
+            ["감독 미션", `${scenarios.length}개`, "실제 경기 시점 재구성"],
+          ].map(([label, value, note]) => (
+            <article key={label} className="panel p-5">
+              <p className="text-xs font-black tracking-[.12em] text-[#9aa5b4]">
+                {label}
+              </p>
+              <p className="number-tabular mt-3 text-3xl font-black text-white">
+                {value}
+              </p>
+              <p className="mt-2 text-xs leading-5 text-[#8f99a8]">{note}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-5 grid gap-4 lg:grid-cols-2">
+          <article className="panel p-6">
+            <Badge tone="green">공식 기록 기반</Badge>
+            <h3 className="mt-4 text-xl font-black text-white">
+              경기와 명단은 실제 기록을 재구성합니다.
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-[#aab3bf]">
+              최종 명단, 선발 라인업, 득점·경고·교체 타임라인, 최종 결과를
+              공식 출처와 대조했습니다. 미션 화면은 해당 결정 시점까지 확인할
+              수 있었던 정보만 먼저 보여 줍니다.
+            </p>
+          </article>
+
+          <article className="panel p-6">
+            <Badge tone="gold">BASE PROFILE · 미산정</Badge>
+            <h3 className="mt-4 text-xl font-black text-white">
+              최근 1년 선수 능력 1–20은 표시하지 않습니다.
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-[#aab3bf]">
+              현재 {players.length}명 모두에게 재배포와 자동 수집이 가능한
+              동일 기준의 최근 1년 세부 성과 자료를 확보하지 못했습니다. 빈
+              값을 0점이나 평균값으로 바꾸지 않으며, 1–20 능력치와 선수 능력
+              비교는 미산정 상태로 둡니다.
+            </p>
+          </article>
+
+          <article className="panel p-6">
+            <Badge tone="gold">FORM · TLSI · 미적용</Badge>
+            <h3 className="mt-4 text-xl font-black text-white">
+              대회 Form과 리그 강도 보정은 점수에 넣지 않습니다.
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-[#aab3bf]">
+              선수별 성과 지표의 공통 기준과 리그·시즌 매핑을 검증할 수 없는
+              현재 버전에서는 Form 및 TLSI를 적용하지 않습니다. 미적용을
+              0점이나 중립 성과로 해석하지 않습니다.
+            </p>
+          </article>
+
+          <article className="panel p-6">
+            <Badge tone="blue">CURRENT CONDITION · 추정</Badge>
+            <h3 className="mt-4 text-xl font-black text-white">
+              컨디션은 출전 시간을 이용한 상황 지표입니다.
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-[#aab3bf]">
+              공식 체력 측정값이 없으므로 미션 시점까지의 출전 시간을 바탕으로
+              피로 가능성을 추정합니다. 이는 선수의 실제 체력이나 의학적 상태를
+              뜻하지 않으며 화면에서도 ‘출전 시간 기반 컨디션 추정’으로
+              표시합니다.
+            </p>
+          </article>
         </div>
       </section>
 
-      <section className="mt-16 grid gap-6 lg:grid-cols-[1fr_.9fr]">
+      <section className="mt-16 grid gap-5 lg:grid-cols-[1.05fr_.95fr]">
         <article className="panel p-6 sm:p-8">
-          <p className="eyebrow">Situation fit</p>
-          <h2 className="mt-4 text-2xl font-black tracking-[-.03em] text-white">상황 적합도 0–100</h2>
-          <div className="mt-6 grid gap-3">
-            {[
-              ["60%", "선수 능력치 적합도", "미션별 가중치로 1–20 지표를 조합"],
-              ["20%", "역할 적합도", "선택한 역할이 선호하는 능력과 선수 특성"],
-              ["10%", "체력·신선도", "시뮬레이션 시점의 보수적 체력 입력"],
-              ["10%", "상대 매치업", "낮은 블록·리드 보호 등 미션 태그"],
-            ].map(([value, title, copy]) => (
-              <div key={value} className="grid grid-cols-[62px_1fr] gap-3 rounded-xl border border-white/[.07] bg-white/[.025] p-3">
-                <span className="number-tabular text-xl font-black text-[#f4b860]">{value}</span>
-                <div>
-                  <strong className="text-sm text-white">{title}</strong>
-                  <p className="mt-0.5 text-[10px] leading-4 text-[#8994a3]">{copy}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-5 rounded-xl border border-[#ff806d]/14 bg-[#ff806d]/6 p-4 text-xs leading-5 text-[#d2aaa5]">
-            포지션 재배치, 높은 라인+낮은 압박, 수동적 저블록, 낮은 데이터 신뢰도와 같은
-            위험은 점수에서 패널티로 차감하고 결과에 문장으로도 표시합니다.
+          <p className="eyebrow">Tactical decision fit</p>
+          <h2 className="mt-4 text-2xl font-black text-white">
+            전술 선택 적합도는 승률이 아닙니다.
+          </h2>
+          <p className="mt-5 text-sm leading-6 text-[#adb6c2]">
+            이 점수는 선택한 교체, 역할, 팀 지시가 해당 미션의 전술 목표와
+            얼마나 잘 맞는지 설명하기 위한 자체 비교 지표입니다. 경기 승리
+            확률, 선수의 절대 능력, 미래 결과 예측을 뜻하지 않습니다.
+          </p>
+          <ul className="mt-6 grid gap-3 text-sm leading-6 text-[#adb6c2]">
+            <li>· 실제 미션 시점의 스코어·인원·카드·출전 시간 상황</li>
+            <li>· OUT·IN 선수의 공식 포지션과 전술 역할 적합성</li>
+            <li>· 상대 전술과 매치업에 대한 미션별 분석 규칙</li>
+            <li>· 선택한 역할과 팀 지시의 조합, 기대 장점과 위험</li>
+          </ul>
+          <p className="mt-6 rounded-xl border border-[#f4b860]/15 bg-[#f4b860]/7 p-4 text-xs leading-5 text-[#c7b995]">
+            최근 1년 선수 능력 데이터가 없는 현재 버전에서는 그 항목을 점수
+            계산에서 제외하고, 사용 가능한 전술·상황 요소만으로 다시
+            계산합니다.
           </p>
         </article>
 
         <article className="panel p-6 sm:p-8">
-          <p className="eyebrow">Known limits</p>
-          <h2 className="mt-4 text-2xl font-black tracking-[-.03em] text-white">읽을 때의 주의점</h2>
-          <ul className="mt-6 grid gap-4 text-sm leading-6 text-[#aab2bd]">
-            <li className="border-b border-white/[.07] pb-4">
-              <strong className="block text-white">회고 정보의 한계</strong>
-              경기 종료 후 데이터를 사용하므로 69분 당시 실시간으로 알 수 있었던 예측값이 아닙니다.
-            </li>
-            <li className="border-b border-white/[.07] pb-4">
-              <strong className="block text-white">한 경기 표본</strong>
-              비교 범위가 작고 교체 선수는 출전 시간이 짧습니다. 신뢰도와 표본 분을 반드시 함께 보세요.
-            </li>
-            <li className="border-b border-white/[.07] pb-4">
-              <strong className="block text-white">인과관계 아님</strong>
-              교체 뒤 득점이 나왔더라도 그 교체가 득점의 원인이라고 단정하지 않습니다.
-            </li>
-            <li>
-              <strong className="block text-white">공식 서비스 아님</strong>
-              FIFA·대표팀·선수와 제휴하지 않은 비공식 데이터 프로젝트입니다.
-            </li>
-          </ul>
+          <p className="eyebrow">Fact boundaries</p>
+          <h2 className="mt-4 text-2xl font-black text-white">
+            사실, 해석, 이후 사실을 구분합니다.
+          </h2>
+          <dl className="mt-6 grid gap-4 text-sm leading-6">
+            <div className="panel-soft p-4">
+              <dt className="font-black text-[#82e6ac]">공식 확인 사실</dt>
+              <dd className="mt-1 text-[#aab3bf]">
+                명단, 라인업, 미션 시점까지의 득점·경고·교체 기록
+              </dd>
+            </div>
+            <div className="panel-soft p-4">
+              <dt className="font-black text-[#9acbff]">모델의 전술 해석</dt>
+              <dd className="mt-1 text-[#aab3bf]">
+                전술 선택 적합도, 기대 장점·위험, 대안 시나리오
+              </dd>
+            </div>
+            <div className="panel-soft p-4">
+              <dt className="font-black text-[#f7c979]">경기 종료 후 확인 사실</dt>
+              <dd className="mt-1 text-[#aab3bf]">
+                실제 감독의 교체와 그 이후 사건·최종 결과는 선택을 제출한 뒤
+                결과 화면에서만 공개
+              </dd>
+            </div>
+          </dl>
+          <p className="mt-5 text-xs leading-5 text-[#8f99a8]">
+            실제 감독의 선택은 정답이나 채점 기준이 아니라 비교를 위한 회고
+            기준입니다. 다른 선택이 자동으로 오답이 되지 않습니다.
+          </p>
         </article>
+      </section>
+
+      <section className="mt-16 rounded-[24px] border border-dashed border-[#f4b860]/30 bg-[#f4b860]/[.04] p-6 sm:p-8">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="eyebrow">Future extension</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-.04em] text-white">
+              향후 데이터 확장 계획
+            </h2>
+          </div>
+          <Badge tone="gold">FUTURE · 현재 점수에 미반영</Badge>
+        </div>
+        <p className="mt-5 max-w-4xl text-sm leading-6 text-[#aab3bf]">
+          아래 기능은 구현 완료나 데이터 확보를 뜻하지 않습니다. 적법한
+          라이선스와 공통 기준을 갖춘 선수 단위 자료가 확보된 뒤에만 검증을
+          거쳐 도입할 계획입니다.
+        </p>
+        <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            [
+              "01 · 라이선스 데이터",
+              "최근 1년 클럽·대표팀 선수 성과를 합법적으로 수집·재배포할 수 있는 출처 확보",
+            ],
+            [
+              "02 · 1–20 능력 모델",
+              "포지션별 표본과 결측 규칙을 공개한 뒤 동일 기준으로 선수 능력 산정",
+            ],
+            [
+              "03 · Form·리그 보정",
+              "대회 출전 성과와 리그·시즌 매핑을 검증해 제한된 범위에서 보정 적용",
+            ],
+            [
+              "04 · 선수 능력 영향 게이지",
+              "실측 능력 근거가 있을 때만 교체 전후 전술 영향과 불확실성을 함께 시각화",
+            ],
+          ].map(([title, copy]) => (
+            <article key={title} className="panel-soft p-5">
+              <h3 className="text-sm font-black text-[#f7c979]">{title}</h3>
+              <p className="mt-3 text-sm leading-6 text-[#9fa8b5]">{copy}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="mt-16">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="eyebrow">Sources</p>
-            <h2 className="mt-4 text-3xl font-black tracking-[-.04em] text-white">사용한 출처</h2>
+            <p className="eyebrow">Official source registry</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-.04em] text-white">
+              경기 사실 검증 출처
+            </h2>
           </div>
-          <Badge tone="green">2026-07-27 확인</Badge>
+          <Badge tone="green">
+            {unique(officialSources.map((source) => source.id)).length}개 참조
+          </Badge>
         </div>
+        <p className="mt-4 max-w-4xl text-sm leading-6 text-[#9fa8b5]">
+          아래 링크는 현재 명단·라인업·타임라인·경기 결과를 대조한
+          사실 확인 출처입니다. 원문 PDF와 표·그래픽·사진을 재배포하지
+          않고, 확인한 경기 사실만 서비스의 자체 데이터 구조로
+          재구성했습니다. 각 원문에는 출처별 이용조건이 적용됩니다.
+        </p>
+        <p className="mt-3 max-w-4xl rounded-xl border border-white/[.08] bg-white/[.025] p-4 text-xs leading-5 text-[#aab3bf]">
+          TOUCHLINE 26은 FIFA 또는 아래 출처 기관과 제휴하거나 승인을 받은
+          공식 서비스가 아닙니다. 링크는 사실 검증 경로를 투명하게 공개하기
+          위한 것이며, 원문 저작물의 재사용 허가를 뜻하지 않습니다.
+        </p>
         <div className="mt-6 grid gap-3">
-          {match?.dataSources.map((source, index) => (
+          {officialSources.map((source, index) => (
             <a
-              key={source.sourceUrl}
-              href={source.sourceUrl}
+              key={source.id}
+              href={source.url}
               target="_blank"
               rel="noreferrer"
-              className="panel group grid gap-4 p-4 transition hover:border-white/20 sm:grid-cols-[34px_1fr_auto] sm:items-center sm:p-5"
+              className="panel group grid gap-3 p-4 transition hover:border-white/20 sm:grid-cols-[38px_1fr_auto] sm:items-center sm:p-5"
             >
-              <span className="number-tabular text-xs font-black text-[#f4b860]">{String(index + 1).padStart(2, "0")}</span>
-              <span>
-                <strong className="block text-sm text-white group-hover:text-[#f7c979]">{source.sourceName}</strong>
-                <span className="mt-1 block text-xs leading-5 text-[#8f99a8]">{source.verificationNote}</span>
-                <span className="mt-1 block text-[10px] leading-4 text-[#8f99a8]">{source.license}</span>
+              <span className="number-tabular text-xs font-black text-[#f4b860]">
+                {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="text-xs font-black text-[#7f8998] group-hover:text-white">원문 열기 ↗</span>
+              <span>
+                <strong className="block text-sm text-white group-hover:text-[#f7c979]">
+                  {source.sourceName ?? source.title}
+                </strong>
+                <span className="mt-1 block text-xs leading-5 text-[#8f99a8]">
+                  {source.publisher} · {source.sourceType} · 확인{" "}
+                  {source.accessedAt}
+                </span>
+              </span>
+              <span className="text-xs font-black text-[#a8b1bf] group-hover:text-white">
+                {formatUserFacingUsagePermission(source.usagePermission)} ·
+                원문 링크 보기 →
+              </span>
             </a>
           ))}
         </div>
       </section>
 
-      <div className="mt-12 flex flex-col gap-3 border-t border-white/[.08] pt-8 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-xl text-xs leading-5 text-[#788494]">
-          원본 PDF의 로고·레이아웃·이미지는 서비스 화면에 사용하지 않았고, 사실 수치만 자체 UI로 재구성했습니다.
+      <div className="mt-12 flex flex-col gap-4 border-t border-white/[.08] pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <p className="max-w-2xl text-xs leading-5 text-[#7f8a98]">
+          데이터 출처와 사용 조건은 저장소의 THIRD_PARTY_NOTICES.md에,
+          현재 BASE PROFILE 수집 한계는 docs/BASE_PROFILE_PROGRESS.md에
+          기록합니다. 이 페이지의 ‘향후 확장’ 항목은 현재 제품 기능으로
+          오해해서는 안 됩니다.
         </p>
-        <ButtonLink href="/matches">
-          데이터로 판단해 보기 <span aria-hidden="true">→</span>
+        <ButtonLink href="/teams">
+          국가 선택 <span aria-hidden="true">→</span>
         </ButtonLink>
       </div>
     </div>

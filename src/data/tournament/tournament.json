@@ -1,0 +1,20 @@
+{
+  "id": "fifa-world-cup-2026",
+  "name": "FIFA World Cup 2026",
+  "supportedGroupId": "group-a",
+  "supportedTeamIds": [
+    "kor",
+    "cze",
+    "mex",
+    "rsa"
+  ],
+  "baseProfileWindow": {
+    "from": "2025-06-11T00:00:00Z",
+    "through": "2026-06-10T23:59:59Z"
+  },
+  "officialOpeningDate": "2026-06-11",
+  "dataPolicy": "본선 데이터는 Tournament Form/Current Condition/결과 사실으로만 분리하고 BASE PROFILE에 포함하지 않는다.",
+  "sourceIds": [
+    "fifa-squad-list-2026-v1"
+  ]
+}

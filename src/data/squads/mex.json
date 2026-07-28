@@ -1,0 +1,41 @@
+{
+  "teamId": "mex",
+  "competition": "FIFA World Cup 2026",
+  "squadSize": 26,
+  "headCoach": {
+    "nameKo": "하비에르 아기레",
+    "nameEn": "Javier Aguirre"
+  },
+  "playerIds": [
+    "mex-raul-rangel",
+    "mex-jorge-sanchez",
+    "mex-cesar-montes",
+    "mex-edson-alvarez",
+    "mex-johan-vasquez",
+    "mex-erik-lira",
+    "mex-luis-romo",
+    "mex-alvaro-fidalgo",
+    "mex-raul-jimenez",
+    "mex-alexis-vega",
+    "mex-santiago-gimenez",
+    "mex-carlos-acevedo",
+    "mex-guillermo-ochoa",
+    "mex-armando-gonzalez",
+    "mex-israel-reyes",
+    "mex-julian-quinones",
+    "mex-orbelin-pineda",
+    "mex-obed-vargas",
+    "mex-gilberto-mora",
+    "mex-mateo-chavez",
+    "mex-cesar-huerta",
+    "mex-guillermo-martinez",
+    "mex-jesus-gallardo",
+    "mex-luis-chavez",
+    "mex-roberto-alvarado",
+    "mex-brian-gutierrez"
+  ],
+  "sourceIds": [
+    "fifa-squad-list-2026-v1"
+  ],
+  "verificationStatus": "verified"
+}

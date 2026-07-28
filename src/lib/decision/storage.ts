@@ -1,6 +1,13 @@
 import type { StoredDecision } from "@/data/types";
 
 const STORAGE_PREFIX = "touchline26:decision";
+export const DECISION_STORAGE_VERSION = 3;
+export const DECISION_STORAGE_EVENT = "touchline26:decision-change";
+
+export type DecisionLoadResult =
+  | { status: "ready"; decision: StoredDecision }
+  | { status: "missing" }
+  | { status: "invalid" };
 
 const instructionValues = {
   attackDirection: ["left", "centre", "right", "balanced"],
@@ -17,8 +24,13 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return value !== null && typeof value === "object" && !Array.isArray(value);
 }
 
-function isStringArray(value: unknown): value is string[] {
-  return Array.isArray(value) && value.every((item) => typeof item === "string");
+function isIdentifier(value: unknown): value is string {
+  return (
+    typeof value === "string" &&
+    value.length > 0 &&
+    value.length <= 128 &&
+    /^[a-z0-9][a-z0-9-]*$/i.test(value)
+  );
 }
 
 function isInstructions(
@@ -42,62 +54,89 @@ function isInstructions(
   );
 }
 
-function isImpactRecord(value: unknown): value is Record<string, number> {
-  if (!isRecord(value)) return false;
-
-  return Object.values(value).every(
-    (impact) => typeof impact === "number" && Number.isFinite(impact),
-  );
-}
-
-function isExplanation(
-  value: unknown,
-): value is StoredDecision["explanation"] {
-  if (!isRecord(value)) return false;
-
-  return (
-    isStringArray(value.benefits) &&
-    isStringArray(value.risks) &&
-    isStringArray(value.remedies) &&
-    typeof value.summary === "string"
-  );
-}
-
 function isStoredDecision(value: unknown): value is StoredDecision {
   if (!isRecord(value)) return false;
 
   return (
-    value.version === 1 &&
-    typeof value.matchId === "string" &&
-    typeof value.scenarioId === "string" &&
-    typeof value.outPlayerId === "string" &&
-    typeof value.inPlayerId === "string" &&
-    typeof value.roleId === "string" &&
+    value.version === DECISION_STORAGE_VERSION &&
+    isIdentifier(value.matchId) &&
+    isIdentifier(value.scenarioId) &&
+    isIdentifier(value.selectedTeamId) &&
+    isIdentifier(value.outPlayerId) &&
+    isIdentifier(value.inPlayerId) &&
+    isIdentifier(value.roleId) &&
     isInstructions(value.instructions) &&
-    typeof value.score === "number" &&
-    Number.isFinite(value.score) &&
-    value.score >= 0 &&
-    value.score <= 100 &&
-    typeof value.riskPenalty === "number" &&
-    Number.isFinite(value.riskPenalty) &&
-    isImpactRecord(value.impactsBefore) &&
-    isImpactRecord(value.impactsAfter) &&
-    isExplanation(value.explanation) &&
     typeof value.createdAt === "string" &&
     Number.isFinite(Date.parse(value.createdAt))
   );
 }
 
+function normalizeDecision(decision: StoredDecision): StoredDecision {
+  return {
+    version: DECISION_STORAGE_VERSION,
+    matchId: decision.matchId,
+    scenarioId: decision.scenarioId,
+    selectedTeamId: decision.selectedTeamId,
+    outPlayerId: decision.outPlayerId,
+    inPlayerId: decision.inPlayerId,
+    roleId: decision.roleId,
+    instructions: {
+      attackDirection: decision.instructions.attackDirection,
+      pressing: decision.instructions.pressing,
+      defensiveLine: decision.instructions.defensiveLine,
+      mentality: decision.instructions.mentality,
+    },
+    createdAt: decision.createdAt,
+  };
+}
+
 export function saveDecision(decision: StoredDecision): boolean {
   if (typeof window === "undefined") return false;
+  if (!isStoredDecision(decision)) return false;
   try {
+    const normalized = normalizeDecision(decision);
     window.localStorage.setItem(
-      storageKey(decision.matchId, decision.scenarioId),
-      JSON.stringify(decision),
+      storageKey(normalized.matchId, normalized.scenarioId),
+      JSON.stringify(normalized),
     );
+    window.dispatchEvent(new Event(DECISION_STORAGE_EVENT));
     return true;
   } catch {
     return false;
+  }
+}
+
+export function loadDecisionResult(
+  matchId: string,
+  scenarioId: string,
+): DecisionLoadResult {
+  if (typeof window === "undefined") return { status: "missing" };
+  const key = storageKey(matchId, scenarioId);
+  try {
+    const raw = window.localStorage.getItem(key);
+    if (!raw) return { status: "missing" };
+    const parsed: unknown = JSON.parse(raw);
+    if (!isStoredDecision(parsed)) {
+      window.localStorage.removeItem(key);
+      return { status: "invalid" };
+    }
+    if (parsed.matchId !== matchId || parsed.scenarioId !== scenarioId) {
+      window.localStorage.removeItem(key);
+      return { status: "invalid" };
+    }
+    const normalized = normalizeDecision(parsed);
+    const normalizedRaw = JSON.stringify(normalized);
+    if (raw !== normalizedRaw) {
+      window.localStorage.setItem(key, normalizedRaw);
+    }
+    return { status: "ready", decision: normalized };
+  } catch {
+    try {
+      window.localStorage.removeItem(key);
+    } catch {
+      // Storage may be unavailable. The caller still receives a safe null.
+    }
+    return { status: "invalid" };
   }
 }
 
@@ -105,35 +144,15 @@ export function loadDecision(
   matchId: string,
   scenarioId: string,
 ): StoredDecision | null {
-  if (typeof window === "undefined") return null;
-  const key = storageKey(matchId, scenarioId);
-  try {
-    const raw = window.localStorage.getItem(key);
-    if (!raw) return null;
-    const parsed: unknown = JSON.parse(raw);
-    if (!isStoredDecision(parsed)) {
-      window.localStorage.removeItem(key);
-      return null;
-    }
-    if (parsed.matchId !== matchId || parsed.scenarioId !== scenarioId) {
-      window.localStorage.removeItem(key);
-      return null;
-    }
-    return parsed;
-  } catch {
-    try {
-      window.localStorage.removeItem(key);
-    } catch {
-      // Storage may be unavailable. The caller still receives a safe null.
-    }
-    return null;
-  }
+  const result = loadDecisionResult(matchId, scenarioId);
+  return result.status === "ready" ? result.decision : null;
 }
 
 export function clearDecision(matchId: string, scenarioId: string): void {
   if (typeof window === "undefined") return;
   try {
     window.localStorage.removeItem(storageKey(matchId, scenarioId));
+    window.dispatchEvent(new Event(DECISION_STORAGE_EVENT));
   } catch {
     // A failed clear should not break the playable flow.
   }

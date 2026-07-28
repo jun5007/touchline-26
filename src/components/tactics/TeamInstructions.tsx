@@ -18,7 +18,7 @@ export function TeamInstructions({
     <section aria-labelledby="instruction-title">
       <div className="flex items-center justify-between">
         <h2 id="instruction-title" className="text-sm font-black text-white">팀 지시</h2>
-        <span className="text-[10px] font-bold text-[#748091]">선택 즉시 재계산</span>
+        <span className="text-xs font-bold text-[#9acbff]">모델 입력 · 즉시 재계산</span>
       </div>
       <div className="mt-3 grid gap-4">
         {categories.map((category) => {
@@ -27,7 +27,7 @@ export function TeamInstructions({
           );
           return (
             <fieldset key={category.id}>
-              <legend className="mb-2 text-[10px] font-black tracking-[.08em] text-[#8f99a8]">
+              <legend className="mb-2 text-xs font-black tracking-[.08em] text-[#a8b1bf]">
                 {category.label}
               </legend>
               <div className="grid grid-cols-3 gap-1.5 sm:grid-cols-4">
@@ -38,7 +38,7 @@ export function TeamInstructions({
                     <label
                       key={option.id}
                       title={option.description}
-                      className={`cursor-pointer rounded-lg border px-2 py-2.5 text-center text-[10px] font-black transition focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#75b9ff] ${
+                      className={`cursor-pointer rounded-lg border px-2 py-2.5 text-center text-xs font-black transition focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#75b9ff] ${
                         selected
                           ? "border-[#75b9ff]/50 bg-[#75b9ff]/12 text-[#a9d2ff]"
                           : "border-white/[.07] bg-white/[.025] text-[#8c97a6] hover:border-white/16"
@@ -70,7 +70,7 @@ export function TeamInstructions({
               </div>
               <p
                 aria-live="polite"
-                className="mt-2 min-h-8 text-[10px] leading-4 text-[#9ba5b2]"
+                className="mt-2 min-h-10 text-xs leading-5 text-[#b2bbc7]"
               >
                 {selectedOption?.description}
               </p>

@@ -1,0 +1,171 @@
+[
+  {
+    "id": "mex",
+    "code": "MEX",
+    "nameKo": "멕시코",
+    "nameEn": "Mexico",
+    "confederation": "CONCACAF",
+    "headCoach": {
+      "nameKo": "하비에르 아기레",
+      "nameEn": "Javier Aguirre"
+    },
+    "fifaRanking": {
+      "rank": 14,
+      "referenceDate": "2026-06-11",
+      "verificationStatus": "derived",
+      "method": "FIFA가 발표한 월드컵 후 순위(10위)와 4계단 상승 폭을 역산",
+      "sourceIds": [
+        "fifa-ranking-july-2026",
+        "fifa-ranking-post-world-cup-2026"
+      ]
+    },
+    "standing": {
+      "position": 1,
+      "played": 3,
+      "won": 3,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 6,
+      "goalsAgainst": 0,
+      "goalDifference": 6,
+      "points": 9,
+      "advanced": true,
+      "sourceIds": [
+        "fifa-ftr-m01",
+        "fifa-ftr-m28",
+        "fifa-ftr-m53"
+      ]
+    },
+    "squadId": "mex",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ]
+  },
+  {
+    "id": "rsa",
+    "code": "RSA",
+    "nameKo": "남아프리카공화국",
+    "nameEn": "South Africa",
+    "confederation": "CAF",
+    "headCoach": {
+      "nameKo": "위고 브로스",
+      "nameEn": "Hugo Broos"
+    },
+    "fifaRanking": {
+      "rank": 60,
+      "referenceDate": "2026-06-11",
+      "verificationStatus": "derived",
+      "method": "FIFA가 발표한 월드컵 후 순위(54위)와 6계단 상승 폭을 역산",
+      "sourceIds": [
+        "fifa-ranking-july-2026",
+        "fifa-ranking-post-world-cup-2026"
+      ]
+    },
+    "standing": {
+      "position": 2,
+      "played": 3,
+      "won": 1,
+      "drawn": 1,
+      "lost": 1,
+      "goalsFor": 2,
+      "goalsAgainst": 3,
+      "goalDifference": -1,
+      "points": 4,
+      "advanced": true,
+      "sourceIds": [
+        "fifa-ftr-m01",
+        "fifa-ftr-m25",
+        "fifa-ftr-m54"
+      ]
+    },
+    "squadId": "rsa",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1",
+      "cosafa-rsa-jersey-numbers-2026"
+    ]
+  },
+  {
+    "id": "kor",
+    "code": "KOR",
+    "nameKo": "대한민국",
+    "nameEn": "Korea Republic",
+    "confederation": "AFC",
+    "headCoach": {
+      "nameKo": "홍명보",
+      "nameEn": "Hong Myungbo"
+    },
+    "fifaRanking": {
+      "rank": 25,
+      "referenceDate": "2026-06-11",
+      "verificationStatus": "derived",
+      "method": "FIFA가 발표한 월드컵 후 순위(32위)와 7계단 하락 폭을 역산",
+      "sourceIds": [
+        "fifa-ranking-july-2026",
+        "fifa-ranking-post-world-cup-2026"
+      ]
+    },
+    "standing": {
+      "position": 3,
+      "played": 3,
+      "won": 1,
+      "drawn": 0,
+      "lost": 2,
+      "goalsFor": 2,
+      "goalsAgainst": 3,
+      "goalDifference": -1,
+      "points": 3,
+      "advanced": false,
+      "sourceIds": [
+        "fifa-ftr-m02",
+        "fifa-ftr-m28",
+        "fifa-ftr-m54"
+      ]
+    },
+    "squadId": "kor",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ]
+  },
+  {
+    "id": "cze",
+    "code": "CZE",
+    "nameKo": "체코",
+    "nameEn": "Czechia",
+    "confederation": "UEFA",
+    "headCoach": {
+      "nameKo": "미로슬라프 코우베크",
+      "nameEn": "Miroslav Koubek"
+    },
+    "fifaRanking": {
+      "rank": 40,
+      "referenceDate": "2026-06-11",
+      "verificationStatus": "derived",
+      "method": "FIFA가 발표한 월드컵 후 순위(48위)와 8계단 하락 폭을 역산",
+      "sourceIds": [
+        "fifa-ranking-july-2026",
+        "fifa-ranking-post-world-cup-2026"
+      ]
+    },
+    "standing": {
+      "position": 4,
+      "played": 3,
+      "won": 0,
+      "drawn": 1,
+      "lost": 2,
+      "goalsFor": 2,
+      "goalsAgainst": 6,
+      "goalDifference": -4,
+      "points": 1,
+      "advanced": false,
+      "sourceIds": [
+        "fifa-ftr-m02",
+        "fifa-ftr-m25",
+        "fifa-ftr-m53"
+      ]
+    },
+    "squadId": "cze",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ]
+  }
+]

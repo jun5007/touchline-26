@@ -1,4 +1,6 @@
 export * from "./calculateAttributes";
+export * from "./baseProfile";
+export * from "./buildGroupABaseProfiles";
 export * from "./confidenceAdjustment";
 export * from "./normalizeMetrics";
 export * from "./numeric";

@@ -1,0 +1,262 @@
+[
+  {
+    "id": "association-aut",
+    "name": "AUT club-association context",
+    "associationCode": "AUT",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-bel",
+    "name": "BEL club-association context",
+    "associationCode": "BEL",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-chn",
+    "name": "CHN club-association context",
+    "associationCode": "CHN",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-cyp",
+    "name": "CYP club-association context",
+    "associationCode": "CYP",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-cze",
+    "name": "CZE club-association context",
+    "associationCode": "CZE",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-den",
+    "name": "DEN club-association context",
+    "associationCode": "DEN",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-eng",
+    "name": "ENG club-association context",
+    "associationCode": "ENG",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-esp",
+    "name": "ESP club-association context",
+    "associationCode": "ESP",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-fra",
+    "name": "FRA club-association context",
+    "associationCode": "FRA",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-ger",
+    "name": "GER club-association context",
+    "associationCode": "GER",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-gre",
+    "name": "GRE club-association context",
+    "associationCode": "GRE",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-ita",
+    "name": "ITA club-association context",
+    "associationCode": "ITA",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-jpn",
+    "name": "JPN club-association context",
+    "associationCode": "JPN",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-kor",
+    "name": "KOR club-association context",
+    "associationCode": "KOR",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-ksa",
+    "name": "KSA club-association context",
+    "associationCode": "KSA",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-mex",
+    "name": "MEX club-association context",
+    "associationCode": "MEX",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-ned",
+    "name": "NED club-association context",
+    "associationCode": "NED",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-nor",
+    "name": "NOR club-association context",
+    "associationCode": "NOR",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-por",
+    "name": "POR club-association context",
+    "associationCode": "POR",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-rsa",
+    "name": "RSA club-association context",
+    "associationCode": "RSA",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-rus",
+    "name": "RUS club-association context",
+    "associationCode": "RUS",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-sco",
+    "name": "SCO club-association context",
+    "associationCode": "SCO",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-srb",
+    "name": "SRB club-association context",
+    "associationCode": "SRB",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-tur",
+    "name": "TUR club-association context",
+    "associationCode": "TUR",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-usa",
+    "name": "USA club-association context",
+    "associationCode": "USA",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  },
+  {
+    "id": "association-wal",
+    "name": "WAL club-association context",
+    "associationCode": "WAL",
+    "nameStatus": "league_unidentified",
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "FIFA 최종 명단은 클럽 협회 코드는 제공하지만 리그·시즌을 완전하게 식별하지 않는다. 이 행을 실제 리그 순위로 해석하지 않는다."
+  }
+]

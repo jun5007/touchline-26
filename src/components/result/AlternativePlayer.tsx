@@ -15,7 +15,7 @@ export function AlternativePlayer({
   const delta = score - selectedScore;
   return (
     <section className="panel p-5 sm:p-6">
-      <p className="text-[10px] font-black tracking-[.13em] text-[#7f8998]">ALTERNATIVE</p>
+      <p className="text-xs font-black tracking-[.13em] text-[#9aa5b4]">ALTERNATIVE</p>
       <h2 className="mt-2 text-lg font-black text-white">다른 선택의 가능성</h2>
       <div className="mt-4 flex items-center gap-3 rounded-xl border border-white/[.08] bg-white/[.03] p-4">
         <span className="grid h-11 w-11 place-items-center rounded-full border border-[#75b9ff]/40 bg-[#75b9ff]/8 text-sm font-black text-[#9acbff]">
@@ -23,11 +23,11 @@ export function AlternativePlayer({
         </span>
         <div className="min-w-0 flex-1">
           <strong className="block text-sm text-white">{player.name}</strong>
-          <span className="block text-[10px] text-[#8792a1]">{role.name} · {player.position}</span>
+          <span className="block text-xs text-[#a8b1bf]">{role.name} · {player.position}</span>
         </div>
         <div className="text-right">
           <span className="number-tabular block text-xl font-black text-white">{score}</span>
-          <span className={`number-tabular text-[10px] font-bold ${delta > 0 ? "text-[#82e6ac]" : "text-[#ff9e90]"}`}>
+          <span className={`number-tabular text-xs font-bold ${delta > 0 ? "text-[#82e6ac]" : "text-[#ff9e90]"}`}>
             선택 대비 {delta > 0 ? "+" : ""}{delta}
           </span>
         </div>
@@ -44,4 +44,3 @@ export function AlternativePlayer({
     </section>
   );
 }
-

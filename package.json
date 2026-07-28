@@ -14,7 +14,22 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "attributes:verify": "node -r ./scripts/register-typescript.cjs ./scripts/attributes.ts",
-    "attributes:generate": "node -r ./scripts/register-typescript.cjs ./scripts/attributes.ts --write"
+    "attributes:generate": "node -r ./scripts/register-typescript.cjs ./scripts/attributes.ts --write",
+    "base-profile:scope": "node scripts/generate-p0-scope.mjs",
+    "base-profile:docs": "node scripts/generate-base-profile-docs.mjs",
+    "base-profile:generate": "node -r ./scripts/register-typescript.cjs ./scripts/generate-base-profiles.cjs",
+    "base-profile:verify": "node scripts/verify-base-profile.mjs && vitest run src/lib/attributes/baseProfile.test.ts src/lib/attributes/buildGroupABaseProfiles.test.ts",
+    "data:generate": "node scripts/generate-group-a.mjs",
+    "data:validate": "node scripts/validate-data.mjs && node scripts/validate-sources.mjs",
+    "data:coverage": "node scripts/generate-coverage-report.mjs",
+    "data:future-leakage": "node scripts/validate-future-leakage.mjs",
+    "license:check": "node scripts/check-licenses.mjs",
+    "score-distribution:generate": "node -r ./scripts/register-typescript.cjs ./scripts/score-distributions.ts --write",
+    "score-distribution:verify": "node -r ./scripts/register-typescript.cjs ./scripts/score-distributions.ts",
+    "bundle:test": "node --test scripts/submission-bundle.node-test.mjs",
+    "bundle:create": "node scripts/create-submission-bundle.mjs",
+    "bundle:verify": "node scripts/verify-submission-bundle.mjs",
+    "prebuild": "node -r ./scripts/register-typescript.cjs ./scripts/score-distributions.ts"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

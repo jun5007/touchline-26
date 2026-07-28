@@ -34,9 +34,33 @@ yarn-error.log*
 /.pnpm-home/
 /.npm-cache/
 /.cache/
+/.review-*/
 /.task/
 /tmp/
-/docs/sources/fifa/*.pdf
+/docs/sources/
+/docs/base-profile-screenshots/
+/docs/final-review-screenshots/
+/docs/screenshots/
+/docs/images/
+/docs/FINAL_COMPETITION_REVIEW.md
+*.zip
+*.pdf
+*.crt
+*.der
+*.key
+*.p12
+*.pfx
+credentials*
+service-account*.json
+/BASE_PROFILE_*.md
+/FINAL_*.md
+!/FINAL_RELEASE_FILE_LIST.md
+!/FINAL_GIT_STAGE_PLAN.md
+/FINAL_PROJECT_TREE.txt
+/PROJECT_TREE.txt
+/REVIEW_*.md
+/scripts/build-base-profile-review-bundle.ps1
+/python-fastapi/
 
 # env files (can opt-in for committing if needed)
 .env*

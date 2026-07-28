@@ -1,139 +1,207 @@
-# TOUCHLINE 26 구현 계획
+# TOUCHLINE 26 Group A 구현 계획
 
-## 입력 요구사항 요약
+## 목표
 
-대회의 최신 공개 규칙과 전달된 상세 제품 명세를 기준으로, 실제 2026 월드컵의 결정적 교체 순간을 사용자가 다시 판단하는 인터랙티브 전술 의사결정 서비스를 만든다. 사용자는 경기와 미션을 고르고, 필드 선수와 벤치 선수를 교체하고, 역할과 팀 지시를 정한 뒤 설명 가능한 점수·영향·위험·실제 감독 선택 비교를 확인한다.
+2026 월드컵 A조의 대한민국, 체코, 멕시코, 남아프리카공화국 네 팀만 지원하는 조별리그 감독 시뮬레이션을 완성합니다. 실제 여섯 경기 모두를 양 팀 관점으로 제공하고, 사용자가 특정 시점의 교체·역할·팀 지시를 선택한 뒤 설명 가능한 결과를 받게 합니다.
 
-지목된 기획서 PDF는 작업 시작 시 제공되지 않았다. 따라서 상세 제품 명세를 기획 기준으로 사용하며, PDF에만 있을 수 있는 요구사항은 추정해 확정하지 않는다.
+핵심 품질 기준은 “모르는 선수 값을 만들지 않는다”와 “결정 시점 이후 정보를 결정 화면에 넣지 않는다”입니다.
 
-## MVP 범위
+## P0 제출 범위
 
-- 제품 소개와 명확한 시작 행동
-- 검증된 실제 2026 월드컵 경기 1개 이상
-- 실제 경기 안의 후반 교체 의사결정 미션 1개 이상
-- 미션 브리핑과 경기 상태
-- 필드/벤치 선수 선택, 데스크톱 드래그앤드롭, 모바일 클릭 교체
-- 교체 전후 선수 비교와 1~20 퍼포먼스 지표
-- 허용 포지션에 따른 역할 선택
-- 공격 방향, 압박 강도, 수비 라인, 공격 성향 조정
-- 선택마다 즉시 갱신되는 상황 적합도, 네 개 영향 게이지, 위험 경고
-- 결정 확정, 결과 등급, 장점, 위험, 보완책, 대안, 실제 감독 선택 비교
-- 재도전, 다음 미션, 손상된 저장 기록 복구
-- 출처와 계산 방법을 설명하는 데이터 페이지
-- 반응형·키보드·스크린리더 기본 접근성
-- 잘못된 URL과 직접 결과 접근의 안전한 처리
-- 로컬 사용자 선택 기록
+### 데이터
 
-## 제외 범위
+- 정확히 4팀: KOR, CZE, MEX, RSA
+- 정확히 A조 6경기, 팀당 3경기
+- 모든 경기의 양 팀 관점
+- 13미션: KOR 4, CZE/MEX/RSA 각 3
+- FIFA 공식 최종 명단 104명
+- A조 최종 순위와 공식 경기 이벤트
+- 경기별 FTR, Tactical, PMSR, API, FIFA 기사 source id
+- 팀·선수·경기·미션·출처 런타임 검증
 
-- 90분 물리 경기 시뮬레이션과 실제 결과 예측
-- 모든 2026 월드컵 경기 지원
-- 회원가입, 결제, 데이터베이스, 서버 백엔드
-- 실시간 멀티플레이와 실시간 경기 API
-- API 키가 필요한 생성형 AI 코치
-- 선수 사진, FIFA/FMM 공식·게임 자산
-- 실제 감독의 선택을 정답으로 판정하는 기능
+### 경험
 
-## 페이지 구조
+- 홈
+- 국가 선택
+- 국가별 3경기 여정
+- A조 순위·경기 결과
+- 경기 선택과 양측 감독 관점
+- 미션 브리핑
+- OUT/IN 선택
+- 역할 선택
+- 네 팀 지시
+- 전술 선택 적합도·영향·위험
+- 결과, 실제 선택 비교, 다시 하기, 다음 경기
+- 모바일 클릭 흐름
+- 잘못된 URL·손상 저장값 복구
 
-- `/`: 브랜드 소개, 가치 제안, 핵심 경험 미리보기, 시작/데이터 버튼
-- `/matches`: 실제 경기 목록과 데이터 검증 상태
-- `/matches/[matchId]`: 경기 요약과 미션 목록
-- `/matches/[matchId]/scenarios/[scenarioId]/briefing`: 시점·점수·미션·상대 전술 브리핑
-- `/matches/[matchId]/scenarios/[scenarioId]/tactics`: 교체와 전술 선택 워크스페이스
-- `/matches/[matchId]/scenarios/[scenarioId]/result`: 선택 분석과 실제 감독 비교
-- `/about-data`: 출처, 사실/추론 구분, 1~20 변환, 상황 적합도와 한계
-- `not-found`: 잘못된 경로의 복구 행동
+### 제출
 
-## 컴포넌트 구조
+- 공개 production URL
+- 공개 GitHub 저장소
+- YouTube 시연
+- Chromium, Firefox, Safari/iOS Safari 핵심 흐름
+- 마감 이전 동결
 
-- `layout`: Header, Footer, StepIndicator
-- `common`: Button, Card, Badge, Modal/BottomSheet, 상태 메시지
-- `match`: MatchCard, MissionCard, MissionBriefing
-- `tactics`: MatchStatePanel, FootballPitch, PitchPlayer, BenchPanel, PlayerComparison, RoleSelector, TeamInstructions, ImpactGauges, SubstitutionPreview
-- `result`: DecisionScore, DecisionSummary, Benefit/Risk 목록, AlternativePlayer, ActualDecisionComparison
-- 복잡한 화면은 서버 페이지와 클라이언트 워크스페이스를 분리한다.
+P0가 완성·검증되기 전에는 다른 조, 다른 팀, 계정, 공유, 실시간 API 같은 P1을 추가하지 않습니다.
 
-## 데이터 구조
+## 명시적 제외 범위
 
-정적 JSON을 `src/data` 아래 경기, 선수, 미션, 역할, 지시, 설명 템플릿으로 분리한다. 경기·선수·미션에는 출처 메타데이터와 `isSample` 여부를 둔다. TypeScript 타입과 런타임 조회 함수가 JSON 경계에서 누락 데이터를 방어한다.
+- A조 이외 팀·조
+- 실제 경기 결과 예측
+- 90분 물리 경기 엔진
+- 회원가입·결제·서버 데이터베이스
+- 실시간 경기 API
+- 생성형 AI API 키가 필요한 코치
+- 선수 사진·대표팀 문장·FIFA 공식 그래픽
+- 확인하지 못한 최근 365일 선수 능력치
+- 실제 감독 선택을 정답으로 판정
 
-확인된 사실:
+## 정보 구조
 
-- 경기 날짜, 장소, 팀, 스코어
-- 선발/벤치 명단과 실제 교체 시점
+| 경로 | 역할 |
+| --- | --- |
+| `/` | 제품 설명과 시작 |
+| `/teams` | 네 국가 선택 |
+| `/teams/[teamId]` | 선택 국가의 최종 명단 맥락과 3경기 여정 |
+| `/group-a` | 최종 순위와 6경기 결과 |
+| `/matches` | 6경기 목록과 팀 필터 |
+| `/matches/[matchId]` | 경기 요약과 양 팀 관점·미션 |
+| `.../[scenarioId]/briefing` | 미션 시점까지의 사실 |
+| `.../[scenarioId]/tactics` | 교체·역할·팀 지시 |
+| `.../[scenarioId]/result` | 설명·실제 사실 비교 |
+| `/about-data` | 출처, 계산, 한계 |
 
-앱 파생값:
+## 데이터 아키텍처
 
-- 원자료 정규화 결과인 1~20 퍼포먼스 스탯
-- 역할·체력·매치업을 반영한 상황 적합도와 영향 게이지
+```text
+teams ─┬─ squads ── players ── BASE PROFILE
+       ├─ matches ── official events/sources
+       └─ scenarios ─┬─ Tournament Form
+                     ├─ Current Condition
+                     ├─ decision-only context
+                     └─ result-only facts
+```
 
-추론:
+주요 파일:
 
-- 실제 교체의 가능한 전술 목적
-- 사용자 선택과 실제 선택의 장단점
+- `src/data/teams/teams.json`
+- `src/data/squads/{kor,cze,mex,rsa}.json`
+- `src/data/players/group-a-players.json`
+- `src/data/matches/group-a/*.json`
+- `src/data/scenarios/group-a/{kor,cze,mex,rsa}.json`
+- `src/data/tournament/{tournament,group-a}.json`
+- `src/data/leagues/{leagues,league-strength}.json`
+- `src/data/sources/sourceRegistry.json`
 
-화면과 문서에서 세 범주를 라벨로 구분한다.
+`scripts/generate-group-a.mjs`가 반복 가능한 정규화 산출물을 만들고, 별도 validator가 정본 불변조건을 확인합니다.
 
-## 상태 관리
+## 선수 모델
 
-전술 화면 내부는 작은 `useState` 상태들과 `useMemo` 파생 계산으로 관리한다. URL이 경기/미션의 정본이며, 선택 기록은 버전이 있는 단일 localStorage 키에 제한적으로 저장한다. 손상되거나 이전 버전인 기록은 폐기하고 기본 상태로 복구한다. 결과 페이지는 저장된 완성 결정이 없으면 전술 단계로 안내한다.
+### BASE PROFILE
 
-## 계산 로직
+- 기간: 2025-06-11~2026-06-10
+- 현재 커버리지: 104명 전원 D/incomplete
+- `analysisMinutes: null`
+- 필드/GK 속성: `null`
+- 평균 대치 금지
+- 누락 구성요소 제외 후 가중치 재정규화
 
-### 1~20 퍼포먼스 스탯
+### GK 분리
 
-1. 횟수형 원자료를 가능한 범위에서 90분당 값으로 변환한다.
-2. 같은 포지션 그룹의 공개된 비교 표본 안에서 백분위를 구한다.
-3. `round(1 + 19 × percentile)`로 1~20에 매핑한다.
-4. 표본 신뢰도에 따라 `confidence × raw + (1-confidence) × 10.5`로 중앙값에 수축한다.
-5. 결과를 1~20으로 제한하고 표본 시간과 신뢰도를 함께 표시한다.
+GK는 다음 전용 키를 씁니다.
 
-실제 상세 원자료가 공개적으로 확보되지 않은 지표는 사실처럼 채우지 않는다. 사용할 수 있는 검증 자료의 범위와 파생·보정 방식을 `DATA_RESEARCH.md`에 남긴다.
+`shotStopping`, `distribution`, `aerialCommand`, `sweeping`, `penaltySaving`, `stability`, `buildUp`, `impact`
 
-### 상황 적합도
+### Tournament Form
 
-- 선수 능력치 적합도 60%
-- 선택 역할 적합도 20%
-- 체력·신선도 10%
-- 상대 매치업 10%
-- 포지션 부적합·전술 모순·카드 위험 등 패널티 차감
-- 결과를 0~100으로 제한
+미션 전에 완료된 A조 경기의 출전 사실만 사용합니다. 선수별 시점 안전 통계가 없으므로 `adjustment: 0`입니다.
 
-미션별 능력치 가중치·활성 위험 규칙 ID, 역할 적합도·위험 수정치, 전술 지시 수정치는 JSON에서 관리한다. 위험 조건의 선언형 규칙 레지스트리와 매치업 계산은 순수 TypeScript로 두며, 선수 이름이나 국가를 계산 함수에 하드코딩하지 않는다.
+### Current Condition
 
-### 영향 게이지
+공식 현재 출전시간과 카드 상태를 사용하고, 에너지는 다음 파생식으로 제한합니다.
 
-교체 전/후의 공격 위협, 찬스 창출, 압박 강도, 수비 안정성을 동일 함수로 산출하고 차이를 표시한다. 역할과 팀 지시 변경은 게이지와 위험 설명에 즉시 반영한다.
+```text
+max(60, round(100 - 0.42 × minutesInMatch))
+```
 
-## 테스트 계획
+### TLSI
 
-- 단위: 백분위, 1~20 매핑, 신뢰도 보정, 점수 제한, 상황 적합도, 위험, 영향, 템플릿 설명
-- 컴포넌트/통합: 필드 선택, 벤치 선택, 교체 미리보기·취소, 역할, 지시, 점수 갱신, 결과 저장
-- 수동 브라우저: 시작부터 결과, 재도전, 직접 URL, 새로고침, 1280×720, 모바일 폭, 키보드 조작, 콘솔 오류
-- 명령: `npm run lint`, `npm run test`, `npm run build`, 가능한 경우 production 실행 확인
+26개 클럽 협회 맥락을 등록하되 공식 리그 비교 근거가 없어 `strengthFactor: 1.00`, low/incomplete, `applied: false`, 영향 0으로 둡니다.
+
+## 점수와 설명
+
+- `null` 능력치는 계산에서 제외
+- 사용 가능한 속성 가중치만 재정규화
+- 전체 능력 구성요소가 없으면 역할·현재 상태·매치업 등 가용 구성요소를 재가중
+- 역할 적합도는 포지션 호환성 규칙이며 선수 능력치가 아님
+- 팀 지시는 시나리오의 선언형 수정치 사용
+- 위험은 선언형 규칙으로 감점하고 설명 근거를 함께 노출
+- 실제 경기 결과나 실제 선택은 사용자 점수 계산의 정답 라벨로 사용하지 않음
+
+## 미래 정보 누출 경계
+
+1. BASE PROFILE은 2026-06-10에 종료합니다.
+2. Tournament Form은 `scenarioTimestamp` 이전 경기만 읽습니다.
+3. Current Condition은 미션 분까지의 현재 경기 사실만 읽습니다.
+4. 전술 페이지에는 `DecisionMatchView`, `DecisionScenarioContext`를 전달합니다.
+5. `finalScore`, 사후 이벤트, `actualDecision`, 결과 사실은 DTO에서 제거합니다.
+6. 결과 페이지에서만 실제 결과와 선택을 읽습니다.
+
+## 검증 계획
+
+### 정적 데이터
+
+```bash
+npm run data:generate
+npm run data:validate
+npm run data:coverage
+npm run data:future-leakage
+```
+
+확인할 불변조건:
+
+- 4팀/6경기/3경기씩/양 팀 관점/13미션/104명
+- 팀당 최종 명단 26명
+- 선발 11명과 경기 명단 선수 id
+- M01 RSA 퇴장 이후 10명 현재 라인업 예외의 근거
+- 경기별 불참과 실제 교체 유효성
+- source id 참조
+- `null`과 범위
+- TLSI 영향 0
+- 시나리오 시간 경계
+
+### 코드
+
+```bash
+npm run lint
+npm run test
+npm run build
+npm run start
+```
+
+최종 통합 이후의 실제 결과만 기록합니다. 과거 단일 경기판의 테스트 개수는 재사용하지 않습니다.
+
+### 브라우저
+
+- Chromium 1280×720
+- Chromium 390×844와 360px
+- Firefox
+- Safari 또는 iOS Safari
+- 모든 팀, 6경기, 양 팀 관점
+- 대표 미션의 브리핑→전술→결과
+- 직접 URL·새로고침·404·손상 저장값
+- console error, hydration warning, NaN
 
 ## 배포 계획
 
-- Next.js App Router 정적 데이터 앱으로 구성
-- 환경변수와 API 키 없이 production build
-- Vercel 프로젝트 루트에 바로 연결 가능한 구조
-- 직접 배포 자격 증명이 있으면 production 배포와 새 시크릿 세션 검증
-- 자격 증명이 없으면 README에 Import/CLI 절차, 배포 후 확인 항목을 정확히 기록
+1. 전체 검증 통과
+2. 공개 GitHub 저장소에 최종 commit push
+3. Vercel 등 공개 HTTPS production 배포
+4. 로그아웃·시크릿 창과 외부 네트워크 확인
+5. 90초~2분 영상 녹화와 YouTube 업로드
+6. 세 URL 제출
+7. 공식 페이지 표시 2026-08-03 10:00 전에 제출하고, 시간대는 최신 공지에서
+   재확인한 뒤 마감 이후 commit/push 금지
 
-## 저작권·라이선스 계획
-
-- FIFA/FMM 로고, 엠블럼, 그래픽, 선수 사진을 사용하지 않는다.
-- 축구장, 선수 토큰, 게이지와 아이콘은 CSS/텍스트 또는 라이선스가 명확한 패키지로 표현한다.
-- 외부 폰트 다운로드 없이 시스템 글꼴 스택을 사용한다.
-- 데이터 출처 URL, 확인일, 제공처 이용 조건과 재사용 한계를 문서화한다.
-- 짧은 사실 데이터와 앱 자체 파생값을 사용하고 원문 기사·리포트를 복제하지 않는다.
-
-## 예상 위험과 대응
-
-- 기획서 PDF 부재: 상세 제품 명세를 기준으로 구현하고 미확인 상태를 문서화
-- 2026 경기 상세 통계 접근 제한: FIFA 공식 사실을 우선하고 독립 출처로 교차 확인, 확보 불가 지표는 투명한 파생값 또는 누락으로 처리
-- 드래그 접근성: 동일한 클릭 기반 흐름과 명시적 버튼 제공
-- 화면 정보 과밀: 단계형 흐름, 접이식 상세, 모바일 탭/하단 패널 사용
-- 계산 과신: “예측”이 아닌 “현재 미션 적합도”로 명명하고 장점과 위험을 항상 함께 제시
-- 제출 후 커밋 위험: 체크리스트와 README 최상단에 마감 직전 동결 절차 명시
+현재 공개 배포, 공개 GitHub, YouTube, Firefox, Safari/iOS Safari는 미완료입니다.

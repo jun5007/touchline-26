@@ -13,9 +13,10 @@ const projectRoot = path.resolve(__dirname, "..");
 const playersPath = path.join(
   projectRoot,
   "src",
-  "data",
-  "players",
-  "players.json",
+  "test",
+  "fixtures",
+  "legacy",
+  "attribute-model-players.json",
 );
 
 const source = readFileSync(playersPath, "utf8");
@@ -70,7 +71,13 @@ if (writeMode) {
 }
 
 const sampleSummary = Object.fromEntries(
-  [...new Set(players.map((player) => player.positionGroup))].map(
+  [
+    ...new Set(
+      players.flatMap((player) =>
+        player.positionGroup ? [player.positionGroup] : [],
+      ),
+    ),
+  ].map(
     (positionGroup) => {
       const samples = buildPositionGroupComparisonSamples(
         players,
@@ -83,7 +90,7 @@ const sampleSummary = Object.fromEntries(
             (player) =>
               player.positionGroup === positionGroup &&
               player.rawMetrics !== null &&
-              player.minutesPlayed > 0,
+              (player.minutesPlayed ?? 0) > 0,
           ).length,
           metrics: Object.keys(samples).length,
         },

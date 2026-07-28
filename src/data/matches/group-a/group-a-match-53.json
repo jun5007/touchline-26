@@ -1,0 +1,397 @@
+{
+  "id": "cze-mex-2026",
+  "fifaMatchId": "400021444",
+  "fdpResourceId": "r12453",
+  "groupId": "group-a",
+  "competition": "FIFA World Cup 2026",
+  "stage": "group",
+  "matchNumber": 53,
+  "date": "2026-06-24",
+  "localKickoff": "19:00",
+  "kickoffUtc": "2026-06-25T01:00:00Z",
+  "venue": "Mexico City Stadium",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "attendance": 80824,
+  "homeTeamId": "cze",
+  "awayTeamId": "mex",
+  "playableTeamIds": [
+    "cze",
+    "mex"
+  ],
+  "finalScore": {
+    "home": 0,
+    "away": 3
+  },
+  "halfTimeScore": {
+    "home": 0,
+    "away": 0
+  },
+  "formationsByTeam": {
+    "cze": "5-2-3",
+    "mex": "4-1-2-3"
+  },
+  "lineupsByTeam": {
+    "cze": [
+      "cze-matej-kovar",
+      "cze-tomas-holes",
+      "cze-robin-hranac",
+      "cze-vladimir-coufal",
+      "cze-ladislav-krejci",
+      "cze-adam-hlozek",
+      "cze-lukas-cerv",
+      "cze-pavel-sulc",
+      "cze-michal-sadilek",
+      "cze-david-doudera",
+      "cze-denis-visinsky"
+    ],
+    "mex": [
+      "mex-raul-rangel",
+      "mex-jorge-sanchez",
+      "mex-cesar-montes",
+      "mex-edson-alvarez",
+      "mex-luis-romo",
+      "mex-israel-reyes",
+      "mex-julian-quinones",
+      "mex-gilberto-mora",
+      "mex-mateo-chavez",
+      "mex-guillermo-martinez",
+      "mex-roberto-alvarado"
+    ]
+  },
+  "benchesByTeam": {
+    "cze": [
+      "cze-jindrich-stanek",
+      "cze-lukas-hornicek",
+      "cze-david-zima",
+      "cze-stepan-chaloupek",
+      "cze-vladimir-darida",
+      "cze-patrik-schick",
+      "cze-jan-kuchta",
+      "cze-mojmir-chytil",
+      "cze-lukas-provod",
+      "cze-tomas-chory",
+      "cze-jaroslav-zeleny",
+      "cze-tomas-soucek",
+      "cze-alexandr-sojka",
+      "cze-hugo-sochurek"
+    ],
+    "mex": [
+      "mex-carlos-acevedo",
+      "mex-guillermo-ochoa",
+      "mex-johan-vasquez",
+      "mex-erik-lira",
+      "mex-alvaro-fidalgo",
+      "mex-raul-jimenez",
+      "mex-alexis-vega",
+      "mex-santiago-gimenez",
+      "mex-armando-gonzalez",
+      "mex-orbelin-pineda",
+      "mex-obed-vargas",
+      "mex-cesar-huerta",
+      "mex-jesus-gallardo",
+      "mex-luis-chavez",
+      "mex-brian-gutierrez"
+    ]
+  },
+  "unavailableByTeam": {
+    "cze": [
+      {
+        "playerId": "cze-david-jurasek",
+        "status": "matchday_unavailable",
+        "reason": null,
+        "note": "공식 경기 명단 미등재. 사유는 공식 자료에서 확인되지 않음.",
+        "verificationStatus": "partial"
+      }
+    ],
+    "mex": []
+  },
+  "substitutionsByTeam": {
+    "cze": [
+      {
+        "minute": {
+          "regulation": 56
+        },
+        "outPlayerId": "cze-denis-visinsky",
+        "inPlayerId": "cze-lukas-provod",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 64
+        },
+        "outPlayerId": "cze-tomas-holes",
+        "inPlayerId": "cze-tomas-soucek",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 64
+        },
+        "outPlayerId": "cze-adam-hlozek",
+        "inPlayerId": "cze-patrik-schick",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 87
+        },
+        "outPlayerId": "cze-lukas-cerv",
+        "inPlayerId": "cze-tomas-chory",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 87
+        },
+        "outPlayerId": "cze-tomas-soucek",
+        "inPlayerId": "cze-alexandr-sojka",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ],
+    "mex": [
+      {
+        "minute": {
+          "regulation": 63
+        },
+        "outPlayerId": "mex-guillermo-martinez",
+        "inPlayerId": "mex-santiago-gimenez",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 63
+        },
+        "outPlayerId": "mex-luis-romo",
+        "inPlayerId": "mex-obed-vargas",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 72
+        },
+        "outPlayerId": "mex-gilberto-mora",
+        "inPlayerId": "mex-alvaro-fidalgo",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 78
+        },
+        "outPlayerId": "mex-raul-rangel",
+        "inPlayerId": "mex-guillermo-ochoa",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 78
+        },
+        "outPlayerId": "mex-mateo-chavez",
+        "inPlayerId": "mex-jesus-gallardo",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ]
+  },
+  "events": [
+    {
+      "minute": {
+        "regulation": 55
+      },
+      "type": "goal",
+      "teamId": "mex",
+      "playerId": "mex-mateo-chavez",
+      "assistPlayerId": "mex-luis-romo",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 56
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-lukas-provod",
+      "relatedPlayerId": "cze-denis-visinsky",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 61
+      },
+      "type": "goal",
+      "teamId": "mex",
+      "playerId": "mex-julian-quinones",
+      "assistPlayerId": "mex-jorge-sanchez",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 63
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-santiago-gimenez",
+      "relatedPlayerId": "mex-guillermo-martinez",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 63
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-obed-vargas",
+      "relatedPlayerId": "mex-luis-romo",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 64
+      },
+      "type": "card",
+      "teamId": "mex",
+      "playerId": "mex-edson-alvarez",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 64
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-tomas-soucek",
+      "relatedPlayerId": "cze-tomas-holes",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 64
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-patrik-schick",
+      "relatedPlayerId": "cze-adam-hlozek",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 72
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-alvaro-fidalgo",
+      "relatedPlayerId": "mex-gilberto-mora",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 78
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-guillermo-ochoa",
+      "relatedPlayerId": "mex-raul-rangel",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 78
+      },
+      "type": "substitution",
+      "teamId": "mex",
+      "playerId": "mex-jesus-gallardo",
+      "relatedPlayerId": "mex-mateo-chavez",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 87
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-tomas-chory",
+      "relatedPlayerId": "cze-lukas-cerv",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 87
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-alexandr-sojka",
+      "relatedPlayerId": "cze-tomas-soucek",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 90,
+        "added": 4
+      },
+      "type": "goal",
+      "teamId": "mex",
+      "playerId": "mex-alvaro-fidalgo",
+      "assistPlayerId": "mex-roberto-alvarado",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    }
+  ],
+  "sourceIds": [
+    "fifa-ftr-m53",
+    "fifa-tactical-m53",
+    "fifa-pmsr-m53",
+    "fifa-api-m53",
+    "fifa-article-m53"
+  ],
+  "discrepancyNotes": [
+    "에드손 알바레스 경고는 FTR·PMSR의 64분을 사용했다. FIFA live API에는 63분으로 표기된다."
+  ],
+  "verificationStatus": "verified_official"
+}

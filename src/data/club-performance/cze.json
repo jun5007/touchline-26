@@ -1,0 +1,678 @@
+[
+  {
+    "playerId": "cze-matej-kovar",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-david-zima",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-tomas-holes",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-robin-hranac",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-vladimir-coufal",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-stepan-chaloupek",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-ladislav-krejci",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-vladimir-darida",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-adam-hlozek",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-patrik-schick",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-jan-kuchta",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-lukas-cerv",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-mojmir-chytil",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-david-jurasek",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-pavel-sulc",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-jindrich-stanek",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-lukas-provod",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-michal-sadilek",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-tomas-chory",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-jaroslav-zeleny",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-david-doudera",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-tomas-soucek",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-lukas-hornicek",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-alexandr-sojka",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-hugo-sochurek",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cze-denis-visinsky",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-chance-liga-copyright"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  }
+]

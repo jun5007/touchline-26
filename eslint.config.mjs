@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "python-fastapi/.venv/**",
+    "python-fastapi/.cache/**",
+    "python-fastapi/.pip-cache/**",
+    "python-fastapi/.tmp/**",
+    ".review-*/**",
   ]),
 ]);
 

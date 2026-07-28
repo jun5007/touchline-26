@@ -20,44 +20,67 @@ export const DEFAULT_IMPACT_GAUGE_DEFINITIONS: Readonly<
   attackThreat: {
     label: "공격 위협",
     attributeWeights: {
-      finishing: 0.25,
-      chanceCreation: 0.2,
+      finishing: 0.3,
+      chanceCreation: 0.25,
       dribbling: 0.2,
-      speed: 0.15,
-      impact: 0.2,
+      impact: 0.25,
     },
   },
   possessionStability: {
     label: "점유 안정",
     attributeWeights: {
-      passing: 0.35,
-      chanceCreation: 0.15,
-      dribbling: 0.1,
-      composure: 0.2,
-      ballRetention: 0.2,
+      passing: 0.5,
+      chanceCreation: 0.2,
+      dribbling: 0.15,
+      pressing: 0.15,
     },
   },
   defensiveStability: {
     label: "수비 안정",
     attributeWeights: {
-      defending: 0.4,
-      pressing: 0.15,
-      aerial: 0.2,
-      composure: 0.1,
-      stamina: 0.15,
+      defending: 0.5,
+      pressing: 0.25,
+      aerial: 0.25,
     },
   },
   pressingIntensity: {
     label: "압박 강도",
     attributeWeights: {
-      pressing: 0.4,
-      stamina: 0.25,
-      speed: 0.15,
-      defending: 0.1,
-      impact: 0.1,
+      pressing: 0.55,
+      defending: 0.2,
+      impact: 0.25,
     },
   },
 };
+
+export const SUPPORTED_IMPACT_ATTRIBUTES = [
+  "finishing",
+  "chanceCreation",
+  "dribbling",
+  "passing",
+  "pressing",
+  "defending",
+  "aerial",
+  "impact",
+] as const;
+
+const supportedImpactAttributes = new Set<string>(
+  SUPPORTED_IMPACT_ATTRIBUTES,
+);
+
+function assertSupportedAttributes(
+  gaugeId: string,
+  definition: ImpactGaugeDefinition,
+) {
+  const unsupported = Object.keys(definition.attributeWeights).filter(
+    (attribute) => !supportedImpactAttributes.has(attribute),
+  );
+  if (unsupported.length > 0) {
+    throw new Error(
+      `${gaugeId} 영향 게이지에 지원하지 않는 속성이 있습니다: ${unsupported.join(", ")}`,
+    );
+  }
+}
 
 interface GaugeCalculation {
   score: number;
@@ -69,8 +92,8 @@ function calculateGauge(
   gaugeId: string,
   snapshot: ImpactSnapshot,
   definition: ImpactGaugeDefinition,
+  availableAttributes: ReadonlySet<string>,
 ): GaugeCalculation {
-  const fallback = clampPercent(definition.fallbackScore);
   let total = 0;
   let totalWeight = 0;
   const normalizedAttributes: Record<string, number> = {};
@@ -85,21 +108,25 @@ function calculateGauge(
     if (weight === 0) {
       continue;
     }
+    if (!availableAttributes.has(attribute)) {
+      continue;
+    }
 
     const attributeValue = snapshot.attributes[attribute];
-    const normalized = isFiniteNumber(attributeValue)
-      ? attributeScoreToPercent(attributeValue)
-      : fallback;
+    if (!isFiniteNumber(attributeValue)) {
+      continue;
+    }
+    const normalized = attributeScoreToPercent(attributeValue);
     normalizedAttributes[attribute] = normalized;
     total += normalized * weight;
     totalWeight += weight;
   }
 
-  const baseScore = totalWeight > 0 ? total / totalWeight : fallback;
+  const baseScore = totalWeight > 0 ? total / totalWeight : 0;
   const modifier = snapshot.gaugeModifiers?.[gaugeId];
   const score = clampPercent(
     baseScore + (isFiniteNumber(modifier) ? modifier : 0),
-    fallback,
+    0,
   );
 
   return { score, normalizedAttributes, totalWeight };
@@ -123,12 +150,11 @@ function calculateDrivers(
       if (!isFiniteNumber(configuredWeight) || configuredWeight <= 0) {
         continue;
       }
-      const beforeValue =
-        before.normalizedAttributes[attribute] ??
-        clampPercent(definition.fallbackScore);
-      const afterValue =
-        after.normalizedAttributes[attribute] ??
-        clampPercent(definition.fallbackScore);
+      const beforeValue = before.normalizedAttributes[attribute];
+      const afterValue = after.normalizedAttributes[attribute];
+      if (!isFiniteNumber(beforeValue) || !isFiniteNumber(afterValue)) {
+        continue;
+      }
       const delta =
         ((afterValue - beforeValue) * configuredWeight) / totalWeight;
 
@@ -145,7 +171,7 @@ function calculateDrivers(
   if (Math.abs(modifierDelta) >= 0.05) {
     drivers.push({
       key: "tacticalModifier",
-      label: "역할·팀 지시",
+      label: "팀 지시",
       delta: roundTo(modifierDelta, 1),
     });
   }
@@ -180,15 +206,43 @@ function buildGaugeResult(
   afterSnapshot: ImpactSnapshot,
   attributeLabels: Readonly<Record<string, string | undefined>>,
 ): ImpactGaugeResult {
+  const availableAttributes = Object.entries(definition.attributeWeights)
+    .filter(
+      ([attribute, configuredWeight]) =>
+        isFiniteNumber(configuredWeight) &&
+        configuredWeight > 0 &&
+        isFiniteNumber(beforeSnapshot.attributes[attribute]) &&
+        isFiniteNumber(afterSnapshot.attributes[attribute]),
+    )
+    .map(([attribute]) => attribute);
+  const availableAttributeSet = new Set(availableAttributes);
+
+  if (availableAttributes.length === 0) {
+    return {
+      id: gaugeId,
+      label: definition.label,
+      before: 0,
+      after: 0,
+      delta: 0,
+      available: false,
+      availableAttributes,
+      direction: "unchanged",
+      reason: "OUT·IN 공통 능력치 데이터 없음",
+      drivers: [],
+    };
+  }
+
   const beforeCalculation = calculateGauge(
     gaugeId,
     beforeSnapshot,
     definition,
+    availableAttributeSet,
   );
   const afterCalculation = calculateGauge(
     gaugeId,
     afterSnapshot,
     definition,
+    availableAttributeSet,
   );
   const before = Math.round(beforeCalculation.score);
   const after = Math.round(afterCalculation.score);
@@ -212,6 +266,8 @@ function buildGaugeResult(
     before,
     after,
     delta,
+    available: true,
+    availableAttributes,
     direction:
       delta > 0 ? "increase" : delta < 0 ? "decrease" : "unchanged",
     reason: describeGaugeChange(delta, drivers),
@@ -242,6 +298,7 @@ export function calculateImpact<GaugeId extends string>(
   for (const [gaugeId, definition] of Object.entries(definitions) as Array<
     [GaugeId, ImpactGaugeDefinition]
   >) {
+    assertSupportedAttributes(gaugeId, definition);
     results[gaugeId] = buildGaugeResult(
       gaugeId,
       definition,
@@ -253,4 +310,3 @@ export function calculateImpact<GaugeId extends string>(
 
   return results;
 }
-

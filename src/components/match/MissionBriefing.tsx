@@ -32,7 +32,7 @@ export function MissionBriefing({
           <ul className="mt-4 grid gap-3">
             {scenario.observations.map((observation, index) => (
               <li key={observation} className="panel-soft flex gap-3 p-4 text-sm leading-6 text-[#cbd1da]">
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#f4b860]/12 text-[10px] font-black text-[#f4b860]">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#f4b860]/12 text-[11px] font-black text-[#f4b860]">
                   {index + 1}
                 </span>
                 {observation}
@@ -45,32 +45,45 @@ export function MissionBriefing({
         <section className="panel p-6">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-[10px] font-black tracking-[.14em] text-[#7f8998]">MATCH STATE</p>
+              <p className="text-xs font-black tracking-[.14em] text-[#9aa5b4]">MATCH STATE</p>
               <h2 className="mt-2 text-lg font-black text-white">
                 {match.homeTeam.name} <span className="text-[#f4b860]">{scenario.currentScore}</span> {match.awayTeam.name}
               </h2>
             </div>
             <div className="rounded-xl border border-[#65d89a]/20 bg-[#65d89a]/8 px-3 py-2 text-right">
-              <span className="block text-[9px] font-bold text-[#8fa99a]">교체 카드</span>
-              <span className="number-tabular text-lg font-black text-[#82e6ac]">{scenario.substitutionsRemaining}</span>
+              <span className="block max-w-28 text-[11px] font-bold leading-4 text-[#a8c3b2]">이 시점 기준 남은 교체 가능 인원</span>
+              <span className="number-tabular text-lg font-black text-[#82e6ac]">{scenario.substitutionsRemaining}명</span>
             </div>
           </div>
           <dl className="mt-5 grid gap-3 text-sm">
             <div className="flex items-start justify-between gap-5 border-t border-white/[.07] pt-3">
-              <dt className="text-[#7f8998]">상대 형태</dt>
-              <dd className="max-w-[65%] text-right font-bold text-[#dce1e8]">{scenario.opponentShape}</dd>
+              <dt className="text-[#a8b1bf]">상대 형태</dt>
+              <dd className="max-w-[65%] text-right font-bold text-[#dce1e8]">
+                {scenario.opponentShape}
+                <span className="mt-1 block text-[11px] text-[#9acbff]">전술적 관찰</span>
+              </dd>
             </div>
             <div className="flex items-start justify-between gap-5 border-t border-white/[.07] pt-3">
-              <dt className="text-[#7f8998]">현재 포메이션</dt>
-              <dd className="font-bold text-[#dce1e8]">{match.startingFormation}</dd>
+              <dt className="text-[#a8b1bf]">현재 포메이션</dt>
+              <dd className="text-right font-bold text-[#dce1e8]">
+                {match.formationsByTeam?.[scenario.selectedTeamId] ??
+                  match.startingFormation}
+                <span className="mt-1 block text-[11px] text-[#9acbff]">
+                  공식 선발 형태 · 현재 배치는 포지션군 도식
+                </span>
+              </dd>
             </div>
             <div className="flex items-start justify-between gap-5 border-t border-white/[.07] pt-3">
-              <dt className="text-[#7f8998]">데이터 상태</dt>
+              <dt className="text-[#a8b1bf]">데이터 상태</dt>
               <dd className="flex items-center gap-2 font-bold text-[#82e6ac]">
-                <span className="data-dot" /> 공식 기록 검증
+                <span className="data-dot" /> 공식 경기 사실
               </dd>
             </div>
           </dl>
+          <p className="mt-4 text-xs leading-5 text-[#a8b1bf]">
+            이 수치는 공식 경기에서 해당 시점 직전의 기록입니다. 체험에서는 교체 1건만
+            확정합니다.
+          </p>
         </section>
         <section className="panel p-6">
           <h2 className="text-sm font-black text-white">직전 흐름</h2>
@@ -96,13 +109,13 @@ export function MissionBriefing({
           </ol>
         </section>
         <div className="rounded-xl border border-[#75b9ff]/15 bg-[#75b9ff]/7 p-4 text-xs leading-5 text-[#aebfd1]">
-          <strong className="text-[#9acbff]">회고 플레이 안내</strong>
+          <strong className="text-[#9acbff]">시점 안전 데이터 안내</strong>
           <br />
-          선수의 1–20 스탯은 경기 종료 후 FIFA 공식 데이터를 변환한 회고 지표입니다.
-          당시 실시간 예측값이 아닙니다.
+          이 브리핑과 전술 점수에는 미션 시점 이후의 사건·최종 결과·실제 교체를
+          넣지 않습니다. 최근 1년 선수 지표를 검증하지 못한 항목은 null로 남기며
+          평가 가중치에서 제외합니다.
         </div>
       </aside>
     </div>
   );
 }
-

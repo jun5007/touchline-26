@@ -1,0 +1,368 @@
+{
+  "id": "kor-cze-2026",
+  "fifaMatchId": "400021441",
+  "fdpResourceId": "r12450",
+  "groupId": "group-a",
+  "competition": "FIFA World Cup 2026",
+  "stage": "group",
+  "matchNumber": 2,
+  "date": "2026-06-11",
+  "localKickoff": "20:00",
+  "kickoffUtc": "2026-06-12T02:00:00Z",
+  "venue": "Guadalajara Stadium",
+  "city": "Guadalajara",
+  "country": "Mexico",
+  "attendance": 44985,
+  "homeTeamId": "kor",
+  "awayTeamId": "cze",
+  "playableTeamIds": [
+    "kor",
+    "cze"
+  ],
+  "finalScore": {
+    "home": 2,
+    "away": 1
+  },
+  "halfTimeScore": {
+    "home": 0,
+    "away": 0
+  },
+  "formationsByTeam": {
+    "kor": "3-4-3",
+    "cze": "5-2-3"
+  },
+  "lineupsByTeam": {
+    "kor": [
+      "kim-seunggyu",
+      "lee-hanbeom",
+      "lee-gihyuk",
+      "kim-minjae",
+      "hwang-inbeom",
+      "son-heungmin",
+      "paik-seungho",
+      "lee-jaesung",
+      "lee-taeseok",
+      "lee-kangin",
+      "seol-youngwoo"
+    ],
+    "cze": [
+      "cze-matej-kovar",
+      "cze-robin-hranac",
+      "cze-vladimir-coufal",
+      "cze-stepan-chaloupek",
+      "cze-ladislav-krejci",
+      "cze-patrik-schick",
+      "cze-pavel-sulc",
+      "cze-lukas-provod",
+      "cze-jaroslav-zeleny",
+      "cze-tomas-soucek",
+      "cze-alexandr-sojka"
+    ]
+  },
+  "benchesByTeam": {
+    "kor": [
+      "song-bumkeun",
+      "jo-hyeonwoo",
+      "kim-taehyeon",
+      "cho-guesung",
+      "hwang-heechan",
+      "cho-wije",
+      "kim-moonhwan",
+      "park-jinseob",
+      "bae-junho",
+      "oh-hyeongyu",
+      "yang-hyunjun",
+      "castrop-jens",
+      "kim-jingyu",
+      "eom-jisung",
+      "lee-donggyeong"
+    ],
+    "cze": [
+      "cze-jindrich-stanek",
+      "cze-lukas-hornicek",
+      "cze-david-zima",
+      "cze-tomas-holes",
+      "cze-vladimir-darida",
+      "cze-adam-hlozek",
+      "cze-jan-kuchta",
+      "cze-lukas-cerv",
+      "cze-mojmir-chytil",
+      "cze-david-jurasek",
+      "cze-michal-sadilek",
+      "cze-tomas-chory",
+      "cze-david-doudera",
+      "cze-hugo-sochurek",
+      "cze-denis-visinsky"
+    ]
+  },
+  "unavailableByTeam": {
+    "kor": [],
+    "cze": []
+  },
+  "substitutionsByTeam": {
+    "kor": [
+      {
+        "minute": {
+          "regulation": 62
+        },
+        "outPlayerId": "lee-jaesung",
+        "inPlayerId": "hwang-heechan",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 69
+        },
+        "outPlayerId": "son-heungmin",
+        "inPlayerId": "oh-hyeongyu",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 69
+        },
+        "outPlayerId": "lee-taeseok",
+        "inPlayerId": "eom-jisung",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 84
+        },
+        "outPlayerId": "hwang-inbeom",
+        "inPlayerId": "kim-jingyu",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 84
+        },
+        "outPlayerId": "paik-seungho",
+        "inPlayerId": "park-jinseob",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ],
+    "cze": [
+      {
+        "minute": {
+          "regulation": 63
+        },
+        "outPlayerId": "cze-pavel-sulc",
+        "inPlayerId": "cze-adam-hlozek",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 63
+        },
+        "outPlayerId": "cze-patrik-schick",
+        "inPlayerId": "cze-tomas-chory",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 63
+        },
+        "outPlayerId": "cze-lukas-provod",
+        "inPlayerId": "cze-michal-sadilek",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 84
+        },
+        "outPlayerId": "cze-alexandr-sojka",
+        "inPlayerId": "cze-mojmir-chytil",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ]
+  },
+  "events": [
+    {
+      "minute": {
+        "regulation": 59
+      },
+      "type": "goal",
+      "teamId": "cze",
+      "playerId": "cze-ladislav-krejci",
+      "assistPlayerId": "cze-vladimir-coufal",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 62
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "hwang-heechan",
+      "relatedPlayerId": "lee-jaesung",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 63
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-adam-hlozek",
+      "relatedPlayerId": "cze-pavel-sulc",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 63
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-tomas-chory",
+      "relatedPlayerId": "cze-patrik-schick",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 63
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-michal-sadilek",
+      "relatedPlayerId": "cze-lukas-provod",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 67
+      },
+      "type": "goal",
+      "teamId": "kor",
+      "playerId": "hwang-inbeom",
+      "assistPlayerId": "lee-kangin",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 69
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "oh-hyeongyu",
+      "relatedPlayerId": "son-heungmin",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 69
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "eom-jisung",
+      "relatedPlayerId": "lee-taeseok",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 80
+      },
+      "type": "goal",
+      "teamId": "kor",
+      "playerId": "oh-hyeongyu",
+      "assistPlayerId": "hwang-inbeom",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 84
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "kim-jingyu",
+      "relatedPlayerId": "hwang-inbeom",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 84
+      },
+      "type": "substitution",
+      "teamId": "kor",
+      "playerId": "park-jinseob",
+      "relatedPlayerId": "paik-seungho",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 84
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-mojmir-chytil",
+      "relatedPlayerId": "cze-alexandr-sojka",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 90,
+        "added": 6
+      },
+      "type": "card",
+      "teamId": "kor",
+      "playerId": "lee-gihyuk",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    }
+  ],
+  "sourceIds": [
+    "fifa-ftr-m02",
+    "fifa-tactical-m02",
+    "fifa-pmsr-m02",
+    "fifa-api-m02",
+    "fifa-article-m02"
+  ],
+  "discrepancyNotes": [
+    "체코의 3인 교체는 FTR 63분을 사용했다. PMSR에는 64분으로 표기된다."
+  ],
+  "verificationStatus": "verified_official"
+}

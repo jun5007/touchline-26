@@ -1,0 +1,340 @@
+[
+  {
+    "leagueId": "association-aut",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-bel",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-chn",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-cyp",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-cze",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-den",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-eng",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-esp",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-fra",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-ger",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-gre",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-ita",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-jpn",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-kor",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-ksa",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-mex",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-ned",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-nor",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-por",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-rsa",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-rus",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-sco",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-srb",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-tur",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-usa",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  },
+  {
+    "leagueId": "association-wal",
+    "indexName": "TOUCHLINE League Strength Index",
+    "strengthFactor": 1,
+    "confidence": "low",
+    "sourceStatus": "incomplete",
+    "attributeImpactLimit": 0,
+    "applied": false,
+    "sourceIds": [
+      "fifa-squad-list-2026-v1"
+    ],
+    "note": "리그를 같은 척도로 연결할 검증 근거를 확보하지 못해 보정을 적용하지 않음. 1.00은 중립 승수가 아니라 미적용 표기이며 속성 영향은 0이다."
+  }
+]

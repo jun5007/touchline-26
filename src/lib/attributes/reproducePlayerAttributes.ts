@@ -18,7 +18,8 @@ import type {
   MetricDefinition,
 } from "./types";
 
-export const ATTRIBUTE_MODEL_VERSION = "match-report-position-group-v1";
+export const ATTRIBUTE_MODEL_VERSION =
+  "match-report-position-group-v2-aerial";
 
 const COUNT_METRICS = [
   "passesAttempted",
@@ -33,6 +34,7 @@ const COUNT_METRICS = [
   "assists",
   "directPressures",
   "possessionRegains",
+  "aerialDuelsWon",
   "crossesAttempted",
   "crossesCompleted",
 ] as const;
@@ -75,6 +77,7 @@ export const PLAYER_ATTRIBUTE_METRIC_DEFINITIONS: Readonly<
   assists: { normalization: "per90", direction: "higher" },
   directPressures: { normalization: "per90", direction: "higher" },
   possessionRegains: { normalization: "per90", direction: "higher" },
+  aerialDuelsWon: { normalization: "per90", direction: "higher" },
   crossesAttempted: { normalization: "per90", direction: "higher" },
   crossesCompleted: { normalization: "per90", direction: "higher" },
   passCompletionRate: { normalization: "raw", direction: "higher" },
@@ -99,9 +102,9 @@ function definitions(
  * intentionally explicit per tactical position group. calculateAttributes
  * re-normalizes the weights over the evidence available for each attribute.
  *
- * FIFA's selected report has no player-level aerial-duel metric. `aerial`
- * therefore has no metric weights and deterministically falls back to the
- * neutral 50th percentile rather than inventing evidence.
+ * `aerial` maps FIFA PMSR page 47's player-level "Duels Won - Aerial" count
+ * through the same per-90, position-group percentile and confidence-shrinkage
+ * pipeline as the other report-derived attributes.
  */
 export const ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP: Readonly<
   Record<PositionGroup, Readonly<Record<AttributeKey, AttributeDefinition>>>
@@ -116,7 +119,7 @@ export const ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP: Readonly<
     }),
     pressing: attribute({}),
     defending: attribute({}),
-    aerial: attribute({}),
+    aerial: attribute({ aerialDuelsWon: 1 }),
     impact: attribute({}),
   }),
   CB: definitions({
@@ -148,7 +151,7 @@ export const ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP: Readonly<
       possessionRegains: 0.75,
       directPressures: 0.25,
     }),
-    aerial: attribute({}),
+    aerial: attribute({ aerialDuelsWon: 1 }),
     impact: attribute({
       goals: 0.25,
       assists: 0.15,
@@ -188,7 +191,7 @@ export const ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP: Readonly<
       possessionRegains: 0.65,
       directPressures: 0.35,
     }),
-    aerial: attribute({}),
+    aerial: attribute({ aerialDuelsWon: 1 }),
     impact: attribute({
       assists: 0.2,
       crossesCompleted: 0.2,
@@ -227,7 +230,7 @@ export const ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP: Readonly<
       possessionRegains: 0.7,
       directPressures: 0.3,
     }),
-    aerial: attribute({}),
+    aerial: attribute({ aerialDuelsWon: 1 }),
     impact: attribute({
       goals: 0.15,
       assists: 0.15,
@@ -266,7 +269,7 @@ export const ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP: Readonly<
       possessionRegains: 0.65,
       directPressures: 0.35,
     }),
-    aerial: attribute({}),
+    aerial: attribute({ aerialDuelsWon: 1 }),
     impact: attribute({
       goals: 0.3,
       assists: 0.3,
@@ -306,7 +309,7 @@ export const ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP: Readonly<
       possessionRegains: 0.6,
       directPressures: 0.4,
     }),
-    aerial: attribute({}),
+    aerial: attribute({ aerialDuelsWon: 1 }),
     impact: attribute({
       goals: 0.25,
       assists: 0.3,
@@ -345,7 +348,7 @@ export const ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP: Readonly<
       possessionRegains: 0.6,
       directPressures: 0.4,
     }),
-    aerial: attribute({}),
+    aerial: attribute({ aerialDuelsWon: 1 }),
     impact: attribute({
       goals: 0.4,
       assists: 0.2,
@@ -426,7 +429,7 @@ export function buildPositionGroupComparisonSamples(
     if (
       player.positionGroup !== positionGroup ||
       player.rawMetrics === null ||
-      player.minutesPlayed <= 0
+      (player.minutesPlayed ?? 0) <= 0
     ) {
       continue;
     }
@@ -434,7 +437,7 @@ export function buildPositionGroupComparisonSamples(
     const normalizedMetrics = normalizeMetrics(
       deriveModelMetrics(player.rawMetrics),
       PLAYER_ATTRIBUTE_METRIC_DEFINITIONS,
-      player.minutesPlayed,
+      player.minutesPlayed ?? undefined,
     );
 
     for (const [metric, value] of Object.entries(normalizedMetrics)) {
@@ -451,6 +454,8 @@ export function derivePlayerAttributeResults(
   player: Player,
   players: readonly Player[],
 ): AttributeResultMap {
+  if (player.positionGroup === null) return {};
+
   return calculateAttributes({
     metrics: deriveModelMetrics(player.rawMetrics),
     comparisonSamples: buildPositionGroupComparisonSamples(
@@ -461,7 +466,7 @@ export function derivePlayerAttributeResults(
       ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP[player.positionGroup],
     metricDefinitions: PLAYER_ATTRIBUTE_METRIC_DEFINITIONS,
     confidence: player.confidence,
-    sampleMinutes: player.minutesPlayed,
+    sampleMinutes: player.minutesPlayed ?? undefined,
   });
 }
 
@@ -469,6 +474,12 @@ export function derivePlayerAttributes(
   player: Player,
   players: readonly Player[],
 ): PlayerAttributes {
+  if (player.positionGroup === null) {
+    return Object.fromEntries(
+      ATTRIBUTE_KEYS.map((attributeKey) => [attributeKey, null]),
+    ) as PlayerAttributes;
+  }
+
   const scores = getAttributeScores(
     derivePlayerAttributeResults(player, players),
   );

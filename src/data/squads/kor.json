@@ -1,0 +1,41 @@
+{
+  "teamId": "kor",
+  "competition": "FIFA World Cup 2026",
+  "squadSize": 26,
+  "headCoach": {
+    "nameKo": "홍명보",
+    "nameEn": "Hong Myungbo"
+  },
+  "playerIds": [
+    "kim-seunggyu",
+    "lee-hanbeom",
+    "lee-gihyuk",
+    "kim-minjae",
+    "kim-taehyeon",
+    "hwang-inbeom",
+    "son-heungmin",
+    "paik-seungho",
+    "cho-guesung",
+    "lee-jaesung",
+    "hwang-heechan",
+    "song-bumkeun",
+    "lee-taeseok",
+    "cho-wije",
+    "kim-moonhwan",
+    "park-jinseob",
+    "bae-junho",
+    "oh-hyeongyu",
+    "lee-kangin",
+    "yang-hyunjun",
+    "jo-hyeonwoo",
+    "seol-youngwoo",
+    "castrop-jens",
+    "kim-jingyu",
+    "eom-jisung",
+    "lee-donggyeong"
+  ],
+  "sourceIds": [
+    "fifa-squad-list-2026-v1"
+  ],
+  "verificationStatus": "verified"
+}

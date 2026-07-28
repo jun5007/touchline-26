@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
 
-import playersData from "@/data/players/players.json";
+import playersData from "@/test/fixtures/legacy/attribute-model-players.json";
 import type { Player } from "@/data/types";
 
 import { adjustForConfidence } from "./confidenceAdjustment";
 import {
+  ATTRIBUTE_MODEL_VERSION,
   ATTRIBUTE_METRIC_WEIGHTS_BY_POSITION_GROUP,
   buildPositionGroupComparisonSamples,
   deriveAllPlayerAttributes,
@@ -14,6 +15,49 @@ import {
 const players = playersData as Player[];
 
 describe("stored player attribute reproduction", () => {
+  it("maps FIFA PMSR page 47 aerial-duels-won values exactly", () => {
+    expect(ATTRIBUTE_MODEL_VERSION).toBe(
+      "match-report-position-group-v2-aerial",
+    );
+
+    const expectedAerialDuelsWon: Readonly<Record<string, number>> = {
+      "kim-seunggyu": 0,
+      "lee-hanbeom": 5,
+      "lee-gihyuk": 5,
+      "kim-minjae": 4,
+      "hwang-inbeom": 2,
+      "son-heungmin": 0,
+      "paik-seungho": 1,
+      "lee-jaesung": 1,
+      "lee-taeseok": 2,
+      "lee-kangin": 0,
+      "seol-youngwoo": 0,
+      "hwang-heechan": 0,
+      "park-jinseob": 3,
+      "oh-hyeongyu": 2,
+      "kim-jingyu": 1,
+      "eom-jisung": 1,
+    };
+
+    for (const [playerId, expectedValue] of Object.entries(
+      expectedAerialDuelsWon,
+    )) {
+      const player = players.find((candidate) => candidate.id === playerId);
+      expect(player?.rawMetrics?.aerialDuelsWon, playerId).toBe(
+        expectedValue,
+      );
+    }
+
+    expect(
+      buildPositionGroupComparisonSamples(players, "WINGER")
+        .aerialDuelsWon,
+    ).toEqual([
+      expect.closeTo(0),
+      expect.closeTo(0),
+      expect.closeTo((1 * 90) / 28),
+    ]);
+  });
+
   it("reproduces every stored 1-20 attribute exactly", () => {
     const generated = deriveAllPlayerAttributes(players);
 
@@ -33,7 +77,7 @@ describe("stored player attribute reproduction", () => {
       expect.arrayContaining([
         expect.closeTo((8 * 90) / 99),
         expect.closeTo((3 * 90) / 34),
-        3,
+        expect.closeTo((1 * 90) / 28),
       ]),
     );
   });

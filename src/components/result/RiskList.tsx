@@ -7,12 +7,12 @@ export function RiskList({
 }) {
   return (
     <section className="panel p-5 sm:p-6" aria-labelledby="risk-title">
-      <p className="text-[10px] font-black tracking-[.13em] text-[#ff9e90]">RISK &amp; RESPONSE</p>
+      <p className="text-xs font-black tracking-[.13em] text-[#ff9e90]">RISK &amp; RESPONSE</p>
       <h2 id="risk-title" className="mt-2 text-lg font-black text-white">따라오는 위험</h2>
       <ul className="mt-4 grid gap-3">
         {risks.map((item, index) => (
           <li key={`${item}-${index}`} className="flex gap-3 text-sm leading-6 text-[#d9bdba]">
-            <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#ff806d]/10 text-[10px] font-black text-[#ff9e90]">!</span>
+            <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#ff806d]/10 text-xs font-black text-[#ff9e90]">!</span>
             {item}
           </li>
         ))}
@@ -28,4 +28,3 @@ export function RiskList({
     </section>
   );
 }
-

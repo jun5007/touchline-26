@@ -50,21 +50,20 @@ export function PitchPlayer({
       >
         {previewPlayer ? previewPlayer.shirtNumber : player.shirtNumber}
         {previewPlayer && (
-          <span className="absolute -right-2 -top-2 rounded-full bg-[#65d89a] px-1.5 py-0.5 text-[7px] font-black text-[#062015]">
+          <span className="absolute -right-2 -top-2 rounded-full bg-[#65d89a] px-1.5 py-0.5 text-[11px] font-black text-[#062015]">
             IN
           </span>
         )}
         {selected && !previewPlayer && (
-          <span className="absolute -right-2 -top-2 rounded-full bg-[#ff806d] px-1.5 py-0.5 text-[7px] font-black text-[#2a0e12]">
+          <span className="absolute -right-2 -top-2 rounded-full bg-[#ff806d] px-1.5 py-0.5 text-[11px] font-black text-[#2a0e12]">
             OUT
           </span>
         )}
       </span>
-      <span className="mt-1.5 max-w-[76px] truncate rounded-md bg-[#06110d]/84 px-2 py-1 text-[9px] font-black leading-none text-white shadow">
+      <span className="mt-1.5 max-w-[82px] truncate rounded-md bg-[#06110d]/88 px-2 py-1 text-[11px] font-black leading-none text-white shadow">
         {previewPlayer ? previewPlayer.name : player.name}
       </span>
-      <span className="mt-0.5 text-[8px] font-bold text-white/55">{spot.slot}</span>
+      <span className="mt-1 text-[11px] font-bold text-white/75">{spot.slot}</span>
     </button>
   );
 }
-

@@ -1,0 +1,375 @@
+{
+  "id": "cze-rsa-2026",
+  "fifaMatchId": "400021440",
+  "fdpResourceId": "r12449",
+  "groupId": "group-a",
+  "competition": "FIFA World Cup 2026",
+  "stage": "group",
+  "matchNumber": 25,
+  "date": "2026-06-18",
+  "localKickoff": "12:00",
+  "kickoffUtc": "2026-06-18T16:00:00Z",
+  "venue": "Atlanta Stadium",
+  "city": "Atlanta",
+  "country": "United States",
+  "attendance": 67442,
+  "homeTeamId": "cze",
+  "awayTeamId": "rsa",
+  "playableTeamIds": [
+    "cze",
+    "rsa"
+  ],
+  "finalScore": {
+    "home": 1,
+    "away": 1
+  },
+  "halfTimeScore": {
+    "home": 1,
+    "away": 0
+  },
+  "formationsByTeam": {
+    "cze": "3-5-2",
+    "rsa": "4-3-3"
+  },
+  "lineupsByTeam": {
+    "cze": [
+      "cze-matej-kovar",
+      "cze-tomas-holes",
+      "cze-robin-hranac",
+      "cze-vladimir-coufal",
+      "cze-ladislav-krejci",
+      "cze-vladimir-darida",
+      "cze-adam-hlozek",
+      "cze-patrik-schick",
+      "cze-lukas-cerv",
+      "cze-michal-sadilek",
+      "cze-alexandr-sojka"
+    ],
+    "rsa": [
+      "rsa-ronwen-williams",
+      "rsa-teboho-mokoena",
+      "rsa-thalente-mbatha",
+      "rsa-aubrey-modiba",
+      "rsa-oswin-appollis",
+      "rsa-thapelo-maseko",
+      "rsa-mbekezeli-mbokazi",
+      "rsa-iqraam-rayners",
+      "rsa-khuliso-mudau",
+      "rsa-ime-okon",
+      "rsa-jayden-adams"
+    ]
+  },
+  "benchesByTeam": {
+    "cze": [
+      "cze-jindrich-stanek",
+      "cze-lukas-hornicek",
+      "cze-david-zima",
+      "cze-stepan-chaloupek",
+      "cze-jan-kuchta",
+      "cze-mojmir-chytil",
+      "cze-pavel-sulc",
+      "cze-lukas-provod",
+      "cze-tomas-chory",
+      "cze-jaroslav-zeleny",
+      "cze-david-doudera",
+      "cze-tomas-soucek",
+      "cze-hugo-sochurek",
+      "cze-denis-visinsky"
+    ],
+    "rsa": [
+      "rsa-sipho-chaine",
+      "rsa-ricardo-goss",
+      "rsa-thabang-matuludi",
+      "rsa-khulumani-ndamane",
+      "rsa-tshepang-moremi",
+      "rsa-lyle-foster",
+      "rsa-relebohile-mofokeng",
+      "rsa-evidence-makgopa",
+      "rsa-samukele-kabini",
+      "rsa-nkosinathi-sibisi",
+      "rsa-olwethu-makhanya",
+      "rsa-kamogelo-sebelebele",
+      "rsa-bradley-cross"
+    ]
+  },
+  "unavailableByTeam": {
+    "cze": [
+      {
+        "playerId": "cze-david-jurasek",
+        "status": "matchday_unavailable",
+        "reason": null,
+        "note": "공식 경기 명단 미등재. 사유는 공식 자료에서 확인되지 않음.",
+        "verificationStatus": "partial"
+      }
+    ],
+    "rsa": [
+      {
+        "playerId": "rsa-sphephelo-sithole",
+        "status": "matchday_unavailable",
+        "reason": null,
+        "note": "개막전 퇴장과 이 경기 공식 명단 미등재는 확인. 징계 기간은 별도 단정하지 않음.",
+        "verificationStatus": "partial"
+      },
+      {
+        "playerId": "rsa-themba-zwane",
+        "status": "matchday_unavailable",
+        "reason": null,
+        "note": "개막전 퇴장과 이 경기 공식 명단 미등재는 확인. 징계 기간은 별도 단정하지 않음.",
+        "verificationStatus": "partial"
+      }
+    ]
+  },
+  "substitutionsByTeam": {
+    "cze": [
+      {
+        "minute": {
+          "regulation": 55
+        },
+        "outPlayerId": "cze-vladimir-darida",
+        "inPlayerId": "cze-pavel-sulc",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 55
+        },
+        "outPlayerId": "cze-alexandr-sojka",
+        "inPlayerId": "cze-jaroslav-zeleny",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 67
+        },
+        "outPlayerId": "cze-adam-hlozek",
+        "inPlayerId": "cze-lukas-provod",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 67
+        },
+        "outPlayerId": "cze-michal-sadilek",
+        "inPlayerId": "cze-tomas-soucek",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 78
+        },
+        "outPlayerId": "cze-lukas-cerv",
+        "inPlayerId": "cze-david-zima",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ],
+    "rsa": [
+      {
+        "minute": {
+          "regulation": 46
+        },
+        "outPlayerId": "rsa-jayden-adams",
+        "inPlayerId": "rsa-relebohile-mofokeng",
+        "note": "half-time",
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 66
+        },
+        "outPlayerId": "rsa-iqraam-rayners",
+        "inPlayerId": "rsa-evidence-makgopa",
+        "note": null,
+        "verificationStatus": "verified_official"
+      },
+      {
+        "minute": {
+          "regulation": 84
+        },
+        "outPlayerId": "rsa-thapelo-maseko",
+        "inPlayerId": "rsa-kamogelo-sebelebele",
+        "note": null,
+        "verificationStatus": "verified_official"
+      }
+    ]
+  },
+  "events": [
+    {
+      "minute": {
+        "regulation": 6
+      },
+      "type": "goal",
+      "teamId": "cze",
+      "playerId": "cze-michal-sadilek",
+      "assistPlayerId": "cze-alexandr-sojka",
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 33
+      },
+      "type": "card",
+      "teamId": "rsa",
+      "playerId": "rsa-teboho-mokoena",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 40
+      },
+      "type": "card",
+      "teamId": "rsa",
+      "playerId": "rsa-thalente-mbatha",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 46
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-relebohile-mofokeng",
+      "relatedPlayerId": "rsa-jayden-adams",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": "half-time",
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 55
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-pavel-sulc",
+      "relatedPlayerId": "cze-vladimir-darida",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 55
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-jaroslav-zeleny",
+      "relatedPlayerId": "cze-alexandr-sojka",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 66
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-evidence-makgopa",
+      "relatedPlayerId": "rsa-iqraam-rayners",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 67
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-lukas-provod",
+      "relatedPlayerId": "cze-adam-hlozek",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 67
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-tomas-soucek",
+      "relatedPlayerId": "cze-michal-sadilek",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 75
+      },
+      "type": "card",
+      "teamId": "cze",
+      "playerId": "cze-ladislav-krejci",
+      "assistPlayerId": null,
+      "card": "yellow",
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 78
+      },
+      "type": "substitution",
+      "teamId": "cze",
+      "playerId": "cze-david-zima",
+      "relatedPlayerId": "cze-lukas-cerv",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 83
+      },
+      "type": "goal",
+      "teamId": "rsa",
+      "playerId": "rsa-teboho-mokoena",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": "penalty",
+      "verificationStatus": "verified_official"
+    },
+    {
+      "minute": {
+        "regulation": 84
+      },
+      "type": "substitution",
+      "teamId": "rsa",
+      "playerId": "rsa-kamogelo-sebelebele",
+      "relatedPlayerId": "rsa-thapelo-maseko",
+      "assistPlayerId": null,
+      "card": null,
+      "detail": null,
+      "verificationStatus": "verified_official"
+    }
+  ],
+  "sourceIds": [
+    "fifa-ftr-m25",
+    "fifa-tactical-m25",
+    "fifa-pmsr-m25",
+    "fifa-api-m25",
+    "fifa-article-m25"
+  ],
+  "discrepancyNotes": [],
+  "verificationStatus": "verified_official"
+}

@@ -1,0 +1,2147 @@
+[
+  {
+    "id": "cze-m02-equaliser-84",
+    "matchId": "kor-cze-2026",
+    "selectedTeamId": "cze",
+    "opponentTeamId": "kor",
+    "order": 1,
+    "globalOrder": 4,
+    "minute": 84,
+    "scenarioTimestamp": "2026-06-12T03:24:00.000Z",
+    "timestampBasis": "derived logical match-clock boundary; not an official wall-clock event timestamp",
+    "currentScore": {
+      "home": 2,
+      "away": 1
+    },
+    "scoreState": "trailing",
+    "substitutionsRemaining": 2,
+    "title": "마지막 전방 카드, 구조를 얼마나 열 것인가",
+    "shortMission": "84분 1–2, 동점골을 노리되 역습 한 번까지 견뎌라",
+    "mission": "남은 시간 전방 숫자를 늘려 동점을 노리면서도 공을 잃은 뒤 중앙 통로를 닫아라.",
+    "difficulty": "보통",
+    "observations": [
+      "체코는 59분 먼저 득점했다.",
+      "대한민국이 67분 동점을 만들고 80분 역전했다.",
+      "체코는 63분 공격진 세 명을 바꿨다.",
+      "남은 두 장 중 한 장으로 마지막 공격 구조를 정해야 한다."
+    ],
+    "contextTimeline": [
+      {
+        "minute": "59′",
+        "label": "체코 선제골",
+        "tone": "positive"
+      },
+      {
+        "minute": "67′",
+        "label": "대한민국 동점",
+        "tone": "danger"
+      },
+      {
+        "minute": "80′",
+        "label": "대한민국 역전",
+        "tone": "danger"
+      },
+      {
+        "minute": "84′",
+        "label": "당신의 결정",
+        "tone": "neutral"
+      }
+    ],
+    "opponentShape": "3-4-3 · 한 골 리드 보호",
+    "currentLineup": [
+      "cze-matej-kovar",
+      "cze-robin-hranac",
+      "cze-vladimir-coufal",
+      "cze-stepan-chaloupek",
+      "cze-ladislav-krejci",
+      "cze-jaroslav-zeleny",
+      "cze-tomas-soucek",
+      "cze-alexandr-sojka",
+      "cze-adam-hlozek",
+      "cze-tomas-chory",
+      "cze-michal-sadilek"
+    ],
+    "lineupStatus": "normal",
+    "benchOptions": [
+      "cze-mojmir-chytil",
+      "cze-jan-kuchta",
+      "cze-vladimir-darida",
+      "cze-lukas-cerv",
+      "cze-david-zima"
+    ],
+    "unavailablePlayerIds": [],
+    "attributeWeights": {
+      "finishing": 0.2,
+      "chanceCreation": 0.18,
+      "dribbling": 0.14,
+      "passing": 0.14,
+      "pressing": 0.12,
+      "defending": 0.06,
+      "aerial": 0.1,
+      "impact": 0.14
+    },
+    "defaultInstructions": {
+      "attackDirection": "balanced",
+      "pressing": "medium",
+      "defensiveLine": "medium",
+      "mentality": "attacking"
+    },
+    "instructionFit": {
+      "attackDirection": {
+        "left": 0,
+        "centre": 2,
+        "right": 0,
+        "balanced": 1
+      },
+      "pressing": {
+        "low": -2,
+        "medium": 2,
+        "high": 1
+      },
+      "defensiveLine": {
+        "low": -1,
+        "medium": 2,
+        "high": 0
+      },
+      "mentality": {
+        "safe": -3,
+        "balanced": 1,
+        "attacking": 3
+      },
+      "combinationModifiers": [
+        {
+          "id": "attack-centre-commitment",
+          "label": "중앙 공략과 공격 성향의 박스 점유",
+          "when": {
+            "attackDirection": "centre",
+            "mentality": "attacking"
+          },
+          "modifier": 1
+        },
+        {
+          "id": "attack-exposed-line",
+          "label": "낮은 압박과 높은 라인의 간격",
+          "when": {
+            "pressing": "low",
+            "defensiveLine": "high"
+          },
+          "modifier": -3
+        }
+      ]
+    },
+    "matchupModifiers": {
+      "base": 55,
+      "rules": [
+        {
+          "id": "attack-striker",
+          "label": "박스 중앙 공격수",
+          "positionGroups": [
+            "STRIKER"
+          ],
+          "modifier": 10
+        },
+        {
+          "id": "attack-winger",
+          "label": "측면 돌파 옵션",
+          "positionGroups": [
+            "WINGER"
+          ],
+          "modifier": 7
+        },
+        {
+          "id": "attack-role",
+          "label": "득점 지향 역할",
+          "roleIds": [
+            "target-striker",
+            "advanced-forward",
+            "inside-forward"
+          ],
+          "modifier": 7
+        }
+      ]
+    },
+    "matchupTags": [
+      "득점 필요",
+      "박스 점유",
+      "전환 위험"
+    ],
+    "riskRules": [
+      "high-line-low-press",
+      "all-out-attack",
+      "position-mismatch",
+      "low-confidence"
+    ],
+    "tournamentFormByPlayer": {
+      "cze-matej-kovar": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-robin-hranac": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-vladimir-coufal": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-stepan-chaloupek": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-ladislav-krejci": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-jaroslav-zeleny": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-tomas-soucek": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-alexandr-sojka": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-adam-hlozek": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-tomas-chory": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-michal-sadilek": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-mojmir-chytil": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-jan-kuchta": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-vladimir-darida": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-lukas-cerv": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-david-zima": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      }
+    },
+    "currentConditionByPlayer": {
+      "cze-matej-kovar": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-robin-hranac": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-vladimir-coufal": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-stepan-chaloupek": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-ladislav-krejci": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-jaroslav-zeleny": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-tomas-soucek": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-alexandr-sojka": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-adam-hlozek": {
+        "minutesInMatch": 21,
+        "energyEstimate": 91,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-tomas-chory": {
+        "minutesInMatch": 21,
+        "energyEstimate": 91,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-michal-sadilek": {
+        "minutesInMatch": 21,
+        "energyEstimate": 91,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-mojmir-chytil": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-jan-kuchta": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-vladimir-darida": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-lukas-cerv": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-david-zima": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "verificationStatus": "partial"
+      }
+    },
+    "evidenceRefs": [
+      {
+        "sourceId": "fifa-ftr-m02",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 84,
+        "observedThrough": "2026-06-12T03:24:00.000Z"
+      },
+      {
+        "sourceId": "fifa-tactical-m02",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-12T02:00:00Z"
+      },
+      {
+        "sourceId": "fifa-squad-list-2026-v1",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-10T23:59:59Z",
+        "note": "최종 명단의 신원·등록·소속팀 정보만 사용"
+      }
+    ],
+    "actualDecision": {
+      "minute": 84,
+      "outPlayerId": "cze-alexandr-sojka",
+      "inPlayerId": "cze-mojmir-chytil",
+      "scoreAtDecision": {
+        "home": 2,
+        "away": 1
+      },
+      "interpretedRole": "전방 교체로 박스 점유 확대",
+      "interpretationStatus": "inferred",
+      "note": "OUT/IN과 시점은 공식 기록이다. 구체적인 전술 목적은 경기 상태에 기반한 해석이다.",
+      "parallelDecision": null,
+      "sourceIds": [
+        "fifa-ftr-m02"
+      ],
+      "usage": "result-only"
+    },
+    "resultFacts": {
+      "finalScore": {
+        "home": 2,
+        "away": 1
+      },
+      "eventsAfterScenario": [
+        {
+          "minute": {
+            "regulation": 90,
+            "added": 6
+          },
+          "type": "card",
+          "teamId": "kor",
+          "playerId": "lee-gihyuk",
+          "assistPlayerId": null,
+          "card": "yellow",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        }
+      ],
+      "sourceIds": [
+        "fifa-ftr-m02",
+        "fifa-tactical-m02",
+        "fifa-pmsr-m02",
+        "fifa-api-m02",
+        "fifa-article-m02"
+      ],
+      "usage": "result-only"
+    },
+    "sourceIds": [
+      "fifa-ftr-m02",
+      "fifa-tactical-m02",
+      "fifa-pmsr-m02",
+      "fifa-api-m02",
+      "fifa-article-m02"
+    ],
+    "verificationStatus": "verified_official"
+  },
+  {
+    "id": "cze-m25-protect-78",
+    "matchId": "cze-rsa-2026",
+    "selectedTeamId": "cze",
+    "opponentTeamId": "rsa",
+    "order": 2,
+    "globalOrder": 6,
+    "minute": 78,
+    "scenarioTimestamp": "2026-06-18T17:18:00.000Z",
+    "timestampBasis": "derived logical match-clock boundary; not an official wall-clock event timestamp",
+    "currentScore": {
+      "home": 1,
+      "away": 0
+    },
+    "scoreState": "leading",
+    "substitutionsRemaining": 1,
+    "title": "리드를 잠글 다섯 번째 수비수를 세울까",
+    "shortMission": "78분 1–0, 수비 숫자와 전방 압박 중 무엇을 남길지 정하라",
+    "mission": "경고를 받은 수비 리더를 보호하면서 박스 수비 숫자와 전방 압박의 균형을 선택하라.",
+    "difficulty": "어려움",
+    "observations": [
+      "미할 사딜렉이 6분 선제골을 넣었다.",
+      "체코는 55분과 67분에 네 장을 사용했다.",
+      "라디슬라프 크레이치는 75분 경고를 받았다.",
+      "마지막 한 장으로 리드 보호 구조를 결정해야 한다."
+    ],
+    "contextTimeline": [
+      {
+        "minute": "6′",
+        "label": "체코 선제골",
+        "tone": "positive"
+      },
+      {
+        "minute": "67′",
+        "label": "체코 네 번째 교체",
+        "tone": "neutral"
+      },
+      {
+        "minute": "75′",
+        "label": "크레이치 경고",
+        "tone": "danger"
+      },
+      {
+        "minute": "78′",
+        "label": "당신의 결정",
+        "tone": "positive"
+      }
+    ],
+    "opponentShape": "4-3-3 · 동점골을 위한 전방 보강",
+    "currentLineup": [
+      "cze-matej-kovar",
+      "cze-tomas-holes",
+      "cze-robin-hranac",
+      "cze-vladimir-coufal",
+      "cze-ladislav-krejci",
+      "cze-lukas-cerv",
+      "cze-patrik-schick",
+      "cze-pavel-sulc",
+      "cze-jaroslav-zeleny",
+      "cze-lukas-provod",
+      "cze-tomas-soucek"
+    ],
+    "lineupStatus": "normal",
+    "benchOptions": [
+      "cze-david-zima",
+      "cze-tomas-chory",
+      "cze-mojmir-chytil",
+      "cze-jan-kuchta",
+      "cze-denis-visinsky"
+    ],
+    "unavailablePlayerIds": [
+      "cze-david-jurasek"
+    ],
+    "attributeWeights": {
+      "finishing": 0.04,
+      "chanceCreation": 0.14,
+      "dribbling": 0.1,
+      "passing": 0.2,
+      "pressing": 0.15,
+      "defending": 0.2,
+      "aerial": 0.13,
+      "impact": 0.14
+    },
+    "defaultInstructions": {
+      "attackDirection": "balanced",
+      "pressing": "medium",
+      "defensiveLine": "medium",
+      "mentality": "safe"
+    },
+    "instructionFit": {
+      "attackDirection": {
+        "left": 0,
+        "centre": -1,
+        "right": 0,
+        "balanced": 2
+      },
+      "pressing": {
+        "low": -1,
+        "medium": 2,
+        "high": 0
+      },
+      "defensiveLine": {
+        "low": 0,
+        "medium": 2,
+        "high": -2
+      },
+      "mentality": {
+        "safe": 3,
+        "balanced": 1,
+        "attacking": -3
+      },
+      "combinationModifiers": [
+        {
+          "id": "control-mid-block",
+          "label": "중간 라인과 선택적 압박",
+          "when": {
+            "pressing": "medium",
+            "defensiveLine": "medium",
+            "mentality": "safe"
+          },
+          "modifier": 1
+        },
+        {
+          "id": "control-passive-block",
+          "label": "지나치게 수동적인 저블록",
+          "when": {
+            "pressing": "low",
+            "defensiveLine": "low"
+          },
+          "modifier": -2
+        }
+      ]
+    },
+    "matchupModifiers": {
+      "base": 56,
+      "rules": [
+        {
+          "id": "control-midfielder",
+          "label": "중원 통제",
+          "positionGroups": [
+            "DM",
+            "CM_AM"
+          ],
+          "modifier": 10
+        },
+        {
+          "id": "control-defender",
+          "label": "후방 숫자 보강",
+          "positionGroups": [
+            "CB",
+            "FB_WB"
+          ],
+          "modifier": 8
+        },
+        {
+          "id": "control-role",
+          "label": "리드 보호 역할",
+          "roleIds": [
+            "holding-midfielder",
+            "box-to-box",
+            "defensive-fullback",
+            "centre-back"
+          ],
+          "modifier": 7
+        }
+      ]
+    },
+    "matchupTags": [
+      "리드 보호",
+      "세컨드볼",
+      "전환 통제"
+    ],
+    "riskRules": [
+      "high-line-low-press",
+      "deep-passive-block",
+      "position-mismatch",
+      "low-confidence",
+      "protect-lead-attacking"
+    ],
+    "tournamentFormByPlayer": {
+      "cze-matej-kovar": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-tomas-holes": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-robin-hranac": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-vladimir-coufal": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-ladislav-krejci": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-lukas-cerv": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-patrik-schick": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 63,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-pavel-sulc": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 63,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-jaroslav-zeleny": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-lukas-provod": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 63,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-tomas-soucek": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-david-zima": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-tomas-chory": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 27,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-mojmir-chytil": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 6,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-jan-kuchta": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-denis-visinsky": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m02"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      }
+    },
+    "currentConditionByPlayer": {
+      "cze-matej-kovar": {
+        "minutesInMatch": 78,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-tomas-holes": {
+        "minutesInMatch": 78,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-robin-hranac": {
+        "minutesInMatch": 78,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-vladimir-coufal": {
+        "minutesInMatch": 78,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-ladislav-krejci": {
+        "minutesInMatch": 78,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "yellow",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-lukas-cerv": {
+        "minutesInMatch": 78,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-patrik-schick": {
+        "minutesInMatch": 78,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-pavel-sulc": {
+        "minutesInMatch": 23,
+        "energyEstimate": 90,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-jaroslav-zeleny": {
+        "minutesInMatch": 23,
+        "energyEstimate": 90,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-lukas-provod": {
+        "minutesInMatch": 11,
+        "energyEstimate": 95,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-tomas-soucek": {
+        "minutesInMatch": 11,
+        "energyEstimate": 95,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-david-zima": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-tomas-chory": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-mojmir-chytil": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-jan-kuchta": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-denis-visinsky": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      }
+    },
+    "evidenceRefs": [
+      {
+        "sourceId": "fifa-ftr-m25",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 78,
+        "observedThrough": "2026-06-18T17:18:00.000Z"
+      },
+      {
+        "sourceId": "fifa-tactical-m25",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-18T16:00:00Z"
+      },
+      {
+        "sourceId": "fifa-squad-list-2026-v1",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-10T23:59:59Z",
+        "note": "최종 명단의 신원·등록·소속팀 정보만 사용"
+      }
+    ],
+    "actualDecision": {
+      "minute": 78,
+      "outPlayerId": "cze-lukas-cerv",
+      "inPlayerId": "cze-david-zima",
+      "scoreAtDecision": {
+        "home": 1,
+        "away": 0
+      },
+      "interpretedRole": "미드필더를 빼고 수비 숫자 보강",
+      "interpretationStatus": "inferred",
+      "note": "OUT/IN과 시점은 공식 기록이다. 구체적인 전술 목적은 경기 상태에 기반한 해석이다.",
+      "parallelDecision": null,
+      "sourceIds": [
+        "fifa-ftr-m25"
+      ],
+      "usage": "result-only"
+    },
+    "resultFacts": {
+      "finalScore": {
+        "home": 1,
+        "away": 1
+      },
+      "eventsAfterScenario": [
+        {
+          "minute": {
+            "regulation": 83
+          },
+          "type": "goal",
+          "teamId": "rsa",
+          "playerId": "rsa-teboho-mokoena",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": "penalty",
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 84
+          },
+          "type": "substitution",
+          "teamId": "rsa",
+          "playerId": "rsa-kamogelo-sebelebele",
+          "relatedPlayerId": "rsa-thapelo-maseko",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        }
+      ],
+      "sourceIds": [
+        "fifa-ftr-m25",
+        "fifa-tactical-m25",
+        "fifa-pmsr-m25",
+        "fifa-api-m25",
+        "fifa-article-m25"
+      ],
+      "usage": "result-only"
+    },
+    "sourceIds": [
+      "fifa-ftr-m25",
+      "fifa-tactical-m25",
+      "fifa-pmsr-m25",
+      "fifa-api-m25",
+      "fifa-article-m25"
+    ],
+    "verificationStatus": "verified_official"
+  },
+  {
+    "id": "cze-m53-reconnect-56",
+    "matchId": "cze-mex-2026",
+    "selectedTeamId": "cze",
+    "opponentTeamId": "mex",
+    "order": 3,
+    "globalOrder": 10,
+    "minute": 56,
+    "scenarioTimestamp": "2026-06-25T01:56:00.000Z",
+    "timestampBasis": "derived logical match-clock boundary; not an official wall-clock event timestamp",
+    "currentScore": {
+      "home": 0,
+      "away": 1
+    },
+    "scoreState": "trailing",
+    "substitutionsRemaining": 5,
+    "title": "실점 직후 연결 고리를 되찾아라",
+    "shortMission": "56분 0–1, 창의성과 중원 연결을 보강하며 추가 실점을 막아라",
+    "mission": "막 실점한 흐름에서 패스 연결을 살리되 전진하는 순간의 후방 균형까지 유지하라.",
+    "difficulty": "보통",
+    "observations": [
+      "전반은 0–0으로 끝났다.",
+      "멕시코의 마테오 차베스가 55분 선제골을 넣었다.",
+      "체코는 아직 교체 카드를 사용하지 않았다.",
+      "실점 직후 첫 카드로 전진 연결의 방향을 바꿀 수 있다."
+    ],
+    "contextTimeline": [
+      {
+        "minute": "HT",
+        "label": "0–0",
+        "tone": "neutral"
+      },
+      {
+        "minute": "55′",
+        "label": "멕시코 선제골",
+        "tone": "danger"
+      },
+      {
+        "minute": "56′",
+        "label": "당신의 결정",
+        "tone": "neutral"
+      }
+    ],
+    "opponentShape": "4-1-2-3 · 선제골 직후 압박",
+    "currentLineup": [
+      "cze-matej-kovar",
+      "cze-tomas-holes",
+      "cze-robin-hranac",
+      "cze-vladimir-coufal",
+      "cze-ladislav-krejci",
+      "cze-david-doudera",
+      "cze-lukas-cerv",
+      "cze-michal-sadilek",
+      "cze-adam-hlozek",
+      "cze-pavel-sulc",
+      "cze-denis-visinsky"
+    ],
+    "lineupStatus": "normal",
+    "benchOptions": [
+      "cze-lukas-provod",
+      "cze-patrik-schick",
+      "cze-tomas-soucek",
+      "cze-tomas-chory",
+      "cze-alexandr-sojka"
+    ],
+    "unavailablePlayerIds": [
+      "cze-david-jurasek"
+    ],
+    "attributeWeights": {
+      "finishing": 0.2,
+      "chanceCreation": 0.18,
+      "dribbling": 0.14,
+      "passing": 0.14,
+      "pressing": 0.12,
+      "defending": 0.06,
+      "aerial": 0.1,
+      "impact": 0.14
+    },
+    "defaultInstructions": {
+      "attackDirection": "balanced",
+      "pressing": "medium",
+      "defensiveLine": "medium",
+      "mentality": "attacking"
+    },
+    "instructionFit": {
+      "attackDirection": {
+        "left": 0,
+        "centre": 2,
+        "right": 0,
+        "balanced": 1
+      },
+      "pressing": {
+        "low": -2,
+        "medium": 2,
+        "high": 1
+      },
+      "defensiveLine": {
+        "low": -1,
+        "medium": 2,
+        "high": 0
+      },
+      "mentality": {
+        "safe": -3,
+        "balanced": 1,
+        "attacking": 3
+      },
+      "combinationModifiers": [
+        {
+          "id": "attack-centre-commitment",
+          "label": "중앙 공략과 공격 성향의 박스 점유",
+          "when": {
+            "attackDirection": "centre",
+            "mentality": "attacking"
+          },
+          "modifier": 1
+        },
+        {
+          "id": "attack-exposed-line",
+          "label": "낮은 압박과 높은 라인의 간격",
+          "when": {
+            "pressing": "low",
+            "defensiveLine": "high"
+          },
+          "modifier": -3
+        }
+      ]
+    },
+    "matchupModifiers": {
+      "base": 55,
+      "rules": [
+        {
+          "id": "attack-striker",
+          "label": "박스 중앙 공격수",
+          "positionGroups": [
+            "STRIKER"
+          ],
+          "modifier": 10
+        },
+        {
+          "id": "attack-winger",
+          "label": "측면 돌파 옵션",
+          "positionGroups": [
+            "WINGER"
+          ],
+          "modifier": 7
+        },
+        {
+          "id": "attack-role",
+          "label": "득점 지향 역할",
+          "roleIds": [
+            "target-striker",
+            "advanced-forward",
+            "inside-forward"
+          ],
+          "modifier": 7
+        }
+      ]
+    },
+    "matchupTags": [
+      "득점 필요",
+      "박스 점유",
+      "전환 위험"
+    ],
+    "riskRules": [
+      "high-line-low-press",
+      "all-out-attack",
+      "position-mismatch",
+      "low-confidence"
+    ],
+    "tournamentFormByPlayer": {
+      "cze-matej-kovar": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-tomas-holes": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-robin-hranac": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-vladimir-coufal": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-ladislav-krejci": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-david-doudera": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-lukas-cerv": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 78,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-michal-sadilek": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 94,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-adam-hlozek": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 94,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-pavel-sulc": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 98,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-denis-visinsky": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "cze-lukas-provod": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 86,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-patrik-schick": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 153,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-tomas-soucek": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 113,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-tomas-chory": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 27,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "cze-alexandr-sojka": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 139,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m02",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      }
+    },
+    "currentConditionByPlayer": {
+      "cze-matej-kovar": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-tomas-holes": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-robin-hranac": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-vladimir-coufal": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-ladislav-krejci": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-david-doudera": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-lukas-cerv": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-michal-sadilek": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-adam-hlozek": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-pavel-sulc": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-denis-visinsky": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-lukas-provod": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-patrik-schick": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-tomas-soucek": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-tomas-chory": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "cze-alexandr-sojka": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      }
+    },
+    "evidenceRefs": [
+      {
+        "sourceId": "fifa-ftr-m53",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 56,
+        "observedThrough": "2026-06-25T01:56:00.000Z"
+      },
+      {
+        "sourceId": "fifa-tactical-m53",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-25T01:00:00Z"
+      },
+      {
+        "sourceId": "fifa-squad-list-2026-v1",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-10T23:59:59Z",
+        "note": "최종 명단의 신원·등록·소속팀 정보만 사용"
+      }
+    ],
+    "actualDecision": {
+      "minute": 56,
+      "outPlayerId": "cze-denis-visinsky",
+      "inPlayerId": "cze-lukas-provod",
+      "scoreAtDecision": {
+        "home": 0,
+        "away": 1
+      },
+      "interpretedRole": "측면 공격수 대신 연결형 미드필더 투입",
+      "interpretationStatus": "inferred",
+      "note": "OUT/IN과 시점은 공식 기록이다. 구체적인 전술 목적은 경기 상태에 기반한 해석이다.",
+      "parallelDecision": null,
+      "sourceIds": [
+        "fifa-ftr-m53"
+      ],
+      "usage": "result-only"
+    },
+    "resultFacts": {
+      "finalScore": {
+        "home": 0,
+        "away": 3
+      },
+      "eventsAfterScenario": [
+        {
+          "minute": {
+            "regulation": 61
+          },
+          "type": "goal",
+          "teamId": "mex",
+          "playerId": "mex-julian-quinones",
+          "assistPlayerId": "mex-jorge-sanchez",
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 63
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-santiago-gimenez",
+          "relatedPlayerId": "mex-guillermo-martinez",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 63
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-obed-vargas",
+          "relatedPlayerId": "mex-luis-romo",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 64
+          },
+          "type": "card",
+          "teamId": "mex",
+          "playerId": "mex-edson-alvarez",
+          "assistPlayerId": null,
+          "card": "yellow",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 64
+          },
+          "type": "substitution",
+          "teamId": "cze",
+          "playerId": "cze-tomas-soucek",
+          "relatedPlayerId": "cze-tomas-holes",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 64
+          },
+          "type": "substitution",
+          "teamId": "cze",
+          "playerId": "cze-patrik-schick",
+          "relatedPlayerId": "cze-adam-hlozek",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 72
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-alvaro-fidalgo",
+          "relatedPlayerId": "mex-gilberto-mora",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 78
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-guillermo-ochoa",
+          "relatedPlayerId": "mex-raul-rangel",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 78
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-jesus-gallardo",
+          "relatedPlayerId": "mex-mateo-chavez",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 87
+          },
+          "type": "substitution",
+          "teamId": "cze",
+          "playerId": "cze-tomas-chory",
+          "relatedPlayerId": "cze-lukas-cerv",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 87
+          },
+          "type": "substitution",
+          "teamId": "cze",
+          "playerId": "cze-alexandr-sojka",
+          "relatedPlayerId": "cze-tomas-soucek",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 90,
+            "added": 4
+          },
+          "type": "goal",
+          "teamId": "mex",
+          "playerId": "mex-alvaro-fidalgo",
+          "assistPlayerId": "mex-roberto-alvarado",
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        }
+      ],
+      "sourceIds": [
+        "fifa-ftr-m53",
+        "fifa-tactical-m53",
+        "fifa-pmsr-m53",
+        "fifa-api-m53",
+        "fifa-article-m53"
+      ],
+      "usage": "result-only"
+    },
+    "sourceIds": [
+      "fifa-ftr-m53",
+      "fifa-tactical-m53",
+      "fifa-pmsr-m53",
+      "fifa-api-m53",
+      "fifa-article-m53"
+    ],
+    "verificationStatus": "verified_official"
+  }
+]

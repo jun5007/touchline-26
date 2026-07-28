@@ -1,288 +1,260 @@
 # 월드컵 감독의 선택: TOUCHLINE 26
 
-> 가장 능력치가 높은 선수가 아니라, 지금 이 경기에서 가장 필요한 선수를 고른다.
+> 2026 월드컵 A조의 실제 여섯 경기를 네 나라 감독의 시선으로 다시 판단하는 회고형 전술 의사결정 웹서비스
 
-실제 2026 월드컵의 결정적인 순간으로 돌아가 교체 선수, 역할, 팀 지시를 직접 선택하고 데이터 기반 결과 리포트를 받는 회고형 전술 의사결정 웹서비스입니다.
+TOUCHLINE 26은 대한민국(KOR), 체코(CZE), 멕시코(MEX), 남아프리카공화국(RSA)의 조별리그를 따라가는 감독 시뮬레이션입니다. 사용자는 특정 경기 시점에 교체 선수, 역할, 팀 지시를 선택하고 장점·위험·보완책을 확인한 뒤 실제 경기의 선택과 비교합니다.
 
-![TOUCHLINE 26 실행 화면](docs/images/touchline26-home.png)
+**해커톤 심사·공개 배포의 정본은 저장소 루트의 Next.js 애플리케이션입니다.**
+`python-fastapi/`는 최종 공개 main tip에서 제외합니다. 초기 단일 경기
+아이디어를 검증한 동결 참고판은 Git이 무시하는 로컬 복사본과 이전 Git
+이력에만 남으며, 최종 제품·심사·배포 대상이 아닙니다.
 
-## 프로젝트 목적
+이 서비스의 **전술 선택 적합도(TACTICAL DECISION FIT)** 는 선택이 해당 미션의 전술 조건과 얼마나 일관되는지를 설명하는 프로젝트 자체 규칙값입니다. 승리 확률, 경기 결과 예측, 선수의 절대 능력치나 공식 평점이 아닙니다.
 
-정적인 전술 이미지가 아니라 사용자가 실제로 감독의 판단 과정을 플레이하도록 설계했습니다. 경기 상태를 읽고, 필드와 벤치를 비교하고, 드래그 또는 클릭으로 교체하고, 역할과 팀 지시를 결정한 뒤 선택의 장점·위험·보완책·실제 감독 선택과의 차이를 확인합니다.
+## 구현 범위
 
-이 서비스는 실제 스코어를 예측하거나 선수의 절대 능력을 평가하지 않습니다.
+| 항목 | 현재 구현 |
+| --- | --- |
+| 지원 국가 | KOR, CZE, MEX, RSA 정확히 4개국 |
+| 조별리그 | A조 공식 6경기, 국가별 3경기 |
+| 감독 관점 | 6경기 모두 양 팀 관점 제공 |
+| 미션 | 총 13개: KOR 4개, CZE 3개, MEX 3개, RSA 3개 |
+| 선수 | 공식 최종 명단 기준 팀당 26명, 총 104명 |
+| 국가별 리포트 | `/teams/[teamId]/report` |
+| 제출 런타임 | 저장소 루트 Next.js 애플리케이션 |
 
-## 주요 기능
-
-- 시작 화면 → 경기 선택 → 미션 브리핑 → 전술 보드 → 결과 분석의 완전한 흐름
-- 실제 2026 월드컵 대한민국 2–1 체코 경기 데이터
-- 69분 동점 상황과 84분 리드 보호 상황의 두 개 미션
-- 필드 선수 클릭 또는 벤치 선수 드래그앤드롭 교체
-- 모바일에서도 동등하게 작동하는 클릭 기반 OUT/IN 선택
-- 선수별 1–20 회고형 퍼포먼스 스탯과 표본 시간·신뢰도
-- 포지션에 따라 제한되는 11개 역할
-- 공격 방향·압박·수비 라인·공격 성향 팀 지시
-- 공격 위협·점유 안정·압박 강도·수비 안정 영향 게이지
-- 60/20/10/10 가중치 기반 상황 적합도와 선언형 위험 패널티
-- 장점, 위험, 추천 보완책, 대안 선수, 실제 감독 선택 비교
-- 실제 사실·앱 파생값·전술적 추론의 명시적 구분
-- 손상된 localStorage와 직접 결과 URL 접근의 안전한 복구
-- 잘못된 경기·미션 URL의 사용자 친화적 오류 화면
+한 경기에 미션이 여러 개인 경우 리포트는 미션 점수를 먼저 경기 안에서 평균합니다. 조별리그 전체 점수는 완성된 세 경기의 경기 점수를 각각 같은 비중으로 평균합니다. 일부 미션만 끝낸 경기는 진행 상태와 임시 경기 점수를 보여주되 전체 평균에는 넣지 않습니다.
 
 ## 사용자 흐름
 
-1. `/`에서 제품 목적과 실제 데이터 사용 여부 확인
-2. `/matches`에서 검증된 실제 경기 선택
-3. 경기 안에서 69분 또는 84분 미션 선택
-4. 브리핑에서 스코어, 상대 형태, 직전 이벤트 확인
-5. 전술 보드에서 OUT 선수와 IN 선수 선택
-6. 선수 1–20 지표와 차이 비교
-7. 투입 역할과 네 종류의 팀 지시 선택
-8. 적합도·영향 게이지·위험 경고의 실시간 변화 확인
-9. 결정 확정 후 결과 리포트와 실제 감독 선택 비교
-10. 재도전 또는 다음 미션 진행
+1. `/teams`에서 감독할 국가를 선택합니다.
+2. 국가 페이지에서 세 경기 여정과 미션 진행률을 확인합니다.
+3. 경기와 감독 관점을 선택하고 미션 브리핑에 들어갑니다.
+4. 미션 시점까지 확인 가능한 점수, 사건, 라인업과 후보를 확인합니다.
+5. 필드의 OUT 선수와 벤치의 IN 선수를 클릭하고 역할과 팀 지시를 정합니다.
+6. 선택에 따라 변하는 전술 선택 적합도, 점수 구성, 예상 장점과 위험을 확인합니다.
+7. 결정을 확정한 뒤 결과 화면에서만 실제 경기 결과와 실제 감독 선택을 비교합니다.
+8. 세 경기를 진행한 뒤 국가별 감독 리포트에서 경기별 점수, 결정 하이라이트와 감독 성향을 확인합니다.
+9. 같은 국가를 다시 플레이하거나 다른 국가를 선택합니다.
+
+드래그앤드롭은 데스크톱의 실험적 보조 인터랙션입니다. 클릭 선택이 기본
+조작이며 키보드와 모바일에서도 동일한 핵심 흐름을 수행할 수 있도록
+구성했습니다. 실제 공개 브라우저에서 검증하기 전에는 drag 지원 완료로
+표시하거나 시연 영상에 사용하지 않습니다.
+
+## 데이터 상태를 읽는 법
+
+화면과 문서는 다음 세 층을 구분합니다.
+
+- **공식 확인 사실**: 명단, 등록 포지션, 선발·교체, 득점, 카드, 경기 결과와 같은 출처 기반 사실
+- **프로젝트 자체 분석**: 전술 선택 적합도, 위험, 설명, 출전 시간 기반 컨디션 추정, 감독 성향
+- **결과 화면 전용 사실**: 미션 뒤에 발생한 사건, 최종 결과, 실제 감독 선택
+
+### BASE PROFILE
+
+- 분석 대상 기간은 2025-06-11부터 2026-06-10까지입니다.
+- 최근 1년 동안 104명을 같은 기준으로 비교할 수 있고 공개 서비스 재사용 조건까지 충족하는 선수별 성과 원자료를 확보하지 못했습니다.
+- 따라서 현재 완성 프로필은 **0/104명**, 활성 1–20 속성은 **0/832개**입니다.
+- 104명 모두 `analysisMinutes: null`, `dataGrade: "D"`, `status: "incomplete"`이며 속성은 `null`입니다.
+- 누락값을 0점, 평균값, 중립 능력치나 다른 게임의 평점으로 채우지 않습니다.
+- 필드 선수 8개 키와 골키퍼 8개 키는 향후 검증된 원자료가 들어올 수 있는 스키마이며, 현재 화면에서는 비어 있는 1–20 표를 반복 노출하지 않습니다.
+
+13개 미션에서 실제 선택 후보가 되는 P0 고유 선수는 81명입니다. P0 역시 complete 0명, partial 0명, incomplete 81명이며 활성 속성은 0/648개입니다.
+
+### Tournament Form과 TLSI
+
+Tournament Form은 미션보다 앞선 A조 경기의 출전 사실만 참조합니다. 비교 가능한 성과 지표가 없어 현재 조정치는 모두 0이고 실제 적합도 계산에는 적용되지 않습니다.
+
+TOUCHLINE League Strength Index(TLSI)는 최종 명단의 클럽 협회 맥락 26개를 식별했지만, 리그를 같은 척도로 비교할 검증 근거가 없어 모든 보정이 `applied: false`이고 영향은 0입니다. `strengthFactor: 1.00`은 검증된 리그 동등성을 뜻하지 않습니다.
+
+### Current Condition
+
+현재 경기의 공식 출전 시간과 카드 상태를 사용합니다. 에너지는 공식 생체·체력 자료가 아니라 다음 공개식으로 만든 제한적인 프로젝트 추정입니다.
+
+```text
+energyEstimate = max(60, round(100 - 0.42 × minutesInMatch))
+```
+
+화면에는 “출전 시간 기반 컨디션 추정”으로 표시합니다. 확인하지 못한 부상, 불참 사유, 최근 일정 부담은 임의로 만들지 않고 `null`로 둡니다.
+
+## 전술 선택 적합도 계산
+
+전술 선택 적합도는 0–100 범위의 프로젝트 자체 설명값입니다. 현재 선택에서
+사용 가능한 역할·팀 지시, 출전 시간 기반 컨디션 추정, 상대 전술 매치업을
+조합하고 확인된 위험 규칙의 패널티를 뺍니다. 사용할 수 있는 구성 요소만
+동적으로 재가중하므로 화면의 “점수 구성 보기” 비중도 선택에 따라 달라집니다.
+
+현재 Group A에서는 BASE 속성이 모두 `null`이어서 선수 성과 구성 요소를
+제외하며, Tournament Form과 TLSI도 적용하지 않습니다. 실제 최종 스코어,
+미션 뒤 사건, 실제 감독 선택은 이 계산에 들어가지 않습니다. 따라서 이 값은
+승률, 결과 예측, 선수 평점 또는 절대 능력 평가가 아닙니다.
+
+미션 안의 최소·최대, 백분위와 상위 비율은 OUT × IN × 호환 역할 × 유효한
+팀 지시의 모든 합법 조합을 같은 `evaluateDecision`으로 평가한 분포입니다.
+13개 미션 440,208개 조합의 분포는
+`src/data/generated/decision-score-distributions.json`에 미리 생성합니다.
+각 항목은 입력 전체의 SHA-256과 함께 저장되며, `npm run build` 전에
+`score-distribution:verify`가 현재 데이터·평가기 결과와 완전히 같은지
+검사합니다. 입력이 바뀐 개발 상태에서는 정적 값을 사용하지 않고 안전하게
+재계산한 뒤 프로세스 내 LRU에 보관합니다.
+
+## 미래 정보 누출 방지
+
+- BASE PROFILE 기간은 본선 개막 전날인 2026-06-10에 끝납니다.
+- Tournament Form은 각 `scenarioTimestamp`보다 앞선 경기만 참조합니다.
+- 전술 화면의 클라이언트 DTO에는 `finalScore`, 미션 이후 사건, `actualDecision`이 없습니다.
+- 실제 경기 결과와 실제 감독 선택은 결정을 확정한 결과 화면에서만 불러옵니다.
+- `npm run data:future-leakage`가 소스 import 경계와 빌드된 전술 청크의 결과 정보 비노출을 검사합니다.
+
+## 저장과 국가별 리포트
+
+서비스는 계정이나 서버 데이터베이스를 사용하지 않습니다. 확정한 결정은 현재 브라우저·현재 origin의 `localStorage`에만 저장되므로 다른 기기, 브라우저, 배포 도메인으로 자동 동기화되지 않으며 브라우저 데이터를 지우면 사라집니다.
+
+저장하는 최소 항목은 다음뿐입니다.
+
+- 저장 형식 버전
+- `matchId`, `scenarioId`, `selectedTeamId`
+- `outPlayerId`, `inPlayerId`, `roleId`
+- 네 가지 팀 지시
+- 생성 시각
+
+점수, 위험, 설명, 실제 결과는 저장하지 않습니다. 결과 화면과 국가별 리포트는 저장값의 형식, 팀, 선수, 역할을 다시 검증하고 현재 코드와 데이터로 점수와 위험을 재계산합니다. 손상되었거나 구버전이거나 현재 데이터와 맞지 않는 값은 삭제·제외하고 사용자에게 알립니다.
+
+감독 성향은 사용자가 고른 역할과 팀 지시, 재계산된 위험 패턴에서 결정적으로 산출한 자체 분석입니다. 선수 능력 평가나 심리 진단이 아닙니다.
 
 ## 기술 스택
 
-- Next.js 16.2.12 App Router
-- React 19.2.4
-- TypeScript strict mode
-- Tailwind CSS 4
-- dnd-kit
-- Vitest + Testing Library + jsdom
-- 정적 JSON 데이터
-- localStorage: 확정된 사용자 선택 기록에만 사용
-- Vercel 배포 기준
+- Next.js 16 App Router, React 19, TypeScript strict mode
+- Tailwind CSS 4, dnd-kit
+- Vitest, Testing Library, jsdom
+- 정적 JSON 데이터와 브라우저 로컬 계산
+- 최소 선택만 저장하는 `localStorage`
 
-## Python FastAPI 독립 실행판
-
-Node.js 없이 실행할 수 있는 별도 구현을 [`python-fastapi`](python-fastapi)에 함께 제공합니다.
-FastAPI, Jinja2, Vanilla JavaScript로 같은 경기 선택 → 브리핑 → 전술 결정 → 결과 분석 흐름과
-60/20/10/10 평가 엔진을 구현했으며, 원본 JSON을 동기화한 독립 배포용 데이터 스냅샷을 포함합니다.
-설치·실행·테스트·Vercel·Docker·Render 안내는
-[`python-fastapi/README.md`](python-fastapi/README.md)를 참고하세요.
+환경변수, 외부 API 키, 데이터베이스, 회원가입, 결제는 필요하지 않습니다.
 
 ## 로컬 실행
 
-Node.js 24.x와 npm 11을 기준으로 검증했습니다.
+Node.js 24.x와 npm 11 기준입니다. 제출 재현 검증은 잠금 파일을 그대로
+사용하는 `npm ci`를 권장합니다.
 
 ```bash
-npm install
-npm run dev
-```
-
-브라우저에서 `http://localhost:3000`을 엽니다.
-
-환경변수, 외부 API 키, 데이터베이스는 필요하지 않습니다.
-
-## 검증과 빌드
-
-```bash
+npm ci
+npm run data:validate
+npm run data:coverage
+npm run data:future-leakage
 npm run lint
 npm run test
+npm run attributes:verify
+npm run base-profile:verify
+npm run license:check
+npm run score-distribution:verify
 npm run build
 npm run start
 ```
 
-테스트 범위:
+개발 중에는 `npm run dev`를 실행하고 브라우저에서
+`http://localhost:3000`을 엽니다. `data:generate`는 정본 입력을 변경했을
+때만 실행하고 생성 diff를 검토합니다. 평가기나 분포 입력이 바뀌면
+`npm run score-distribution:generate`로 정적 분포를 다시 만들고
+`npm run score-distribution:verify`로 stale 여부와 13개 미션 전체 결과를
+검증합니다. `base-profile:verify`의 구조·산식 테스트 통과와
+`coverageTarget=NOT_MET`은 동시에 나타날 수 있습니다. 이는 검증기는
+정상이고 실제 BASE 커버리지는 목표 미달이라는 뜻입니다.
 
-- 백분위와 1–20 변환
-- per90 정규화와 신뢰도 수축
-- 18명 × 8개 저장 능력치의 원자료 기반 완전 재현
-- 포지션 그룹 밖 선수가 비교 표본에 섞이지 않는지 검증
-- NaN·Infinity·점수 범위 방어
-- 상황 적합도 60/20/10/10 계산
-- 선언형 위험 규칙
-- 네 개 영향 게이지와 전후 차이
-- 규칙 기반 결과 설명
-- localStorage 저장·손상 복구
-- 클릭 기반 OUT/IN → 역할 → 팀 지시 → 결과 이동 통합 흐름
+기존 `TOUCHLINE26_RELEASE_CANDIDATE_AUDIT.zip`은 과거 로컬 검토
+기록일 뿐입니다. DAKER 또는 공개 GitHub 제출 대상이 아니며, 최종 출시
+단계에서는 새 ZIP을 생성하거나 업로드하지 않습니다.
+
+이번 Release Candidate의 실제 최종 결과는
+`RELEASE_CANDIDATE_TEST_RESULTS.md`, 알려진 한계는
+`RELEASE_CANDIDATE_KNOWN_ISSUES.md`, 공개 commit 범위는
+`FINAL_RELEASE_FILE_LIST.md`를 정본으로 확인합니다.
 
 ## Vercel 배포
 
-### 대시보드
+1. 공개 GitHub 저장소에 최종 소스를 push합니다.
+2. Vercel에서 저장소를 Import하고 Root Directory를 저장소 루트로 둡니다.
+3. Framework Preset `Next.js`, Node.js `24.x`, 환경변수 없음 상태를 확인합니다.
+4. production으로 배포하고 Deployment Protection을 끕니다.
+5. 로그아웃 시크릿 창과 외부 네트워크에서 직접 URL·새로고침·404·모바일을 확인합니다.
+6. 확인된 실제 URL만 제출 문서에 기록합니다.
 
-1. 이 저장소를 GitHub 공개 저장소로 push합니다.
-2. Vercel의 **Add New → Project**에서 저장소를 Import합니다.
-3. Framework Preset은 Next.js, Root Directory는 저장소 루트로 둡니다.
-4. 환경변수 없이 Deploy합니다.
-5. 생성된 URL을 새 시크릿 창과 모바일 폭에서 확인합니다.
+세부 절차와 route 체크는 [Vercel 배포 가이드](docs/VERCEL_DEPLOYMENT_GUIDE.md)를
+따릅니다. 현재 공개 배포는 사용자 작업 필요 상태입니다.
 
-### CLI
+## 90초 시연 흐름
 
-```bash
-npx vercel
-npx vercel --prod
-```
+홈 범위 소개 → 국가 선택 → 3경기 여정 → 미션 브리핑 → 클릭 OUT/IN·역할·팀
+지시 → 전술 선택 적합도와 점수 구성 → 결과의 공식 사실·자체 분석 비교 →
+경기 동일 비중 국가 리포트 → 다른 국가와 실제 production URL 순서로
+시연합니다. 드래그는 실제 브라우저 검증을 통과한 경우에만 보조로 넣습니다.
+자세한 대본은 [시연 영상 스크립트](docs/DEMO_SCRIPT.md)에 있습니다.
 
-`vercel.json`은 Next.js 프레임워크를 명시합니다. 로그인·결제·API 키는 서비스 사용에 필요하지 않습니다.
+## 최종 제출 체크리스트
 
-## 디렉터리 구조
+DAKER 최종 제출물은 파일 업로드가 아니라 배포 URL, GitHub URL, YouTube URL
+3개입니다. ZIP·PDF·README·테스트 결과는 DAKER에 업로드하지 않습니다.
+최종 commit SHA, 최신 공지, 브라우저 교차 검증과 제출 완료 화면은
+[최종 릴리스 체크리스트](SUBMISSION_RELEASE_CHECKLIST.md)에서 실제 확인한
+항목만 체크합니다.
+
+## 주요 경로
 
 ```text
-src/
-  app/
-    matches/[matchId]/scenarios/[scenarioId]/
-      briefing/
-      tactics/
-      result/
-    about-data/
-  components/
-    common/
-    layout/
-    match/
-    tactics/
-    result/
-  data/
-    matches/
-    players/
-    scenarios/
-    roles/
-    instructions/
-    copy/
-  lib/
-    attributes/
-    scoring/
-    decision/
+src/app/
+  teams/[teamId]/report/
+  matches/[matchId]/scenarios/[scenarioId]/
+  about-data/
+src/data/
+  teams/
+  squads/
+  players/
+  matches/group-a/
+  scenarios/group-a/
+  tournament/
+  club-performance/
+  national-performance/
+  leagues/
+  sources/
+src/lib/
+  decision/
+  report/
 docs/
-  COMPETITION_REQUIREMENTS.md
-  IMPLEMENTATION_PLAN.md
-  DATA_RESEARCH.md
+  ASSET_MANIFEST.md
+  VERCEL_DEPLOYMENT_GUIDE.md
+  GITHUB_RELEASE_CHECKLIST.md
   DEMO_SCRIPT.md
-  FINAL_SUBMISSION_CHECKLIST.md
+SUBMISSION_RELEASE_CHECKLIST.md
 ```
 
-## 데이터 구조
+## 출처, 저작권과 비제휴 고지
 
-### 경기
+경기·명단 사실의 출처 ID와 URL, 접근일, 용도는
+`src/data/sources/sourceRegistry.json`에 기록합니다. 세부 조사와 이용 조건은
+`docs/DATA_RESEARCH.md`와 `THIRD_PARTY_NOTICES.md`, 제품 자산의 제작·출처
+기록은 `docs/ASSET_MANIFEST.md`에서 확인할 수 있습니다.
 
-경기 메타데이터, 팀, 최종 스코어, 공식 포메이션, 선발·벤치, 실제 이벤트, 출처 메타데이터를 보관합니다.
+이 프로젝트는 독립적인 비공식 해커톤 작품이며 FIFA, 각국 축구협회, COSAFA, 대회 운영사, 구단, 감독 또는 선수의 승인·후원·제휴를 받지 않았습니다. 공식 로고, 협회 문장, 선수 사진, 방송 영상, 보고서 화면, 원문 PDF를 제품이나 공개 제출물에 복제하지 않습니다. 이름, 스코어와 명단은 출처가 연결된 사실 식별 정보로 제한해 사용합니다.
 
-### 선수
+프로젝트 수준의 오픈소스 라이선스는 현재 선택되지 않았습니다. 해커톤 심사를
+위해 저장소를 공개하더라도 별도 서면 허락 없이 프로젝트 코드·디자인·자체
+그래픽을 복제, 수정, 배포하거나 다른 제품에 재사용하는 것을 허용하지
+않습니다. 서드파티 패키지와 자료의 권리는 각 권리자에게 있습니다.
 
-공식 이름·등번호·포지션, 전술상 포지션 그룹, 출전 시간, 원자료, 1–20 파생 지표, 신뢰도, 계산 맥락, 출처 상태를 보관합니다.
+`python-fastapi/`는 최종 공개 main tip에서 제외하며, 동결 참고 구현은 Git이
+무시하는 로컬 복사본과 이전 Git 이력에만 남습니다. 현재 4개국·6경기·13미션
+제품의 정본, 제출 또는 배포 대상이 아닙니다.
 
-### 미션
+## 제출 상태
 
-결정 시점, 당시 스코어, 미션, 상대 형태, 직전 흐름, 현재 라인업, 벤치 후보, 능력치 가중치, 기본 팀 지시, 위험 규칙, 실제 교체를 보관합니다.
+대회 공식 페이지에는 최종 마감이 **2026-08-03 10:00**으로 표시되어 있습니다. 페이지 표기 기준이며, 시간대가 명확하지 않다면 제출 직전에 공식 공지와 제출 화면에서 다시 확인해야 합니다.
 
-## 사용한 실제 경기
+다음 항목은 저장소만으로 완료할 수 없으며 모두 **사용자 작업 필요** 상태입니다.
 
-- 대회: FIFA World Cup 2026
-- 경기: 대한민국 2–1 체코
-- 일시: 2026-06-11 20:00 현지
-- 단계: A조 조별리그 Match 2
-- 장소: Guadalajara Stadium, Guadalajara, Mexico
-- 전반: 0–0
-- 실제 교체:
-  - 62′ 황희찬 IN / 이재성 OUT
-  - 69′ 엄지성 IN / 이태석 OUT
-  - 69′ 오현규 IN / 손흥민 OUT
-  - 84′ 김진규 IN / 황인범 OUT
-  - 84′ 박진섭 IN / 백승호 OUT
+- Vercel 등 공개 production 배포와 공개 URL 확인
+- 공개 GitHub 저장소 push, URL과 최종 commit SHA 기록
+- YouTube 시연 영상 업로드와 로그아웃 재생 확인
+- DAKER 제출 폼에 배포·GitHub·YouTube URL 3개 입력과 접수 완료 화면 보관
+- Edge, Firefox 및 Safari 또는 iOS Safari 실기기·실브라우저 확인
 
-## 데이터 출처
-
-- [FIFA Full-Time Match Report](https://fdp.fifa.org/assetspublic/ce281/r12450/pdf/FullTimeMatchReport-English.pdf): 경기, 명단, 득점, 도움, 교체, 공식 최종 통계
-- [FIFA Tactical Line-up](https://fdp.fifa.org/assetspublic/ce281/r12450/pdf/TacticalLineup-English.pdf): 대한민국 3-4-3, 체코 5-2-3과 선발 위치
-- [FIFA Post-Match Summary Report](https://www.fifatrainingcentre.com/media/native/tournaments/fifa-world-cup/2026/PMSR-M02%20KOR%20V%20CZE%20.pdf): 선수별 패스·라인브레이크·압박·슈팅 등
-- [AP Match Report](https://apnews.com/article/world-cup-south-korea-czech-republic-score-496e7772dde95ca0af90b5074fdb13d9): 경기 흐름과 독립 교차 확인
-- [OpenFootball World Cup JSON](https://github.com/openfootball/worldcup.json): CC0 경기 메타데이터
-
-확인일: 2026-07-27.
-
-FIFA 리포트는 사실 확인을 위한 로컬 연구 자료로만 내려받았고 저장소에는 포함하지 않습니다. 공식 로고·엠블럼·PDF 캡처·표 디자인은 앱에 사용하지 않습니다.
-
-## 1–20 능력치 산출
-
-1. 공식 리포트의 패스, 라인브레이크, 볼 전진, 테이크온, 슈팅, 득점, 압박 등 사용 가능한 원자료를 정리합니다.
-2. 횟수형 지표는 가능한 경우 90분당 값으로 변환합니다.
-3. `players.json`에서 GK, CB, FB/WB, DM, CM/AM, WINGER, STRIKER 포지션 그룹별 비교 표본을 자동 구성합니다.
-4. 그룹 내 백분위를 `round(1 + 19 × percentile)`로 1–20에 매핑합니다.
-5. 짧은 출전·낮은 커버리지는 `confidence × rawScore + (1-confidence) × 10.5`로 중앙값에 수축합니다.
-6. 결과를 1–20으로 제한하고 표본 시간·높음/보통/낮음 신뢰도를 함께 표시합니다.
-
-이 수치는 FIFA 공식 평점, Football Manager 능력치, 선수의 커리어 절대 평가가 아닙니다. 한 경기의 종료 후 관측값을 UI에서 비교하기 위한 앱 자체 회고 지표입니다.
-
-미출전 선수는 실제 경기 퍼포먼스를 만들지 않고 `rawMetrics: null`, 낮은 신뢰도, 중립 기준을 사용합니다. 출처에 선수별 공중볼 지표가 없으므로 공중볼 능력치도 추정하지 않고 중립 처리합니다.
-
-저장값은 다음 명령으로 원자료부터 전부 다시 계산해 검증할 수 있습니다.
-
-```bash
-npm run attributes:verify
-npm run attributes:verify -- --explain=oh-hyeongyu
-```
-
-정확한 지표 정의, 7개 포지션 그룹별 가중치, 비교 표본 구성과 한계는 [`docs/ATTRIBUTE_PIPELINE.md`](docs/ATTRIBUTE_PIPELINE.md)에 공개했습니다.
-
-## 상황 적합도
-
-```text
-상황 적합도 =
-  선수 능력치 적합도 60%
-+ 역할 적합도 20%
-+ 체력·신선도 10%
-+ 상대 전술 매치업 10%
-- 위험 패널티
-```
-
-미션별 능력치 가중치는 JSON에서 관리합니다. 포지션 재배치, 높은 라인+낮은 압박, 수동적 저블록, 리드 상황의 과도한 공격 성향, 낮은 데이터 신뢰도는 선언형 규칙으로 패널티를 적용합니다. 결과는 0–100으로 제한합니다.
-
-## 샘플 데이터 구분
-
-대표 경기와 두 미션은 모두 `isSample: false`인 실제 경기 기반 데이터입니다. 미출전 선수의 중립값은 샘플 경기 데이터가 아니라 “관측 표본 없음” 상태이며 화면에 낮은 신뢰도와 데이터 제한을 표시합니다. 실제 사실과 앱 파생값은 필드와 설명 문구로 구분합니다.
-
-## 외부 자산과 라이선스
-
-- 외부 이미지·선수 사진·팀 엠블럼·FIFA 공식 그래픽: 사용하지 않음
-- 축구장·선수 토큰·게이지: HTML/CSS로 자체 제작
-- 글꼴: 시스템 글꼴 스택, 별도 다운로드 없음
-- dnd-kit: MIT
-- Next.js/React/Tailwind/Vitest/Testing Library: 각 프로젝트의 오픈소스 라이선스 적용
-- OpenFootball 경기 메타데이터: CC0/Public Domain
-
-이 프로젝트는 FIFA, 대한민국 축구대표팀, 체코 축구대표팀, 선수와 제휴하지 않은 비공식·비상업적 프로젝트입니다.
-
-## 접근성
-
-- 시맨틱 헤딩·목록·표·필드셋
-- 본문 바로가기
-- 명확한 버튼 텍스트와 포커스 링
-- dnd-kit 키보드 센서
-- 드래그와 동등한 클릭 교체 방식
-- `aria-label`, `aria-pressed`, `aria-live`
-- 색상 외에 OUT/IN, 위험, 텍스트 라벨 병행
-- `prefers-reduced-motion` 반영
-- 모바일 가로 스크롤 방지
-
-## 한계
-
-- 선수 지표는 한 경기 종료 후 자료라 69분 당시의 실시간 예측값이 아닙니다.
-- 단일 경기·짧은 출전 표본이므로 신뢰구간을 대신해 보수적 수축과 신뢰도 라벨을 사용합니다.
-- `fitness`는 미션 계산을 위한 보수적인 시뮬레이션 입력이며 공식 생체 데이터가 아닙니다.
-- 세부 역할과 교체 의도는 공식 설명이 없을 때 전술적 추론입니다.
-- 경기 종료 후 발생한 득점과 교체의 인과관계를 단정하지 않습니다.
-- 84분 장면의 세부 포지션은 공식 이벤트와 시작 전술을 바탕으로 한 분석적 재구성입니다.
-
-## 향후 개선
-
-- 공식 타임슬라이스 데이터가 확보되면 의사결정 시점 이전 정보만 사용하는 모드 추가
-- 두 번째 실제 경기 추가
-- 포지션 비교 표본 확대와 신뢰구간 시각화
-- 키보드 전술 보드 조작 설명 강화
-- 익명·집계형 사용자 선택 통계
-- 공유용 결과 카드
-
-## 대회 제출 체크리스트
-
-- [ ] 공개 Vercel URL
-- [ ] 공개 GitHub 저장소
-- [ ] 90초–2분 YouTube 시연 영상
-- [ ] 새 시크릿 창·주요 브라우저·모바일 확인
-- [ ] 데이터 출처와 라이선스 확인
-- [ ] 콘솔 오류 없음
-- [ ] `npm run lint`, `npm run test`, `npm run build` 성공
-- [ ] 최종 제출 시각과 시간대 재확인
-- [ ] 2026-08-03 10:00 이후 GitHub 커밋 금지
-
-세부 항목은 [`docs/FINAL_SUBMISSION_CHECKLIST.md`](docs/FINAL_SUBMISSION_CHECKLIST.md)를 따릅니다.
+실행 순서는 `SUBMISSION_RELEASE_CHECKLIST.md`를 따릅니다.

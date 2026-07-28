@@ -1,0 +1,42 @@
+{
+  "teamId": "rsa",
+  "competition": "FIFA World Cup 2026",
+  "squadSize": 26,
+  "headCoach": {
+    "nameKo": "위고 브로스",
+    "nameEn": "Hugo Broos"
+  },
+  "playerIds": [
+    "rsa-ronwen-williams",
+    "rsa-thabang-matuludi",
+    "rsa-khulumani-ndamane",
+    "rsa-teboho-mokoena",
+    "rsa-thalente-mbatha",
+    "rsa-aubrey-modiba",
+    "rsa-oswin-appollis",
+    "rsa-tshepang-moremi",
+    "rsa-lyle-foster",
+    "rsa-relebohile-mofokeng",
+    "rsa-themba-zwane",
+    "rsa-thapelo-maseko",
+    "rsa-sphephelo-sithole",
+    "rsa-mbekezeli-mbokazi",
+    "rsa-iqraam-rayners",
+    "rsa-sipho-chaine",
+    "rsa-evidence-makgopa",
+    "rsa-samukele-kabini",
+    "rsa-nkosinathi-sibisi",
+    "rsa-khuliso-mudau",
+    "rsa-ime-okon",
+    "rsa-ricardo-goss",
+    "rsa-jayden-adams",
+    "rsa-olwethu-makhanya",
+    "rsa-kamogelo-sebelebele",
+    "rsa-bradley-cross"
+  ],
+  "sourceIds": [
+    "fifa-squad-list-2026-v1",
+    "cosafa-rsa-jersey-numbers-2026"
+  ],
+  "verificationStatus": "verified"
+}

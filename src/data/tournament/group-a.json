@@ -1,0 +1,76 @@
+{
+  "id": "group-a",
+  "teamIds": [
+    "mex",
+    "rsa",
+    "kor",
+    "cze"
+  ],
+  "standings": [
+    {
+      "position": 1,
+      "teamId": "mex",
+      "played": 3,
+      "won": 3,
+      "drawn": 0,
+      "lost": 0,
+      "goalsFor": 6,
+      "goalsAgainst": 0,
+      "goalDifference": 6,
+      "points": 9
+    },
+    {
+      "position": 2,
+      "teamId": "rsa",
+      "played": 3,
+      "won": 1,
+      "drawn": 1,
+      "lost": 1,
+      "goalsFor": 2,
+      "goalsAgainst": 3,
+      "goalDifference": -1,
+      "points": 4
+    },
+    {
+      "position": 3,
+      "teamId": "kor",
+      "played": 3,
+      "won": 1,
+      "drawn": 0,
+      "lost": 2,
+      "goalsFor": 2,
+      "goalsAgainst": 3,
+      "goalDifference": -1,
+      "points": 3
+    },
+    {
+      "position": 4,
+      "teamId": "cze",
+      "played": 3,
+      "won": 0,
+      "drawn": 1,
+      "lost": 2,
+      "goalsFor": 2,
+      "goalsAgainst": 6,
+      "goalDifference": -4,
+      "points": 1
+    }
+  ],
+  "matchIds": [
+    "mex-rsa-2026",
+    "kor-cze-2026",
+    "cze-rsa-2026",
+    "mex-kor-2026",
+    "cze-mex-2026",
+    "rsa-kor-2026"
+  ],
+  "sourceIds": [
+    "fifa-ftr-m01",
+    "fifa-ftr-m02",
+    "fifa-ftr-m25",
+    "fifa-ftr-m28",
+    "fifa-ftr-m53",
+    "fifa-ftr-m54"
+  ],
+  "verificationStatus": "verified_official"
+}

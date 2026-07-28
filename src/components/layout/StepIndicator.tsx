@@ -35,6 +35,9 @@ export function StepIndicator({
       aria-label="미션 진행 단계"
       className="hide-scrollbar overflow-x-auto pb-1"
     >
+      <p className="mb-3 text-xs font-black tracking-[.08em] text-[#f7c979] sm:hidden">
+        현재 {currentIndex + 1}/4 · {steps[currentIndex]?.label}
+      </p>
       <ol className="flex min-w-[520px] items-center">
         {steps.map((step, index) => {
           const isCurrent = index === currentIndex;
@@ -42,17 +45,17 @@ export function StepIndicator({
           const content = (
             <>
               <span
-                className={`grid h-7 w-7 shrink-0 place-items-center rounded-full border text-[10px] font-black ${
+                className={`grid h-7 w-7 shrink-0 place-items-center rounded-full border text-[11px] font-black ${
                   isCurrent
                     ? "border-[#f4b860] bg-[#f4b860] text-[#0a1422]"
                     : isComplete
                       ? "border-[#65d89a]/40 bg-[#65d89a]/12 text-[#82e6ac]"
-                      : "border-white/12 bg-white/[.035] text-[#748091]"
+                      : "border-white/12 bg-white/[.035] text-[#9aa5b4]"
                 }`}
               >
                 {isComplete ? "✓" : step.short}
               </span>
-              <span className={isCurrent ? "text-white" : "text-[#7f8998]"}>
+              <span className={isCurrent ? "text-white" : "text-[#9aa5b4]"}>
                 {step.label}
               </span>
             </>

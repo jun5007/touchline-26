@@ -1,0 +1,2057 @@
+[
+  {
+    "id": "mex-m01-control-79",
+    "matchId": "mex-rsa-2026",
+    "selectedTeamId": "mex",
+    "opponentTeamId": "rsa",
+    "order": 1,
+    "globalOrder": 1,
+    "minute": 79,
+    "scenarioTimestamp": "2026-06-11T20:19:00.000Z",
+    "timestampBasis": "derived logical match-clock boundary; not an official wall-clock event timestamp",
+    "currentScore": {
+      "home": 2,
+      "away": 0
+    },
+    "scoreState": "leading",
+    "substitutionsRemaining": 1,
+    "title": "두 골 리드, 마지막 출구를 고르다",
+    "shortMission": "79분 2–0, 마지막 교체로 압박과 전환 출구를 함께 남겨라",
+    "mission": "마지막 교체 슬롯으로 리드를 관리하되, 공을 되찾은 뒤 전진할 출구까지 지켜라.",
+    "difficulty": "어려움",
+    "observations": [
+      "멕시코는 9분 훌리안 키노네스의 득점으로 앞섰다.",
+      "남아공은 49분 퇴장으로 10명이 됐다.",
+      "라울 히메네스가 67분 두 번째 골을 넣었다.",
+      "76분 멕시코는 두 장을 먼저 사용했고 마지막 한 장이 남았다."
+    ],
+    "contextTimeline": [
+      {
+        "minute": "49′",
+        "label": "남아공 퇴장",
+        "tone": "positive"
+      },
+      {
+        "minute": "67′",
+        "label": "멕시코 추가골",
+        "tone": "positive"
+      },
+      {
+        "minute": "76′",
+        "label": "멕시코 2명 교체",
+        "tone": "neutral"
+      },
+      {
+        "minute": "79′",
+        "label": "당신의 결정",
+        "tone": "positive"
+      }
+    ],
+    "opponentShape": "10명 · 수적 열세 속 직접 전개",
+    "currentLineup": [
+      "mex-raul-rangel",
+      "mex-cesar-montes",
+      "mex-johan-vasquez",
+      "mex-israel-reyes",
+      "mex-jesus-gallardo",
+      "mex-julian-quinones",
+      "mex-roberto-alvarado",
+      "mex-luis-chavez",
+      "mex-gilberto-mora",
+      "mex-edson-alvarez",
+      "mex-armando-gonzalez"
+    ],
+    "lineupStatus": "normal",
+    "benchOptions": [
+      "mex-alexis-vega",
+      "mex-santiago-gimenez",
+      "mex-cesar-huerta",
+      "mex-mateo-chavez",
+      "mex-obed-vargas"
+    ],
+    "unavailablePlayerIds": [],
+    "attributeWeights": {
+      "finishing": 0.04,
+      "chanceCreation": 0.14,
+      "dribbling": 0.1,
+      "passing": 0.2,
+      "pressing": 0.15,
+      "defending": 0.2,
+      "aerial": 0.13,
+      "impact": 0.14
+    },
+    "defaultInstructions": {
+      "attackDirection": "balanced",
+      "pressing": "medium",
+      "defensiveLine": "medium",
+      "mentality": "safe"
+    },
+    "instructionFit": {
+      "attackDirection": {
+        "left": 0,
+        "centre": -1,
+        "right": 0,
+        "balanced": 2
+      },
+      "pressing": {
+        "low": -1,
+        "medium": 2,
+        "high": 0
+      },
+      "defensiveLine": {
+        "low": 0,
+        "medium": 2,
+        "high": -2
+      },
+      "mentality": {
+        "safe": 3,
+        "balanced": 1,
+        "attacking": -3
+      },
+      "combinationModifiers": [
+        {
+          "id": "control-mid-block",
+          "label": "중간 라인과 선택적 압박",
+          "when": {
+            "pressing": "medium",
+            "defensiveLine": "medium",
+            "mentality": "safe"
+          },
+          "modifier": 1
+        },
+        {
+          "id": "control-passive-block",
+          "label": "지나치게 수동적인 저블록",
+          "when": {
+            "pressing": "low",
+            "defensiveLine": "low"
+          },
+          "modifier": -2
+        }
+      ]
+    },
+    "matchupModifiers": {
+      "base": 56,
+      "rules": [
+        {
+          "id": "control-midfielder",
+          "label": "중원 통제",
+          "positionGroups": [
+            "DM",
+            "CM_AM"
+          ],
+          "modifier": 10
+        },
+        {
+          "id": "control-defender",
+          "label": "후방 숫자 보강",
+          "positionGroups": [
+            "CB",
+            "FB_WB"
+          ],
+          "modifier": 8
+        },
+        {
+          "id": "control-role",
+          "label": "리드 보호 역할",
+          "roleIds": [
+            "holding-midfielder",
+            "box-to-box",
+            "defensive-fullback",
+            "centre-back"
+          ],
+          "modifier": 7
+        }
+      ]
+    },
+    "matchupTags": [
+      "리드 보호",
+      "세컨드볼",
+      "전환 통제"
+    ],
+    "riskRules": [
+      "high-line-low-press",
+      "deep-passive-block",
+      "position-mismatch",
+      "low-confidence",
+      "protect-lead-attacking"
+    ],
+    "tournamentFormByPlayer": {
+      "mex-raul-rangel": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-cesar-montes": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-johan-vasquez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-israel-reyes": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-jesus-gallardo": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-julian-quinones": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-roberto-alvarado": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-luis-chavez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-gilberto-mora": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-edson-alvarez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-armando-gonzalez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-alexis-vega": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-santiago-gimenez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-cesar-huerta": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-mateo-chavez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-obed-vargas": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      }
+    },
+    "currentConditionByPlayer": {
+      "mex-raul-rangel": {
+        "minutesInMatch": 79,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-cesar-montes": {
+        "minutesInMatch": 79,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-johan-vasquez": {
+        "minutesInMatch": 79,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-israel-reyes": {
+        "minutesInMatch": 79,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-jesus-gallardo": {
+        "minutesInMatch": 79,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-julian-quinones": {
+        "minutesInMatch": 79,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-roberto-alvarado": {
+        "minutesInMatch": 79,
+        "energyEstimate": 67,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-luis-chavez": {
+        "minutesInMatch": 13,
+        "energyEstimate": 95,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-gilberto-mora": {
+        "minutesInMatch": 13,
+        "energyEstimate": 95,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-edson-alvarez": {
+        "minutesInMatch": 3,
+        "energyEstimate": 99,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-armando-gonzalez": {
+        "minutesInMatch": 3,
+        "energyEstimate": 99,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-alexis-vega": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-santiago-gimenez": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-cesar-huerta": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-mateo-chavez": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-obed-vargas": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      }
+    },
+    "evidenceRefs": [
+      {
+        "sourceId": "fifa-ftr-m01",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 79,
+        "observedThrough": "2026-06-11T20:19:00.000Z"
+      },
+      {
+        "sourceId": "fifa-tactical-m01",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-11T19:00:00Z"
+      },
+      {
+        "sourceId": "fifa-squad-list-2026-v1",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-10T23:59:59Z",
+        "note": "최종 명단의 신원·등록·소속팀 정보만 사용"
+      }
+    ],
+    "actualDecision": {
+      "minute": 79,
+      "outPlayerId": "mex-julian-quinones",
+      "inPlayerId": "mex-alexis-vega",
+      "scoreAtDecision": {
+        "home": 2,
+        "away": 0
+      },
+      "interpretedRole": "측면 압박 에너지와 전환 출구 유지",
+      "interpretationStatus": "inferred",
+      "note": "OUT/IN과 시점은 공식 기록이다. 구체적인 전술 목적은 경기 상태에 기반한 해석이다.",
+      "parallelDecision": null,
+      "sourceIds": [
+        "fifa-ftr-m01"
+      ],
+      "usage": "result-only"
+    },
+    "resultFacts": {
+      "finalScore": {
+        "home": 2,
+        "away": 0
+      },
+      "eventsAfterScenario": [
+        {
+          "minute": {
+            "regulation": 84
+          },
+          "type": "card",
+          "teamId": "rsa",
+          "playerId": "rsa-themba-zwane",
+          "assistPlayerId": null,
+          "card": "red",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 90,
+            "added": 2
+          },
+          "type": "card",
+          "teamId": "mex",
+          "playerId": "mex-cesar-montes",
+          "assistPlayerId": null,
+          "card": "red",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        }
+      ],
+      "sourceIds": [
+        "fifa-ftr-m01",
+        "fifa-tactical-m01",
+        "fifa-pmsr-m01",
+        "fifa-api-m01",
+        "fifa-article-m01"
+      ],
+      "usage": "result-only"
+    },
+    "sourceIds": [
+      "fifa-ftr-m01",
+      "fifa-tactical-m01",
+      "fifa-pmsr-m01",
+      "fifa-api-m01",
+      "fifa-article-m01"
+    ],
+    "verificationStatus": "verified_official"
+  },
+  {
+    "id": "mex-m28-last-press-84",
+    "matchId": "mex-kor-2026",
+    "selectedTeamId": "mex",
+    "opponentTeamId": "kor",
+    "order": 2,
+    "globalOrder": 8,
+    "minute": 84,
+    "scenarioTimestamp": "2026-06-19T02:24:00.000Z",
+    "timestampBasis": "derived logical match-clock boundary; not an official wall-clock event timestamp",
+    "currentScore": {
+      "home": 1,
+      "away": 0
+    },
+    "scoreState": "leading",
+    "substitutionsRemaining": 1,
+    "title": "한 골 리드의 마지막 압박 카드",
+    "shortMission": "84분 1–0, 마지막 한 장으로 압박 에너지와 전환 출구를 지켜라",
+    "mission": "한국의 공격 숫자가 늘어난 상황에서 측면 압박과 역습 출구를 동시에 유지하라.",
+    "difficulty": "어려움",
+    "observations": [
+      "루이스 로모가 50분 선제골을 넣었다.",
+      "한국은 57분과 71분에 네 장을 먼저 사용했다.",
+      "멕시코도 71분과 80분 네 선수를 바꿨다.",
+      "마지막 한 장으로 측면 에너지와 리드 보호를 조율해야 한다."
+    ],
+    "contextTimeline": [
+      {
+        "minute": "50′",
+        "label": "로모 선제골",
+        "tone": "positive"
+      },
+      {
+        "minute": "71′",
+        "label": "양 팀 2명 교체",
+        "tone": "neutral"
+      },
+      {
+        "minute": "80′",
+        "label": "멕시코 2명 교체",
+        "tone": "neutral"
+      },
+      {
+        "minute": "84′",
+        "label": "당신의 결정",
+        "tone": "positive"
+      }
+    ],
+    "opponentShape": "공격수 추가 · 마지막 동점 공세",
+    "currentLineup": [
+      "mex-raul-rangel",
+      "mex-jorge-sanchez",
+      "mex-edson-alvarez",
+      "mex-johan-vasquez",
+      "mex-jesus-gallardo",
+      "mex-erik-lira",
+      "mex-julian-quinones",
+      "mex-obed-vargas",
+      "mex-orbelin-pineda",
+      "mex-santiago-gimenez",
+      "mex-israel-reyes"
+    ],
+    "lineupStatus": "normal",
+    "benchOptions": [
+      "mex-cesar-huerta",
+      "mex-alvaro-fidalgo",
+      "mex-gilberto-mora",
+      "mex-alexis-vega",
+      "mex-mateo-chavez"
+    ],
+    "unavailablePlayerIds": [
+      "mex-cesar-montes"
+    ],
+    "attributeWeights": {
+      "finishing": 0.04,
+      "chanceCreation": 0.14,
+      "dribbling": 0.1,
+      "passing": 0.2,
+      "pressing": 0.15,
+      "defending": 0.2,
+      "aerial": 0.13,
+      "impact": 0.14
+    },
+    "defaultInstructions": {
+      "attackDirection": "balanced",
+      "pressing": "medium",
+      "defensiveLine": "medium",
+      "mentality": "safe"
+    },
+    "instructionFit": {
+      "attackDirection": {
+        "left": 0,
+        "centre": -1,
+        "right": 0,
+        "balanced": 2
+      },
+      "pressing": {
+        "low": -1,
+        "medium": 2,
+        "high": 0
+      },
+      "defensiveLine": {
+        "low": 0,
+        "medium": 2,
+        "high": -2
+      },
+      "mentality": {
+        "safe": 3,
+        "balanced": 1,
+        "attacking": -3
+      },
+      "combinationModifiers": [
+        {
+          "id": "control-mid-block",
+          "label": "중간 라인과 선택적 압박",
+          "when": {
+            "pressing": "medium",
+            "defensiveLine": "medium",
+            "mentality": "safe"
+          },
+          "modifier": 1
+        },
+        {
+          "id": "control-passive-block",
+          "label": "지나치게 수동적인 저블록",
+          "when": {
+            "pressing": "low",
+            "defensiveLine": "low"
+          },
+          "modifier": -2
+        }
+      ]
+    },
+    "matchupModifiers": {
+      "base": 56,
+      "rules": [
+        {
+          "id": "control-midfielder",
+          "label": "중원 통제",
+          "positionGroups": [
+            "DM",
+            "CM_AM"
+          ],
+          "modifier": 10
+        },
+        {
+          "id": "control-defender",
+          "label": "후방 숫자 보강",
+          "positionGroups": [
+            "CB",
+            "FB_WB"
+          ],
+          "modifier": 8
+        },
+        {
+          "id": "control-role",
+          "label": "리드 보호 역할",
+          "roleIds": [
+            "holding-midfielder",
+            "box-to-box",
+            "defensive-fullback",
+            "centre-back"
+          ],
+          "modifier": 7
+        }
+      ]
+    },
+    "matchupTags": [
+      "리드 보호",
+      "세컨드볼",
+      "전환 통제"
+    ],
+    "riskRules": [
+      "high-line-low-press",
+      "deep-passive-block",
+      "position-mismatch",
+      "low-confidence",
+      "protect-lead-attacking"
+    ],
+    "tournamentFormByPlayer": {
+      "mex-raul-rangel": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-jorge-sanchez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-edson-alvarez": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 14,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-johan-vasquez": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-jesus-gallardo": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-erik-lira": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 76,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-julian-quinones": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 79,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-obed-vargas": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-orbelin-pineda": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-santiago-gimenez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-israel-reyes": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-cesar-huerta": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-alvaro-fidalgo": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 66,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-gilberto-mora": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 24,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-alexis-vega": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 11,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-mateo-chavez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      }
+    },
+    "currentConditionByPlayer": {
+      "mex-raul-rangel": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-jorge-sanchez": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-edson-alvarez": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-johan-vasquez": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-jesus-gallardo": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-erik-lira": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-julian-quinones": {
+        "minutesInMatch": 84,
+        "energyEstimate": 65,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-obed-vargas": {
+        "minutesInMatch": 13,
+        "energyEstimate": 95,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-orbelin-pineda": {
+        "minutesInMatch": 13,
+        "energyEstimate": 95,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-santiago-gimenez": {
+        "minutesInMatch": 4,
+        "energyEstimate": 98,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-israel-reyes": {
+        "minutesInMatch": 4,
+        "energyEstimate": 98,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-cesar-huerta": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-alvaro-fidalgo": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-gilberto-mora": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-alexis-vega": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-mateo-chavez": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m28"
+        ],
+        "verificationStatus": "partial"
+      }
+    },
+    "evidenceRefs": [
+      {
+        "sourceId": "fifa-ftr-m28",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 84,
+        "observedThrough": "2026-06-19T02:24:00.000Z"
+      },
+      {
+        "sourceId": "fifa-tactical-m28",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-19T01:00:00Z"
+      },
+      {
+        "sourceId": "fifa-squad-list-2026-v1",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-10T23:59:59Z",
+        "note": "최종 명단의 신원·등록·소속팀 정보만 사용"
+      }
+    ],
+    "actualDecision": {
+      "minute": 84,
+      "outPlayerId": "mex-julian-quinones",
+      "inPlayerId": "mex-cesar-huerta",
+      "scoreAtDecision": {
+        "home": 1,
+        "away": 0
+      },
+      "interpretedRole": "측면 압박과 전환 출구 보강",
+      "interpretationStatus": "inferred",
+      "note": "OUT/IN과 시점은 공식 기록이다. 구체적인 전술 목적은 경기 상태에 기반한 해석이다.",
+      "parallelDecision": null,
+      "sourceIds": [
+        "fifa-ftr-m28"
+      ],
+      "usage": "result-only"
+    },
+    "resultFacts": {
+      "finalScore": {
+        "home": 1,
+        "away": 0
+      },
+      "eventsAfterScenario": [],
+      "sourceIds": [
+        "fifa-ftr-m28",
+        "fifa-tactical-m28",
+        "fifa-pmsr-m28",
+        "fifa-api-m28",
+        "fifa-article-m28"
+      ],
+      "usage": "result-only"
+    },
+    "sourceIds": [
+      "fifa-ftr-m28",
+      "fifa-tactical-m28",
+      "fifa-pmsr-m28",
+      "fifa-api-m28",
+      "fifa-article-m28"
+    ],
+    "verificationStatus": "verified_official"
+  },
+  {
+    "id": "mex-m53-possession-72",
+    "matchId": "cze-mex-2026",
+    "selectedTeamId": "mex",
+    "opponentTeamId": "cze",
+    "order": 3,
+    "globalOrder": 11,
+    "minute": 72,
+    "scenarioTimestamp": "2026-06-25T02:12:00.000Z",
+    "timestampBasis": "derived logical match-clock boundary; not an official wall-clock event timestamp",
+    "currentScore": {
+      "home": 0,
+      "away": 2
+    },
+    "scoreState": "leading",
+    "substitutionsRemaining": 3,
+    "title": "두 골 리드, 점유의 다음 축",
+    "shortMission": "72분 2–0, 리드를 지키면서 전진 연결의 질을 유지하라",
+    "mission": "공격의 속도를 무리하게 높이지 않으면서 볼 순환과 전진 패스의 다음 축을 선택하라.",
+    "difficulty": "어려움",
+    "observations": [
+      "마테오 차베스가 55분 선제골을 넣었다.",
+      "훌리안 키노네스가 61분 두 번째 골을 넣었다.",
+      "멕시코는 63분 두 선수를 교체했다.",
+      "에드손 알바레스는 64분 경고를 받았다."
+    ],
+    "contextTimeline": [
+      {
+        "minute": "55′",
+        "label": "멕시코 선제골",
+        "tone": "positive"
+      },
+      {
+        "minute": "61′",
+        "label": "멕시코 추가골",
+        "tone": "positive"
+      },
+      {
+        "minute": "64′",
+        "label": "알바레스 경고",
+        "tone": "danger"
+      },
+      {
+        "minute": "72′",
+        "label": "당신의 결정",
+        "tone": "positive"
+      }
+    ],
+    "opponentShape": "공격수 보강 · 추격을 위한 직접 전개",
+    "currentLineup": [
+      "mex-raul-rangel",
+      "mex-jorge-sanchez",
+      "mex-cesar-montes",
+      "mex-edson-alvarez",
+      "mex-israel-reyes",
+      "mex-mateo-chavez",
+      "mex-gilberto-mora",
+      "mex-julian-quinones",
+      "mex-roberto-alvarado",
+      "mex-santiago-gimenez",
+      "mex-obed-vargas"
+    ],
+    "lineupStatus": "normal",
+    "benchOptions": [
+      "mex-alvaro-fidalgo",
+      "mex-jesus-gallardo",
+      "mex-raul-jimenez",
+      "mex-alexis-vega",
+      "mex-luis-chavez"
+    ],
+    "unavailablePlayerIds": [],
+    "attributeWeights": {
+      "finishing": 0.04,
+      "chanceCreation": 0.14,
+      "dribbling": 0.1,
+      "passing": 0.2,
+      "pressing": 0.15,
+      "defending": 0.2,
+      "aerial": 0.13,
+      "impact": 0.14
+    },
+    "defaultInstructions": {
+      "attackDirection": "balanced",
+      "pressing": "medium",
+      "defensiveLine": "medium",
+      "mentality": "safe"
+    },
+    "instructionFit": {
+      "attackDirection": {
+        "left": 0,
+        "centre": -1,
+        "right": 0,
+        "balanced": 2
+      },
+      "pressing": {
+        "low": -1,
+        "medium": 2,
+        "high": 0
+      },
+      "defensiveLine": {
+        "low": 0,
+        "medium": 2,
+        "high": -2
+      },
+      "mentality": {
+        "safe": 3,
+        "balanced": 1,
+        "attacking": -3
+      },
+      "combinationModifiers": [
+        {
+          "id": "control-mid-block",
+          "label": "중간 라인과 선택적 압박",
+          "when": {
+            "pressing": "medium",
+            "defensiveLine": "medium",
+            "mentality": "safe"
+          },
+          "modifier": 1
+        },
+        {
+          "id": "control-passive-block",
+          "label": "지나치게 수동적인 저블록",
+          "when": {
+            "pressing": "low",
+            "defensiveLine": "low"
+          },
+          "modifier": -2
+        }
+      ]
+    },
+    "matchupModifiers": {
+      "base": 56,
+      "rules": [
+        {
+          "id": "control-midfielder",
+          "label": "중원 통제",
+          "positionGroups": [
+            "DM",
+            "CM_AM"
+          ],
+          "modifier": 10
+        },
+        {
+          "id": "control-defender",
+          "label": "후방 숫자 보강",
+          "positionGroups": [
+            "CB",
+            "FB_WB"
+          ],
+          "modifier": 8
+        },
+        {
+          "id": "control-role",
+          "label": "리드 보호 역할",
+          "roleIds": [
+            "holding-midfielder",
+            "box-to-box",
+            "defensive-fullback",
+            "centre-back"
+          ],
+          "modifier": 7
+        }
+      ]
+    },
+    "matchupTags": [
+      "리드 보호",
+      "세컨드볼",
+      "전환 통제"
+    ],
+    "riskRules": [
+      "high-line-low-press",
+      "deep-passive-block",
+      "position-mismatch",
+      "low-confidence",
+      "protect-lead-attacking"
+    ],
+    "tournamentFormByPlayer": {
+      "mex-raul-rangel": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-jorge-sanchez": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-cesar-montes": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-edson-alvarez": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 104,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-israel-reyes": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 100,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-mateo-chavez": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "mex-gilberto-mora": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 24,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-julian-quinones": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 163,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-roberto-alvarado": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 170,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-santiago-gimenez": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 10,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-obed-vargas": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 19,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-alvaro-fidalgo": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 66,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-jesus-gallardo": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-raul-jimenez": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 156,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-alexis-vega": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 11,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "mex-luis-chavez": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 24,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m28"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      }
+    },
+    "currentConditionByPlayer": {
+      "mex-raul-rangel": {
+        "minutesInMatch": 72,
+        "energyEstimate": 70,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-jorge-sanchez": {
+        "minutesInMatch": 72,
+        "energyEstimate": 70,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-cesar-montes": {
+        "minutesInMatch": 72,
+        "energyEstimate": 70,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-edson-alvarez": {
+        "minutesInMatch": 72,
+        "energyEstimate": 70,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "yellow",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-israel-reyes": {
+        "minutesInMatch": 72,
+        "energyEstimate": 70,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-mateo-chavez": {
+        "minutesInMatch": 72,
+        "energyEstimate": 70,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-gilberto-mora": {
+        "minutesInMatch": 72,
+        "energyEstimate": 70,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-julian-quinones": {
+        "minutesInMatch": 72,
+        "energyEstimate": 70,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-roberto-alvarado": {
+        "minutesInMatch": 72,
+        "energyEstimate": 70,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-santiago-gimenez": {
+        "minutesInMatch": 9,
+        "energyEstimate": 96,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-obed-vargas": {
+        "minutesInMatch": 9,
+        "energyEstimate": 96,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-alvaro-fidalgo": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-jesus-gallardo": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-raul-jimenez": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-alexis-vega": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      },
+      "mex-luis-chavez": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m53"
+        ],
+        "verificationStatus": "partial"
+      }
+    },
+    "evidenceRefs": [
+      {
+        "sourceId": "fifa-ftr-m53",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 72,
+        "observedThrough": "2026-06-25T02:12:00.000Z"
+      },
+      {
+        "sourceId": "fifa-tactical-m53",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-25T01:00:00Z"
+      },
+      {
+        "sourceId": "fifa-squad-list-2026-v1",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-10T23:59:59Z",
+        "note": "최종 명단의 신원·등록·소속팀 정보만 사용"
+      }
+    ],
+    "actualDecision": {
+      "minute": 72,
+      "outPlayerId": "mex-gilberto-mora",
+      "inPlayerId": "mex-alvaro-fidalgo",
+      "scoreAtDecision": {
+        "home": 0,
+        "away": 2
+      },
+      "interpretedRole": "중원 점유와 전진 연결 보강",
+      "interpretationStatus": "inferred",
+      "note": "OUT/IN과 시점은 공식 기록이다. 구체적인 전술 목적은 경기 상태에 기반한 해석이다.",
+      "parallelDecision": null,
+      "sourceIds": [
+        "fifa-ftr-m53"
+      ],
+      "usage": "result-only"
+    },
+    "resultFacts": {
+      "finalScore": {
+        "home": 0,
+        "away": 3
+      },
+      "eventsAfterScenario": [
+        {
+          "minute": {
+            "regulation": 78
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-guillermo-ochoa",
+          "relatedPlayerId": "mex-raul-rangel",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 78
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-jesus-gallardo",
+          "relatedPlayerId": "mex-mateo-chavez",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 87
+          },
+          "type": "substitution",
+          "teamId": "cze",
+          "playerId": "cze-tomas-chory",
+          "relatedPlayerId": "cze-lukas-cerv",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 87
+          },
+          "type": "substitution",
+          "teamId": "cze",
+          "playerId": "cze-alexandr-sojka",
+          "relatedPlayerId": "cze-tomas-soucek",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 90,
+            "added": 4
+          },
+          "type": "goal",
+          "teamId": "mex",
+          "playerId": "mex-alvaro-fidalgo",
+          "assistPlayerId": "mex-roberto-alvarado",
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        }
+      ],
+      "sourceIds": [
+        "fifa-ftr-m53",
+        "fifa-tactical-m53",
+        "fifa-pmsr-m53",
+        "fifa-api-m53",
+        "fifa-article-m53"
+      ],
+      "usage": "result-only"
+    },
+    "sourceIds": [
+      "fifa-ftr-m53",
+      "fifa-tactical-m53",
+      "fifa-pmsr-m53",
+      "fifa-api-m53",
+      "fifa-article-m53"
+    ],
+    "verificationStatus": "verified_official"
+  }
+]

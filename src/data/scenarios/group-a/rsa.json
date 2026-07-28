@@ -1,0 +1,2248 @@
+[
+  {
+    "id": "rsa-m01-ten-men-56",
+    "matchId": "mex-rsa-2026",
+    "selectedTeamId": "rsa",
+    "opponentTeamId": "mex",
+    "order": 1,
+    "globalOrder": 2,
+    "minute": 56,
+    "scenarioTimestamp": "2026-06-11T19:56:00.000Z",
+    "timestampBasis": "derived logical match-clock boundary; not an official wall-clock event timestamp",
+    "currentScore": {
+      "home": 1,
+      "away": 0
+    },
+    "scoreState": "trailing",
+    "substitutionsRemaining": 5,
+    "title": "열 명으로 버티며 동점을 설계하라",
+    "shortMission": "56분 0–1, 수적 열세에서 중앙 안정과 동점 가능성을 함께 지켜라",
+    "mission": "퇴장 뒤 비어진 중앙을 채우면서도 공격 출구를 완전히 포기하지 않는 교체를 선택하라.",
+    "difficulty": "보통",
+    "observations": [
+      "남아공은 9분 선제골을 허용했다.",
+      "테보호 모코에나는 17분 경고를 받았다.",
+      "스페펠로 시톨레가 49분 퇴장당해 현재 필드에는 10명만 남았다.",
+      "첫 교체로 전방과 중원의 숫자 균형을 다시 잡아야 한다."
+    ],
+    "contextTimeline": [
+      {
+        "minute": "9′",
+        "label": "멕시코 선제골",
+        "tone": "danger"
+      },
+      {
+        "minute": "17′",
+        "label": "모코에나 경고",
+        "tone": "danger"
+      },
+      {
+        "minute": "49′",
+        "label": "시톨레 퇴장",
+        "tone": "danger"
+      },
+      {
+        "minute": "56′",
+        "label": "당신의 결정",
+        "tone": "neutral"
+      }
+    ],
+    "opponentShape": "4-1-2-3 · 수적 우세와 높은 점유",
+    "currentLineup": [
+      "rsa-ronwen-williams",
+      "rsa-aubrey-modiba",
+      "rsa-mbekezeli-mbokazi",
+      "rsa-nkosinathi-sibisi",
+      "rsa-khuliso-mudau",
+      "rsa-ime-okon",
+      "rsa-teboho-mokoena",
+      "rsa-jayden-adams",
+      "rsa-lyle-foster",
+      "rsa-iqraam-rayners"
+    ],
+    "lineupStatus": "verified_red_card_reduction",
+    "benchOptions": [
+      "rsa-thalente-mbatha",
+      "rsa-relebohile-mofokeng",
+      "rsa-evidence-makgopa",
+      "rsa-oswin-appollis",
+      "rsa-thapelo-maseko"
+    ],
+    "unavailablePlayerIds": [],
+    "attributeWeights": {
+      "finishing": 0.12,
+      "chanceCreation": 0.14,
+      "dribbling": 0.1,
+      "passing": 0.14,
+      "pressing": 0.12,
+      "defending": 0.14,
+      "aerial": 0.1,
+      "impact": 0.14
+    },
+    "defaultInstructions": {
+      "attackDirection": "balanced",
+      "pressing": "medium",
+      "defensiveLine": "medium",
+      "mentality": "balanced"
+    },
+    "instructionFit": {
+      "attackDirection": {
+        "left": 0,
+        "centre": 1,
+        "right": 0,
+        "balanced": 2
+      },
+      "pressing": {
+        "low": -1,
+        "medium": 2,
+        "high": 1
+      },
+      "defensiveLine": {
+        "low": -1,
+        "medium": 2,
+        "high": 0
+      },
+      "mentality": {
+        "safe": 0,
+        "balanced": 2,
+        "attacking": 1
+      },
+      "combinationModifiers": [
+        {
+          "id": "balance-coordinated-press",
+          "label": "라인과 압박의 동시 전진",
+          "when": {
+            "pressing": "high",
+            "defensiveLine": "high"
+          },
+          "modifier": 1
+        },
+        {
+          "id": "balance-disconnected",
+          "label": "높은 라인과 낮은 압박의 간격",
+          "when": {
+            "pressing": "low",
+            "defensiveLine": "high"
+          },
+          "modifier": -3
+        }
+      ]
+    },
+    "matchupModifiers": {
+      "base": 56,
+      "rules": [
+        {
+          "id": "balance-midfielder",
+          "label": "중앙 균형",
+          "positionGroups": [
+            "DM",
+            "CM_AM"
+          ],
+          "modifier": 8
+        },
+        {
+          "id": "balance-forward",
+          "label": "전환 출구",
+          "positionGroups": [
+            "WINGER",
+            "STRIKER"
+          ],
+          "modifier": 7
+        },
+        {
+          "id": "balance-role",
+          "label": "양방향 역할",
+          "roleIds": [
+            "box-to-box",
+            "playmaker",
+            "advanced-forward"
+          ],
+          "modifier": 6
+        }
+      ]
+    },
+    "matchupTags": [
+      "공수 균형",
+      "전환 출구",
+      "중원 간격"
+    ],
+    "riskRules": [
+      "high-line-low-press",
+      "all-out-attack",
+      "position-mismatch",
+      "low-confidence"
+    ],
+    "tournamentFormByPlayer": {
+      "rsa-ronwen-williams": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-aubrey-modiba": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-mbekezeli-mbokazi": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-nkosinathi-sibisi": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-khuliso-mudau": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-ime-okon": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-teboho-mokoena": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-jayden-adams": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-lyle-foster": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-iqraam-rayners": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-thalente-mbatha": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-relebohile-mofokeng": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-evidence-makgopa": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-oswin-appollis": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-thapelo-maseko": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      }
+    },
+    "currentConditionByPlayer": {
+      "rsa-ronwen-williams": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-aubrey-modiba": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-mbekezeli-mbokazi": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-nkosinathi-sibisi": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-khuliso-mudau": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-ime-okon": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-teboho-mokoena": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "yellow",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-jayden-adams": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-lyle-foster": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-iqraam-rayners": {
+        "minutesInMatch": 56,
+        "energyEstimate": 76,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-thalente-mbatha": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-relebohile-mofokeng": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-evidence-makgopa": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-oswin-appollis": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-thapelo-maseko": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "verificationStatus": "partial"
+      }
+    },
+    "evidenceRefs": [
+      {
+        "sourceId": "fifa-ftr-m01",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 56,
+        "observedThrough": "2026-06-11T19:56:00.000Z"
+      },
+      {
+        "sourceId": "fifa-tactical-m01",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-11T19:00:00Z"
+      },
+      {
+        "sourceId": "fifa-squad-list-2026-v1",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-10T23:59:59Z",
+        "note": "최종 명단의 신원·등록·소속팀 정보만 사용"
+      }
+    ],
+    "actualDecision": {
+      "minute": 56,
+      "outPlayerId": "rsa-lyle-foster",
+      "inPlayerId": "rsa-thalente-mbatha",
+      "scoreAtDecision": {
+        "home": 1,
+        "away": 0
+      },
+      "interpretedRole": "공격수 한 명을 줄이고 중앙 미드필더 보강",
+      "interpretationStatus": "inferred",
+      "note": "OUT/IN과 시점은 공식 기록이다. 구체적인 전술 목적은 경기 상태에 기반한 해석이다.",
+      "parallelDecision": null,
+      "sourceIds": [
+        "fifa-ftr-m01"
+      ],
+      "usage": "result-only"
+    },
+    "resultFacts": {
+      "finalScore": {
+        "home": 2,
+        "away": 0
+      },
+      "eventsAfterScenario": [
+        {
+          "minute": {
+            "regulation": 61
+          },
+          "type": "substitution",
+          "teamId": "rsa",
+          "playerId": "rsa-themba-zwane",
+          "relatedPlayerId": "rsa-jayden-adams",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 66
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-luis-chavez",
+          "relatedPlayerId": "mex-brian-gutierrez",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 66
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-gilberto-mora",
+          "relatedPlayerId": "mex-alvaro-fidalgo",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 67
+          },
+          "type": "goal",
+          "teamId": "mex",
+          "playerId": "mex-raul-jimenez",
+          "assistPlayerId": "mex-roberto-alvarado",
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 74
+          },
+          "type": "card",
+          "teamId": "rsa",
+          "playerId": "rsa-nkosinathi-sibisi",
+          "assistPlayerId": null,
+          "card": "yellow",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 76
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-edson-alvarez",
+          "relatedPlayerId": "mex-erik-lira",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 76
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-armando-gonzalez",
+          "relatedPlayerId": "mex-raul-jimenez",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 76
+          },
+          "type": "substitution",
+          "teamId": "rsa",
+          "playerId": "rsa-evidence-makgopa",
+          "relatedPlayerId": "rsa-iqraam-rayners",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 76
+          },
+          "type": "substitution",
+          "teamId": "rsa",
+          "playerId": "rsa-oswin-appollis",
+          "relatedPlayerId": "rsa-aubrey-modiba",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 79
+          },
+          "type": "substitution",
+          "teamId": "mex",
+          "playerId": "mex-alexis-vega",
+          "relatedPlayerId": "mex-julian-quinones",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 84
+          },
+          "type": "card",
+          "teamId": "rsa",
+          "playerId": "rsa-themba-zwane",
+          "assistPlayerId": null,
+          "card": "red",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 90,
+            "added": 2
+          },
+          "type": "card",
+          "teamId": "mex",
+          "playerId": "mex-cesar-montes",
+          "assistPlayerId": null,
+          "card": "red",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        }
+      ],
+      "sourceIds": [
+        "fifa-ftr-m01",
+        "fifa-tactical-m01",
+        "fifa-pmsr-m01",
+        "fifa-api-m01",
+        "fifa-article-m01"
+      ],
+      "usage": "result-only"
+    },
+    "sourceIds": [
+      "fifa-ftr-m01",
+      "fifa-tactical-m01",
+      "fifa-pmsr-m01",
+      "fifa-api-m01",
+      "fifa-article-m01"
+    ],
+    "verificationStatus": "verified_official"
+  },
+  {
+    "id": "rsa-m25-box-target-66",
+    "matchId": "cze-rsa-2026",
+    "selectedTeamId": "rsa",
+    "opponentTeamId": "cze",
+    "order": 2,
+    "globalOrder": 7,
+    "minute": 66,
+    "scenarioTimestamp": "2026-06-18T17:06:00.000Z",
+    "timestampBasis": "derived logical match-clock boundary; not an official wall-clock event timestamp",
+    "currentScore": {
+      "home": 1,
+      "away": 0
+    },
+    "scoreState": "trailing",
+    "substitutionsRemaining": 4,
+    "title": "박스 안 기준점을 세울 때",
+    "shortMission": "66분 0–1, 공격수를 바꾸며 동점과 전환 수비를 함께 노려라",
+    "mission": "박스 존재감을 높이되 경고가 있는 중원의 뒷공간까지 보호할 수 있는 교체를 골라라.",
+    "difficulty": "보통",
+    "observations": [
+      "남아공은 6분 선제골을 허용했다.",
+      "모코에나와 음바타가 전반에 경고를 받았다.",
+      "하프타임에 제이든 아담스 대신 렐레보힐레 모포켕이 들어왔다.",
+      "이제 박스 안의 공격 기준점을 바꿀 수 있다."
+    ],
+    "contextTimeline": [
+      {
+        "minute": "6′",
+        "label": "체코 선제골",
+        "tone": "danger"
+      },
+      {
+        "minute": "40′",
+        "label": "음바타 경고",
+        "tone": "danger"
+      },
+      {
+        "minute": "HT",
+        "label": "모포켕 투입",
+        "tone": "neutral"
+      },
+      {
+        "minute": "66′",
+        "label": "당신의 결정",
+        "tone": "neutral"
+      }
+    ],
+    "opponentShape": "3-5-2 · 중앙 밀집과 한 골 리드",
+    "currentLineup": [
+      "rsa-ronwen-williams",
+      "rsa-aubrey-modiba",
+      "rsa-mbekezeli-mbokazi",
+      "rsa-khuliso-mudau",
+      "rsa-ime-okon",
+      "rsa-teboho-mokoena",
+      "rsa-thalente-mbatha",
+      "rsa-oswin-appollis",
+      "rsa-thapelo-maseko",
+      "rsa-iqraam-rayners",
+      "rsa-relebohile-mofokeng"
+    ],
+    "lineupStatus": "normal",
+    "benchOptions": [
+      "rsa-evidence-makgopa",
+      "rsa-tshepang-moremi",
+      "rsa-lyle-foster",
+      "rsa-kamogelo-sebelebele",
+      "rsa-nkosinathi-sibisi"
+    ],
+    "unavailablePlayerIds": [
+      "rsa-sphephelo-sithole",
+      "rsa-themba-zwane"
+    ],
+    "attributeWeights": {
+      "finishing": 0.2,
+      "chanceCreation": 0.18,
+      "dribbling": 0.14,
+      "passing": 0.14,
+      "pressing": 0.12,
+      "defending": 0.06,
+      "aerial": 0.1,
+      "impact": 0.14
+    },
+    "defaultInstructions": {
+      "attackDirection": "balanced",
+      "pressing": "medium",
+      "defensiveLine": "medium",
+      "mentality": "attacking"
+    },
+    "instructionFit": {
+      "attackDirection": {
+        "left": 0,
+        "centre": 2,
+        "right": 0,
+        "balanced": 1
+      },
+      "pressing": {
+        "low": -2,
+        "medium": 2,
+        "high": 1
+      },
+      "defensiveLine": {
+        "low": -1,
+        "medium": 2,
+        "high": 0
+      },
+      "mentality": {
+        "safe": -3,
+        "balanced": 1,
+        "attacking": 3
+      },
+      "combinationModifiers": [
+        {
+          "id": "attack-centre-commitment",
+          "label": "중앙 공략과 공격 성향의 박스 점유",
+          "when": {
+            "attackDirection": "centre",
+            "mentality": "attacking"
+          },
+          "modifier": 1
+        },
+        {
+          "id": "attack-exposed-line",
+          "label": "낮은 압박과 높은 라인의 간격",
+          "when": {
+            "pressing": "low",
+            "defensiveLine": "high"
+          },
+          "modifier": -3
+        }
+      ]
+    },
+    "matchupModifiers": {
+      "base": 55,
+      "rules": [
+        {
+          "id": "attack-striker",
+          "label": "박스 중앙 공격수",
+          "positionGroups": [
+            "STRIKER"
+          ],
+          "modifier": 10
+        },
+        {
+          "id": "attack-winger",
+          "label": "측면 돌파 옵션",
+          "positionGroups": [
+            "WINGER"
+          ],
+          "modifier": 7
+        },
+        {
+          "id": "attack-role",
+          "label": "득점 지향 역할",
+          "roleIds": [
+            "target-striker",
+            "advanced-forward",
+            "inside-forward"
+          ],
+          "modifier": 7
+        }
+      ]
+    },
+    "matchupTags": [
+      "득점 필요",
+      "박스 점유",
+      "전환 위험"
+    ],
+    "riskRules": [
+      "high-line-low-press",
+      "all-out-attack",
+      "position-mismatch",
+      "low-confidence"
+    ],
+    "tournamentFormByPlayer": {
+      "rsa-ronwen-williams": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-aubrey-modiba": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 76,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-mbekezeli-mbokazi": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-khuliso-mudau": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-ime-okon": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-teboho-mokoena": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-thalente-mbatha": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 34,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-oswin-appollis": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 14,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-thapelo-maseko": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-iqraam-rayners": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 76,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-relebohile-mofokeng": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-evidence-makgopa": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 14,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-tshepang-moremi": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-lyle-foster": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 56,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-kamogelo-sebelebele": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-nkosinathi-sibisi": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      }
+    },
+    "currentConditionByPlayer": {
+      "rsa-ronwen-williams": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-aubrey-modiba": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-mbekezeli-mbokazi": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-khuliso-mudau": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-ime-okon": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-teboho-mokoena": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "yellow",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-thalente-mbatha": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "yellow",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-oswin-appollis": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-thapelo-maseko": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-iqraam-rayners": {
+        "minutesInMatch": 66,
+        "energyEstimate": 72,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-relebohile-mofokeng": {
+        "minutesInMatch": 20,
+        "energyEstimate": 92,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-evidence-makgopa": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-tshepang-moremi": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-lyle-foster": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-kamogelo-sebelebele": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-nkosinathi-sibisi": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m25"
+        ],
+        "verificationStatus": "partial"
+      }
+    },
+    "evidenceRefs": [
+      {
+        "sourceId": "fifa-ftr-m25",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 66,
+        "observedThrough": "2026-06-18T17:06:00.000Z"
+      },
+      {
+        "sourceId": "fifa-tactical-m25",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-18T16:00:00Z"
+      },
+      {
+        "sourceId": "fifa-squad-list-2026-v1",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-10T23:59:59Z",
+        "note": "최종 명단의 신원·등록·소속팀 정보만 사용"
+      }
+    ],
+    "actualDecision": {
+      "minute": 66,
+      "outPlayerId": "rsa-iqraam-rayners",
+      "inPlayerId": "rsa-evidence-makgopa",
+      "scoreAtDecision": {
+        "home": 1,
+        "away": 0
+      },
+      "interpretedRole": "박스 안 중앙 공격수 교체",
+      "interpretationStatus": "inferred",
+      "note": "OUT/IN과 시점은 공식 기록이다. 구체적인 전술 목적은 경기 상태에 기반한 해석이다.",
+      "parallelDecision": null,
+      "sourceIds": [
+        "fifa-ftr-m25"
+      ],
+      "usage": "result-only"
+    },
+    "resultFacts": {
+      "finalScore": {
+        "home": 1,
+        "away": 1
+      },
+      "eventsAfterScenario": [
+        {
+          "minute": {
+            "regulation": 67
+          },
+          "type": "substitution",
+          "teamId": "cze",
+          "playerId": "cze-lukas-provod",
+          "relatedPlayerId": "cze-adam-hlozek",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 67
+          },
+          "type": "substitution",
+          "teamId": "cze",
+          "playerId": "cze-tomas-soucek",
+          "relatedPlayerId": "cze-michal-sadilek",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 75
+          },
+          "type": "card",
+          "teamId": "cze",
+          "playerId": "cze-ladislav-krejci",
+          "assistPlayerId": null,
+          "card": "yellow",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 78
+          },
+          "type": "substitution",
+          "teamId": "cze",
+          "playerId": "cze-david-zima",
+          "relatedPlayerId": "cze-lukas-cerv",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 83
+          },
+          "type": "goal",
+          "teamId": "rsa",
+          "playerId": "rsa-teboho-mokoena",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": "penalty",
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 84
+          },
+          "type": "substitution",
+          "teamId": "rsa",
+          "playerId": "rsa-kamogelo-sebelebele",
+          "relatedPlayerId": "rsa-thapelo-maseko",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        }
+      ],
+      "sourceIds": [
+        "fifa-ftr-m25",
+        "fifa-tactical-m25",
+        "fifa-pmsr-m25",
+        "fifa-api-m25",
+        "fifa-article-m25"
+      ],
+      "usage": "result-only"
+    },
+    "sourceIds": [
+      "fifa-ftr-m25",
+      "fifa-tactical-m25",
+      "fifa-pmsr-m25",
+      "fifa-api-m25",
+      "fifa-article-m25"
+    ],
+    "verificationStatus": "verified_official"
+  },
+  {
+    "id": "rsa-m54-break-balance-62",
+    "matchId": "rsa-kor-2026",
+    "selectedTeamId": "rsa",
+    "opponentTeamId": "kor",
+    "order": 3,
+    "globalOrder": 12,
+    "minute": 62,
+    "scenarioTimestamp": "2026-06-25T02:02:00.000Z",
+    "timestampBasis": "derived logical match-clock boundary; not an official wall-clock event timestamp",
+    "currentScore": {
+      "home": 0,
+      "away": 0
+    },
+    "scoreState": "level",
+    "substitutionsRemaining": 5,
+    "title": "0–0의 균형을 먼저 깨는 측면 카드",
+    "shortMission": "62분 0–0, 측면의 다른 움직임으로 경기 균형을 흔들어라",
+    "mission": "중앙 구조를 유지하면서 측면의 1대1과 크로스 선택을 바꿀 교체를 결정하라.",
+    "difficulty": "보통",
+    "observations": [
+      "전반은 득점 없이 끝났다.",
+      "한국은 하프타임에 세 명을 동시에 교체했다.",
+      "남아공은 아직 교체 카드를 사용하지 않았다.",
+      "균형을 깨되 중앙의 수비 간격을 유지해야 한다."
+    ],
+    "contextTimeline": [
+      {
+        "minute": "HT",
+        "label": "0–0",
+        "tone": "neutral"
+      },
+      {
+        "minute": "HT",
+        "label": "한국 3명 교체",
+        "tone": "neutral"
+      },
+      {
+        "minute": "62′",
+        "label": "당신의 결정",
+        "tone": "positive"
+      }
+    ],
+    "opponentShape": "3-4-3 · 하프타임 3명 교체",
+    "currentLineup": [
+      "rsa-ronwen-williams",
+      "rsa-aubrey-modiba",
+      "rsa-mbekezeli-mbokazi",
+      "rsa-khuliso-mudau",
+      "rsa-ime-okon",
+      "rsa-thalente-mbatha",
+      "rsa-sphephelo-sithole",
+      "rsa-oswin-appollis",
+      "rsa-relebohile-mofokeng",
+      "rsa-thapelo-maseko",
+      "rsa-evidence-makgopa"
+    ],
+    "lineupStatus": "normal",
+    "benchOptions": [
+      "rsa-tshepang-moremi",
+      "rsa-iqraam-rayners",
+      "rsa-jayden-adams",
+      "rsa-lyle-foster",
+      "rsa-kamogelo-sebelebele"
+    ],
+    "unavailablePlayerIds": [
+      "rsa-teboho-mokoena",
+      "rsa-themba-zwane"
+    ],
+    "attributeWeights": {
+      "finishing": 0.12,
+      "chanceCreation": 0.14,
+      "dribbling": 0.1,
+      "passing": 0.14,
+      "pressing": 0.12,
+      "defending": 0.14,
+      "aerial": 0.1,
+      "impact": 0.14
+    },
+    "defaultInstructions": {
+      "attackDirection": "balanced",
+      "pressing": "medium",
+      "defensiveLine": "medium",
+      "mentality": "balanced"
+    },
+    "instructionFit": {
+      "attackDirection": {
+        "left": 0,
+        "centre": 1,
+        "right": 0,
+        "balanced": 2
+      },
+      "pressing": {
+        "low": -1,
+        "medium": 2,
+        "high": 1
+      },
+      "defensiveLine": {
+        "low": -1,
+        "medium": 2,
+        "high": 0
+      },
+      "mentality": {
+        "safe": 0,
+        "balanced": 2,
+        "attacking": 1
+      },
+      "combinationModifiers": [
+        {
+          "id": "balance-coordinated-press",
+          "label": "라인과 압박의 동시 전진",
+          "when": {
+            "pressing": "high",
+            "defensiveLine": "high"
+          },
+          "modifier": 1
+        },
+        {
+          "id": "balance-disconnected",
+          "label": "높은 라인과 낮은 압박의 간격",
+          "when": {
+            "pressing": "low",
+            "defensiveLine": "high"
+          },
+          "modifier": -3
+        }
+      ]
+    },
+    "matchupModifiers": {
+      "base": 56,
+      "rules": [
+        {
+          "id": "balance-midfielder",
+          "label": "중앙 균형",
+          "positionGroups": [
+            "DM",
+            "CM_AM"
+          ],
+          "modifier": 8
+        },
+        {
+          "id": "balance-forward",
+          "label": "전환 출구",
+          "positionGroups": [
+            "WINGER",
+            "STRIKER"
+          ],
+          "modifier": 7
+        },
+        {
+          "id": "balance-role",
+          "label": "양방향 역할",
+          "roleIds": [
+            "box-to-box",
+            "playmaker",
+            "advanced-forward"
+          ],
+          "modifier": 6
+        }
+      ]
+    },
+    "matchupTags": [
+      "공수 균형",
+      "전환 출구",
+      "중원 간격"
+    ],
+    "riskRules": [
+      "high-line-low-press",
+      "all-out-attack",
+      "position-mismatch",
+      "low-confidence"
+    ],
+    "tournamentFormByPlayer": {
+      "rsa-ronwen-williams": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-aubrey-modiba": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 166,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-mbekezeli-mbokazi": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-khuliso-mudau": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-ime-okon": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 180,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-thalente-mbatha": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 124,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-sphephelo-sithole": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 90,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-oswin-appollis": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 104,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-relebohile-mofokeng": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 44,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-thapelo-maseko": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 84,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-evidence-makgopa": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 38,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-tshepang-moremi": {
+        "matchesPlayedBeforeScenario": 0,
+        "minutesBeforeScenario": null,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "no_minutes",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이 시점 이전 월드컵 출전 없음. BASE PROFILE을 감점하지 않음."
+      },
+      "rsa-iqraam-rayners": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 142,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-jayden-adams": {
+        "matchesPlayedBeforeScenario": 2,
+        "minutesBeforeScenario": 107,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-lyle-foster": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 56,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      },
+      "rsa-kamogelo-sebelebele": {
+        "matchesPlayedBeforeScenario": 1,
+        "minutesBeforeScenario": 6,
+        "metricCoverage": 0,
+        "reliability": 0,
+        "adjustment": 0,
+        "status": "insufficient_metrics",
+        "sourceIds": [
+          "fifa-ftr-m01",
+          "fifa-ftr-m25"
+        ],
+        "note": "이전 경기 출전 사실은 확인했으나 시점 안전한 선수별 지표 커버리지가 없어 조정 제외."
+      }
+    },
+    "currentConditionByPlayer": {
+      "rsa-ronwen-williams": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-aubrey-modiba": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-mbekezeli-mbokazi": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-khuliso-mudau": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-ime-okon": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-thalente-mbatha": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-sphephelo-sithole": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-oswin-appollis": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-relebohile-mofokeng": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-thapelo-maseko": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-evidence-makgopa": {
+        "minutesInMatch": 62,
+        "energyEstimate": 74,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-tshepang-moremi": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-iqraam-rayners": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-jayden-adams": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-lyle-foster": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      },
+      "rsa-kamogelo-sebelebele": {
+        "minutesInMatch": 0,
+        "energyEstimate": 100,
+        "energyEstimateStatus": "derived_from_verified_minutes",
+        "cardStatus": "clear",
+        "injuryStatus": null,
+        "currentPosition": null,
+        "recentScheduleBurden": null,
+        "eligible": true,
+        "sourceIds": [
+          "fifa-ftr-m54"
+        ],
+        "verificationStatus": "partial"
+      }
+    },
+    "evidenceRefs": [
+      {
+        "sourceId": "fifa-ftr-m54",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 62,
+        "observedThrough": "2026-06-25T02:02:00.000Z"
+      },
+      {
+        "sourceId": "fifa-tactical-m54",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-25T01:00:00Z"
+      },
+      {
+        "sourceId": "fifa-squad-list-2026-v1",
+        "usage": "decision-input",
+        "observedThroughMatchMinute": 0,
+        "observedThrough": "2026-06-10T23:59:59Z",
+        "note": "최종 명단의 신원·등록·소속팀 정보만 사용"
+      }
+    ],
+    "actualDecision": {
+      "minute": 62,
+      "outPlayerId": "rsa-oswin-appollis",
+      "inPlayerId": "rsa-tshepang-moremi",
+      "scoreAtDecision": {
+        "home": 0,
+        "away": 0
+      },
+      "interpretedRole": "측면 공격 방식과 크로스 각도 변화",
+      "interpretationStatus": "inferred",
+      "note": "OUT/IN과 시점은 공식 기록이다. 구체적인 전술 목적은 경기 상태에 기반한 해석이다.",
+      "parallelDecision": null,
+      "sourceIds": [
+        "fifa-ftr-m54"
+      ],
+      "usage": "result-only"
+    },
+    "resultFacts": {
+      "finalScore": {
+        "home": 1,
+        "away": 0
+      },
+      "eventsAfterScenario": [
+        {
+          "minute": {
+            "regulation": 63
+          },
+          "type": "goal",
+          "teamId": "rsa",
+          "playerId": "rsa-thapelo-maseko",
+          "assistPlayerId": "rsa-tshepang-moremi",
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 65
+          },
+          "type": "substitution",
+          "teamId": "kor",
+          "playerId": "park-jinseob",
+          "relatedPlayerId": "kim-minjae",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 72
+          },
+          "type": "card",
+          "teamId": "rsa",
+          "playerId": "rsa-aubrey-modiba",
+          "assistPlayerId": null,
+          "card": "yellow",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 74
+          },
+          "type": "substitution",
+          "teamId": "kor",
+          "playerId": "cho-guesung",
+          "relatedPlayerId": "oh-hyeongyu",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 75
+          },
+          "type": "substitution",
+          "teamId": "rsa",
+          "playerId": "rsa-iqraam-rayners",
+          "relatedPlayerId": "rsa-thapelo-maseko",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 78
+          },
+          "type": "card",
+          "teamId": "kor",
+          "playerId": "cho-guesung",
+          "assistPlayerId": null,
+          "card": "yellow",
+          "detail": null,
+          "verificationStatus": "verified_official"
+        },
+        {
+          "minute": {
+            "regulation": 80
+          },
+          "type": "substitution",
+          "teamId": "rsa",
+          "playerId": "rsa-jayden-adams",
+          "relatedPlayerId": "rsa-relebohile-mofokeng",
+          "assistPlayerId": null,
+          "card": null,
+          "detail": null,
+          "verificationStatus": "verified_official"
+        }
+      ],
+      "sourceIds": [
+        "fifa-ftr-m54",
+        "fifa-tactical-m54",
+        "fifa-pmsr-m54",
+        "fifa-api-m54",
+        "fifa-article-m54"
+      ],
+      "usage": "result-only"
+    },
+    "sourceIds": [
+      "fifa-ftr-m54",
+      "fifa-tactical-m54",
+      "fifa-pmsr-m54",
+      "fifa-api-m54",
+      "fifa-article-m54"
+    ],
+    "verificationStatus": "verified_official"
+  }
+]

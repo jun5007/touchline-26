@@ -1,0 +1,678 @@
+[
+  {
+    "playerId": "kim-seunggyu",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "lee-hanbeom",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "lee-gihyuk",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "kim-minjae",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "kim-taehyeon",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "hwang-inbeom",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "son-heungmin",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "paik-seungho",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cho-guesung",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "lee-jaesung",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "hwang-heechan",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "song-bumkeun",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "lee-taeseok",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "cho-wije",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "kim-moonhwan",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "park-jinseob",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "bae-junho",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "oh-hyeongyu",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "lee-kangin",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "yang-hyunjun",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "jo-hyeonwoo",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "seol-youngwoo",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "castrop-jens",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "kim-jingyu",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "eom-jisung",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "lee-donggyeong",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-kleague-portal"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  }
+]

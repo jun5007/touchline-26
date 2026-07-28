@@ -1,0 +1,678 @@
+[
+  {
+    "playerId": "rsa-ronwen-williams",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-thabang-matuludi",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-khulumani-ndamane",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-teboho-mokoena",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-thalente-mbatha",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-aubrey-modiba",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-oswin-appollis",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-tshepang-moremi",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-lyle-foster",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-relebohile-mofokeng",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-themba-zwane",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-thapelo-maseko",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-sphephelo-sithole",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-mbekezeli-mbokazi",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-iqraam-rayners",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-sipho-chaine",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-evidence-makgopa",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-samukele-kabini",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-nkosinathi-sibisi",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-khuliso-mudau",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-ime-okon",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-ricardo-goss",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-jayden-adams",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-olwethu-makhanya",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-kamogelo-sebelebele",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P0",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  },
+  {
+    "playerId": "rsa-bradley-cross",
+    "period": {
+      "start": "2025-06-11",
+      "end": "2026-06-10"
+    },
+    "priority": "P1",
+    "collectionStatus": "incomplete",
+    "records": [],
+    "sourceIds": [],
+    "reviewedSourceIds": [
+      "base-audit-fifa-terms",
+      "base-audit-uefa-terms",
+      "base-audit-openfootball",
+      "base-audit-openligadb",
+      "base-audit-wikidata",
+      "base-audit-skillcorner-open-data",
+      "base-audit-wyscout-events",
+      "base-audit-statsbomb-open-data",
+      "base-audit-football-data-api",
+      "base-audit-sportmonks-api",
+      "base-audit-sports-reference-policy",
+      "base-audit-psl-terms"
+    ],
+    "missingReason": "분석 기간과 공개 재사용 권리를 모두 충족하는 선수 단위 성능 출처를 확보하지 못했습니다."
+  }
+]
